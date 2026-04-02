@@ -73,7 +73,7 @@ export default function CommunitiesPage() {
     <div className="w-full">
 
       {/* ── HERO ── */}
-      <section className="relative py-20 md:py-32 bg-card">
+      <section className="relative py-12 md:py-32 bg-card">
         <div className="container px-4">
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <h1 className="text-4xl md:text-6xl font-bold font-serif text-foreground">Explore Our Communities</h1>
@@ -85,14 +85,14 @@ export default function CommunitiesPage() {
       </section>
 
       {/* ── PRIMARY: TRI-CITY ── */}
-      <section className="py-20 bg-background">
+      <section className="py-12 md:py-20 bg-background">
         <div className="container px-4 max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8 md:mb-16">
             <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">The Tri-City Area</h2>
             <p className="text-lg text-foreground/70 max-w-2xl mx-auto">Newcastle, Tuttle, and Blanchard represent the primary service area. These communities receive the deepest focus and most consistent market attention.</p>
           </div>
 
-          <div className="space-y-20">
+          <div className="space-y-12 md:space-y-20">
             {primaryCommunities.map((community, idx) => (
               <div
                 key={community.id}
@@ -126,9 +126,9 @@ export default function CommunitiesPage() {
       </section>
 
       {/* ── SECONDARY AREAS ── */}
-      <section className="py-20 bg-card/50">
+      <section className="py-12 md:py-20 bg-card/50">
         <div className="container px-4 max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8 md:mb-16">
             <h2 className="text-3xl font-serif font-bold mb-4">Also Serving</h2>
             <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
               My service area extends throughout the southwestern and southern Oklahoma City metro. Below are additional communities where I actively work with buyers and sellers.

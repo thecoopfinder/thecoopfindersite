@@ -16,7 +16,7 @@ export default function AboutPage() {
     <div className="w-full">
 
       {/* ── HERO ── */}
-      <section className="relative py-20 md:py-32 bg-card">
+      <section className="relative py-12 md:py-32 bg-card">
         <div className="container px-4">
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <h1 className="text-4xl md:text-6xl font-bold font-serif text-foreground">Meet Tessa Hood</h1>
@@ -28,9 +28,9 @@ export default function AboutPage() {
       </section>
 
       {/* ── STORY ── */}
-      <section className="py-20 bg-background">
+      <section className="py-12 md:py-20 bg-background">
         <div className="container px-4">
-          <div className="flex flex-col md:flex-row gap-12 items-center">
+          <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center">
             <div className="flex-1 w-full">
               <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-[#d4c5a9] relative border-8 border-card shadow-xl">
                 {/* PHOTO: Professional or lifestyle headshot of Tessa Hood */}
@@ -60,9 +60,9 @@ export default function AboutPage() {
       </section>
 
       {/* ── APPROACH ── */}
-      <section className="py-24 bg-card/50">
+      <section className="py-12 md:py-24 bg-card/50">
         <div className="container px-4 max-w-5xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8 md:mb-16">
             <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">My Approach</h2>
             <p className="text-lg text-foreground/70 max-w-2xl mx-auto">What you can expect when we work together — from the first conversation to the closing table.</p>
           </div>
@@ -94,7 +94,7 @@ export default function AboutPage() {
                 desc: "Complex situations — contingent sales, new construction guidance, acreage transactions, financing hurdles — require experience and creative thinking. I've worked through a wide range of scenarios and know how to keep a transaction moving forward.",
               },
             ].map((item, i) => (
-              <div key={i} className="bg-background p-8 rounded-xl shadow-sm border border-border/50">
+              <div key={i} className="bg-background p-5 md:p-8 rounded-xl shadow-sm border border-border/50">
                 <h3 className="text-xl font-bold font-serif mb-3 text-primary">{item.title}</h3>
                 <p className="text-foreground/70 leading-relaxed">{item.desc}</p>
               </div>
@@ -104,7 +104,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── BROKERAGE NOTE ── */}
-      <section className="py-20 bg-background">
+      <section className="py-10 md:py-20 bg-background">
         <div className="container px-4 max-w-3xl mx-auto text-center space-y-4">
           <h2 className="text-2xl font-serif font-bold">Knight Land Company</h2>
           <p className="text-lg text-foreground/70 leading-relaxed">
@@ -114,7 +114,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="py-20 bg-card/50 text-center">
+      <section className="py-10 md:py-20 bg-card/50 text-center">
         <div className="container px-4">
           <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">Ready to Get Started?</h2>
           <p className="text-foreground/70 max-w-xl mx-auto mb-8">

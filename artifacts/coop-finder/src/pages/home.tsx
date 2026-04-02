@@ -84,7 +84,7 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-background/80 md:bg-background/45 backdrop-blur-[2px]" />
         </div>
 
-        <div className="container relative z-10 px-4 py-20 text-center md:text-left flex flex-col md:flex-row items-center gap-12">
+        <div className="container relative z-10 px-4 py-10 md:py-20 text-center md:text-left flex flex-col md:flex-row items-center gap-8 md:gap-12">
           <div className="flex-1 space-y-6 max-w-3xl">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-serif leading-tight text-foreground">
@@ -128,9 +128,9 @@ export default function HomePage() {
       </section>
 
       {/* ── BRAND INTRO ── */}
-      <section className="py-24 bg-background">
+      <section className="py-12 md:py-24 bg-background">
         <div className="container px-4">
-          <div className="max-w-4xl mx-auto text-center space-y-8">
+          <div className="max-w-4xl mx-auto text-center space-y-5 md:space-y-8">
             <h2 className="text-3xl md:text-5xl font-serif font-bold text-foreground">Welcome to The Coop Finder</h2>
             <p className="text-lg md:text-xl text-foreground/80 leading-relaxed font-light">
               The name says it all. "The Coop Finder" is built around one mission: helping you <strong className="font-semibold text-foreground">find your coop and live your dream.</strong> Whether that's a starter home in Newcastle, a piece of land in Tuttle, or a quiet acreage property outside Blanchard — this is about finding the right place for your next chapter.
@@ -146,9 +146,9 @@ export default function HomePage() {
       </section>
 
       {/* ── SERVICES ── */}
-      <section className="py-20 bg-card/50">
+      <section className="py-10 md:py-20 bg-card/50">
         <div className="container px-4">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8 md:mb-16">
             <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">How I Can Help</h2>
             <p className="text-foreground/70 max-w-2xl mx-auto">Full-service real estate representation for buyers, sellers, and everyone in between — across Newcastle, Tuttle, Blanchard, and the South OKC metro.</p>
           </div>
@@ -165,7 +165,7 @@ export default function HomePage() {
             ].map((service, i) => (
               <motion.div key={i} variants={itemVariants}>
                 <Card className="h-full border-none shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-background overflow-hidden group">
-                  <CardContent className="p-8 flex flex-col items-center text-center h-full">
+                  <CardContent className="p-5 md:p-8 flex flex-col items-center text-center h-full">
                     <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
                       <service.icon className="w-8 h-8" />
                     </div>
@@ -183,9 +183,9 @@ export default function HomePage() {
       </section>
 
       {/* ── WHY TESSA ── */}
-      <section className="py-24 bg-background">
+      <section className="py-12 md:py-24 bg-background">
         <div className="container px-4 max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8 md:mb-16">
             <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">Why Work With Tessa?</h2>
             <p className="text-foreground/70 max-w-2xl mx-auto">Experience, local market knowledge, and a genuine commitment to every client's outcome — from the first showing to the final signature.</p>
           </div>
@@ -203,7 +203,7 @@ export default function HomePage() {
               { title: "Creative Deal Structuring", body: "Experience managing complex situations — contingent sales, new construction, acreage transactions, and financing challenges." },
             ].map((item, i) => (
               <motion.div key={i} variants={itemVariants}>
-                <div className="bg-card p-8 rounded-xl shadow-sm border border-border/60 h-full flex gap-4">
+                <div className="bg-card p-5 md:p-8 rounded-xl shadow-sm border border-border/60 h-full flex gap-4">
                   <CheckCircle className="w-6 h-6 text-primary shrink-0 mt-0.5" />
                   <div>
                     <h3 className="text-lg font-bold font-serif mb-2">{item.title}</h3>
@@ -223,9 +223,9 @@ export default function HomePage() {
       </section>
 
       {/* ── FEATURED COMMUNITIES ── */}
-      <section className="py-24 bg-card/50">
+      <section className="py-12 md:py-24 bg-card/50">
         <div className="container px-4">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-8 md:mb-12 gap-4 md:gap-6">
             <div className="max-w-2xl">
               <h2 className="text-3xl md:text-5xl font-serif font-bold mb-4">Communities I Serve</h2>
               <p className="text-lg text-foreground/70">Serving the Tri-City area of Newcastle, Tuttle, and Blanchard, along with surrounding South OKC communities.</p>
@@ -278,9 +278,9 @@ export default function HomePage() {
       </section>
 
       {/* ── FEATURED PROPERTIES ── */}
-      <section className="py-24 bg-background">
+      <section className="py-12 md:py-24 bg-background">
         <div className="container px-4">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-8 md:mb-12 gap-4 md:gap-6">
             <div>
               <h2 className="text-3xl md:text-5xl font-serif font-bold mb-4">Featured Properties</h2>
               <p className="text-lg text-foreground/70">A selection of current listings and property spotlights across the service area. Updated regularly.</p>
@@ -317,9 +317,9 @@ export default function HomePage() {
       </section>
 
       {/* ── AROUND THE COOP PREVIEW ── */}
-      <section className="py-24 bg-card/50">
+      <section className="py-12 md:py-24 bg-card/50">
         <div className="container px-4">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-8 md:mb-12 gap-4 md:gap-6">
             <div className="max-w-2xl">
               <h2 className="text-3xl md:text-5xl font-serif font-bold mb-4">Around the Coop</h2>
               <p className="text-lg text-foreground/70">Community spotlights, local business features, buyer and seller tips, and more — all focused on life in the Newcastle, Tuttle, and Blanchard area.</p>
@@ -383,9 +383,9 @@ export default function HomePage() {
       </section>
 
       {/* ── TESTIMONIALS ── */}
-      <section className="py-24 bg-background">
+      <section className="py-12 md:py-24 bg-background">
         <div className="container px-4">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8 md:mb-16">
             <h2 className="text-3xl md:text-5xl font-serif font-bold mb-4">What Clients Are Saying</h2>
             <p className="text-lg text-foreground/70">Relationships built on trust, communication, and results.</p>
           </div>
@@ -395,7 +395,7 @@ export default function HomePage() {
               { quote: "From the listing appointment to closing, Tessa was professional, communicative, and worked hard to get us the right outcome. We couldn't have asked for better representation.", name: "— Seller Client, Tuttle, OK" },
               { quote: "As first-time buyers, we had a lot of questions. Tessa was patient, knowledgeable, and really took the time to make sure we were making the right decision for our family.", name: "— Buyer Client, Blanchard, OK" },
             ].map((t, i) => (
-              <Card key={i} className="border-border shadow-sm bg-card p-8">
+              <Card key={i} className="border-border shadow-sm bg-card p-5 md:p-8">
                 <div className="flex text-secondary mb-4">
                   {[...Array(5)].map((_, j) => <Star key={j} className="w-5 h-5 fill-current" />)}
                 </div>
@@ -408,7 +408,7 @@ export default function HomePage() {
       </section>
 
       {/* ── LEAD CAPTURE ── */}
-      <section className="py-24 bg-card/50">
+      <section className="py-12 md:py-24 bg-card/50">
         <div className="container px-4 max-w-3xl mx-auto">
           <div className="bg-background p-8 md:p-12 rounded-2xl shadow-lg border border-border">
             <div className="text-center mb-8">

@@ -138,11 +138,11 @@ export default function AroundTheCoopPage() {
     <div className="w-full">
 
       {/* ── HERO ── */}
-      <section className="relative py-20 md:py-28 bg-card">
+      <section className="relative py-12 md:py-28 bg-card">
         <div className="container px-4">
-          <div className="max-w-3xl mx-auto text-center space-y-5">
-            <h1 className="text-4xl md:text-6xl font-bold font-serif text-foreground">Around the Coop</h1>
-            <p className="text-xl md:text-2xl text-foreground/80 font-light">
+          <div className="max-w-3xl mx-auto text-center space-y-4">
+            <h1 className="text-3xl md:text-6xl font-bold font-serif text-foreground">Around the Coop</h1>
+            <p className="text-lg md:text-2xl text-foreground/80 font-light">
               Community spotlights, local business features, buyer and seller education, and more — all centered on Newcastle, Tuttle, Blanchard, and the South OKC area.
             </p>
           </div>
@@ -150,7 +150,7 @@ export default function AroundTheCoopPage() {
       </section>
 
       {/* ── FEATURED VIDEO ── */}
-      <section className="py-12 bg-background">
+      <section className="py-6 md:py-12 bg-background">
         <div className="container px-4 max-w-7xl mx-auto">
           <a href={ytUrl("RngFX5wpDaM")} target="_blank" rel="noopener noreferrer" className="block group">
             <div className="relative rounded-2xl overflow-hidden shadow-lg bg-[#d4c5a9]">
@@ -169,10 +169,10 @@ export default function AroundTheCoopPage() {
                   <svg className="w-7 h-7 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
                 </div>
               </div>
-              <div className="absolute bottom-0 left-0 p-8 z-20 text-white w-full md:w-2/3">
-                <p className="text-sm font-bold uppercase tracking-widest text-white/70 mb-1">Buyer Tip</p>
-                <h2 className="text-2xl md:text-3xl font-serif font-bold mb-2">Should You Find a House First or Get Pre-Approved?</h2>
-                <p className="text-white/80 text-sm line-clamp-2">Most buyers want to start by touring homes — but getting pre-approved first puts you in a stronger position from day one.</p>
+              <div className="absolute bottom-0 left-0 p-4 md:p-8 z-20 text-white w-full md:w-2/3">
+                <p className="text-xs md:text-sm font-bold uppercase tracking-widest text-white/70 mb-1">Buyer Tip</p>
+                <h2 className="text-lg md:text-3xl font-serif font-bold mb-1 md:mb-2">Should You Find a House First or Get Pre-Approved?</h2>
+                <p className="text-white/80 text-xs md:text-sm line-clamp-2 hidden sm:block">Most buyers want to start by touring homes — but getting pre-approved first puts you in a stronger position from day one.</p>
               </div>
             </div>
           </a>
@@ -180,9 +180,9 @@ export default function AroundTheCoopPage() {
       </section>
 
       {/* ── CATEGORY FILTERS ── */}
-      <section className="py-4 bg-background border-b border-border sticky top-16 z-20">
+      <section className="py-3 bg-background border-b border-border sticky top-16 z-20">
         <div className="container px-4 max-w-7xl mx-auto">
-          <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-none">
+          <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-none -mx-4 px-4 md:mx-0 md:px-0">
             {categories.map((cat) => (
               <button
                 key={cat}
@@ -202,7 +202,7 @@ export default function AroundTheCoopPage() {
 
       {/* ── COMMUNITY SPOTLIGHTS ── */}
       {(activeCategory === "all" || activeCategory === "spotlights") && (
-        <section id="spotlights" className="py-14 bg-background scroll-mt-28">
+        <section id="spotlights" className="py-8 md:py-14 bg-background scroll-mt-28">
           <div className="container px-4 max-w-7xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-serif font-bold mb-8 border-b border-border pb-3">Community Spotlights</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -217,7 +217,7 @@ export default function AroundTheCoopPage() {
 
       {/* ── LOCAL BUSINESSES ── */}
       {(activeCategory === "all" || activeCategory === "businesses") && (
-        <section id="businesses" className="py-14 bg-card/50 scroll-mt-28">
+        <section id="businesses" className="py-8 md:py-14 bg-card/50 scroll-mt-28">
           <div className="container px-4 max-w-7xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-serif font-bold mb-2 border-b border-border pb-3">Local Businesses</h2>
             <p className="text-foreground/70 mb-8 text-sm">Spotlighting the independent businesses that make the Newcastle, Tuttle, and Blanchard area a great place to live.</p>
@@ -233,7 +233,7 @@ export default function AroundTheCoopPage() {
 
       {/* ── BUYER TIPS ── */}
       {(activeCategory === "all" || activeCategory === "buyer-tips") && (
-        <section id="buyer-tips" className="py-14 bg-background scroll-mt-28">
+        <section id="buyer-tips" className="py-8 md:py-14 bg-background scroll-mt-28">
           <div className="container px-4 max-w-7xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-serif font-bold mb-2 border-b border-border pb-3">Buyer Tips</h2>
             <p className="text-foreground/70 mb-8 text-sm">Practical guidance for home buyers navigating the Oklahoma market.</p>
@@ -254,7 +254,7 @@ export default function AroundTheCoopPage() {
 
       {/* ── SELLER TIPS ── */}
       {(activeCategory === "all" || activeCategory === "seller-tips") && (
-        <section id="seller-tips" className="py-14 bg-card/50 scroll-mt-28">
+        <section id="seller-tips" className="py-8 md:py-14 bg-card/50 scroll-mt-28">
           <div className="container px-4 max-w-7xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-serif font-bold mb-2 border-b border-border pb-3">Seller Tips</h2>
             <p className="text-foreground/70 mb-8 text-sm">Advice to help sellers prepare, price, and navigate the market with confidence.</p>
@@ -279,7 +279,7 @@ export default function AroundTheCoopPage() {
 
       {/* ── ALL VIDEOS ── */}
       {(activeCategory === "all" || activeCategory === "videos") && (
-        <section id="videos" className="py-14 bg-background scroll-mt-28">
+        <section id="videos" className="py-8 md:py-14 bg-background scroll-mt-28">
           <div className="container px-4 max-w-7xl mx-auto">
             <div className="flex items-center justify-between mb-8 border-b border-border pb-3">
               <h2 className="text-2xl md:text-3xl font-serif font-bold">All Videos</h2>
@@ -302,7 +302,7 @@ export default function AroundTheCoopPage() {
       )}
 
       {/* ── INTERNAL LINKS ── */}
-      <section className="py-14 bg-card/50">
+      <section className="py-8 md:py-14 bg-card/50">
         <div className="container px-4 max-w-4xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-center">
             <div className="p-6 rounded-xl border border-border bg-background">
