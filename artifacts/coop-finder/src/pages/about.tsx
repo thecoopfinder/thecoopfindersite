@@ -33,11 +33,7 @@ export default function AboutPage() {
           <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center">
             <div className="flex-1 w-full">
               <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-[#d4c5a9] relative border-8 border-card shadow-xl">
-                {/* PHOTO: Professional or lifestyle headshot of Tessa Hood */}
-                <img src="" alt="Tessa Hood, Realtor – The Coop Finder, Knight Land Company, Newcastle Oklahoma" className="w-full h-full object-cover object-top" />
-                <div className="absolute inset-0 flex items-center justify-center text-foreground/50 p-8 text-center font-medium text-sm">
-                  [Tessa Hood – Headshot or Lifestyle Photo]
-                </div>
+                <img src="/images/tessa-headshot.png" alt="Tessa Hood, Realtor – The Coop Finder, Knight Land Company, Newcastle Oklahoma" className="w-full h-full object-cover object-top" />
               </div>
             </div>
 

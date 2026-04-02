@@ -88,7 +88,7 @@ export default function HomePage() {
           <div className="flex-1 space-y-6 max-w-3xl">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-serif leading-tight text-foreground">
-                Your Trusted Realtor in <span className="text-primary italic">Newcastle, Tuttle,</span> and <span className="text-primary italic">Blanchard.</span>
+                Your Trusted <span className="text-primary italic">Oklahoma</span> Realtor.
               </h1>
             </motion.div>
 
@@ -117,11 +117,7 @@ export default function HomePage() {
             initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.3 }}
           >
             <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl relative bg-[#d4c5a9] border-8 border-background/50">
-              {/* PHOTO: Professional headshot of Tessa Hood */}
-              <img src="" alt="Tessa Hood – Realtor, The Coop Finder, Knight Land Company" className="w-full h-full object-cover object-top" />
-              <div className="absolute inset-0 flex items-center justify-center text-foreground/50 p-8 text-center font-medium text-sm">
-                [Tessa Hood – Professional Headshot]
-              </div>
+              <img src="/images/tessa-headshot.png" alt="Tessa Hood – Realtor, The Coop Finder, Knight Land Company" className="w-full h-full object-cover object-top" />
             </div>
           </motion.div>
         </div>
