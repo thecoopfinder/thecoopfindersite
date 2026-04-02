@@ -13,6 +13,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
+import { VideoModal } from "@/components/VideoModal";
 
 const leadFormSchema = z.object({
   name: z.string().min(2, "Name is required"),
@@ -46,6 +47,7 @@ export default function HomePage() {
 
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [playingVideo, setPlayingVideo] = useState<{ id: string; title: string } | null>(null);
 
   const form = useForm<z.infer<typeof leadFormSchema>>({
     resolver: zodResolver(leadFormSchema),
@@ -350,7 +352,7 @@ export default function HomePage() {
               },
             ].map((card, i) => (
               <motion.div key={i} variants={itemVariants}>
-                <a href={`https://www.youtube.com/watch?v=${card.videoId}`} target="_blank" rel="noopener noreferrer" className="block group">
+                <div className="block group cursor-pointer" onClick={() => setPlayingVideo({ id: card.videoId, title: card.title })}>
                   <Card className="h-full border-border shadow-sm bg-background overflow-hidden flex flex-col">
                     <div className="aspect-video relative overflow-hidden bg-[#d4c5a9]">
                       <img
@@ -371,7 +373,7 @@ export default function HomePage() {
                       <p className="text-foreground/70 leading-relaxed flex-1 text-sm">{card.body}</p>
                     </div>
                   </Card>
-                </a>
+                </div>
               </motion.div>
             ))}
           </motion.div>
@@ -468,6 +470,12 @@ export default function HomePage() {
           </Button>
         </div>
       </section>
+
+      <VideoModal
+        videoId={playingVideo?.id ?? null}
+        title={playingVideo?.title}
+        onClose={() => setPlayingVideo(null)}
+      />
 
     </div>
   );

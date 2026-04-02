@@ -2,8 +2,9 @@ import { Link } from "wouter";
 import { usePageMeta } from "@/hooks/use-page-meta";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, PlayCircle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useState } from "react";
+import { VideoModal } from "@/components/VideoModal";
 
 /* UPDATE WEEKLY: Duplicate card patterns below to add new community spotlights, business features, tips, and videos */
 
@@ -94,29 +95,27 @@ const allVideos = [
   { videoId: "Zu14mblmIko", title: "Around the Coop — Latest Video", label: "Featured" },
 ];
 
-function VideoCard({ videoId, title, label, teaser }: { videoId: string; title: string; label: string; teaser?: string }) {
+function VideoCard({ videoId, title, label, teaser, onPlay }: { videoId: string; title: string; label: string; teaser?: string; onPlay: (id: string, title: string) => void }) {
   return (
-    <Card className="overflow-hidden border-border shadow-sm bg-background group">
-      <a href={ytUrl(videoId)} target="_blank" rel="noopener noreferrer">
-        <div className="aspect-video relative overflow-hidden bg-[#d4c5a9]">
-          <img
-            src={ytThumb(videoId)}
-            alt={title}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-            onError={(e) => { (e.target as HTMLImageElement).src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`; }}
-          />
-          <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors flex items-center justify-center">
-            <div className="w-14 h-14 rounded-full bg-primary/90 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-              <svg className="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
-            </div>
+    <Card className="overflow-hidden border-border shadow-sm bg-background group cursor-pointer" onClick={() => onPlay(videoId, title)}>
+      <div className="aspect-video relative overflow-hidden bg-[#d4c5a9]">
+        <img
+          src={ytThumb(videoId)}
+          alt={title}
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          onError={(e) => { (e.target as HTMLImageElement).src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`; }}
+        />
+        <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+          <div className="w-14 h-14 rounded-full bg-primary/90 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+            <svg className="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
           </div>
         </div>
-        <CardContent className="p-5">
-          <span className="text-xs font-bold text-primary uppercase tracking-wider mb-2 block">{label}</span>
-          <h3 className="font-serif font-bold text-base leading-snug mb-2 group-hover:text-primary transition-colors">{title}</h3>
-          {teaser && <p className="text-foreground/70 text-sm leading-relaxed line-clamp-3">{teaser}</p>}
-        </CardContent>
-      </a>
+      </div>
+      <CardContent className="p-5">
+        <span className="text-xs font-bold text-primary uppercase tracking-wider mb-2 block">{label}</span>
+        <h3 className="font-serif font-bold text-base leading-snug mb-2 group-hover:text-primary transition-colors">{title}</h3>
+        {teaser && <p className="text-foreground/70 text-sm leading-relaxed line-clamp-3">{teaser}</p>}
+      </CardContent>
     </Card>
   );
 }
@@ -133,6 +132,7 @@ export default function AroundTheCoopPage() {
 
   const [activeCategory, setActiveCategory] = useState<Category>("all");
   const categories: Category[] = ["all", "spotlights", "businesses", "buyer-tips", "seller-tips", "videos"];
+  const [playingVideo, setPlayingVideo] = useState<{ id: string; title: string } | null>(null);
 
   return (
     <div className="w-full">
@@ -152,7 +152,10 @@ export default function AroundTheCoopPage() {
       {/* ── FEATURED VIDEO ── */}
       <section className="py-6 md:py-12 bg-background">
         <div className="container px-4 max-w-7xl mx-auto">
-          <a href={ytUrl("RngFX5wpDaM")} target="_blank" rel="noopener noreferrer" className="block group">
+          <div
+            className="block group cursor-pointer"
+            onClick={() => setPlayingVideo({ id: "RngFX5wpDaM", title: "Should You Find a House First or Get Pre-Approved?" })}
+          >
             <div className="relative rounded-2xl overflow-hidden shadow-lg bg-[#d4c5a9]">
               <img
                 src={ytThumb("RngFX5wpDaM")}
@@ -175,7 +178,7 @@ export default function AroundTheCoopPage() {
                 <p className="text-white/80 text-xs md:text-sm line-clamp-2 hidden sm:block">Most buyers want to start by touring homes — but getting pre-approved first puts you in a stronger position from day one.</p>
               </div>
             </div>
-          </a>
+          </div>
         </div>
       </section>
 
@@ -207,7 +210,7 @@ export default function AroundTheCoopPage() {
             <h2 className="text-2xl md:text-3xl font-serif font-bold mb-8 border-b border-border pb-3">Community Spotlights</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {spotlights.map((v) => (
-                <VideoCard key={v.videoId} {...v} label="Community Spotlight" />
+                <VideoCard key={v.videoId} {...v} label="Community Spotlight" onPlay={(id, title) => setPlayingVideo({ id, title })} />
               ))}
               {/* DUPLICATE CARD PATTERN: Add new spotlights here weekly */}
             </div>
@@ -223,7 +226,7 @@ export default function AroundTheCoopPage() {
             <p className="text-foreground/70 mb-8 text-sm">Spotlighting the independent businesses that make the Newcastle, Tuttle, and Blanchard area a great place to live.</p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {businesses.map((v) => (
-                <VideoCard key={v.videoId} {...v} label="Local Business" />
+                <VideoCard key={v.videoId} {...v} label="Local Business" onPlay={(id, title) => setPlayingVideo({ id, title })} />
               ))}
               {/* DUPLICATE CARD PATTERN: Add new business spotlights here weekly */}
             </div>
@@ -239,7 +242,7 @@ export default function AroundTheCoopPage() {
             <p className="text-foreground/70 mb-8 text-sm">Practical guidance for home buyers navigating the Oklahoma market.</p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {buyerTips.map((v) => (
-                <VideoCard key={v.videoId} {...v} />
+                <VideoCard key={v.videoId} {...v} onPlay={(id, title) => setPlayingVideo({ id, title })} />
               ))}
               {/* DUPLICATE CARD PATTERN: Add new buyer tip videos here */}
             </div>
@@ -265,6 +268,7 @@ export default function AroundTheCoopPage() {
                 title="Closing Cost Credits — What Sellers Should Know"
                 label="Seller Tip"
                 teaser="Offering a closing cost credit can help attract more buyers and make your listing stand out — here's how it works and when to use it."
+                onPlay={(id, title) => setPlayingVideo({ id, title })}
               />
               {/* DUPLICATE CARD PATTERN: Add new seller tip videos here */}
             </div>
@@ -294,7 +298,7 @@ export default function AroundTheCoopPage() {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {allVideos.map((v) => (
-                <VideoCard key={v.videoId} videoId={v.videoId} title={v.title} label={v.label} />
+                <VideoCard key={v.videoId} videoId={v.videoId} title={v.title} label={v.label} onPlay={(id, title) => setPlayingVideo({ id, title })} />
               ))}
             </div>
           </div>
@@ -318,6 +322,12 @@ export default function AroundTheCoopPage() {
           </div>
         </div>
       </section>
+
+      <VideoModal
+        videoId={playingVideo?.id ?? null}
+        title={playingVideo?.title}
+        onClose={() => setPlayingVideo(null)}
+      />
 
     </div>
   );
