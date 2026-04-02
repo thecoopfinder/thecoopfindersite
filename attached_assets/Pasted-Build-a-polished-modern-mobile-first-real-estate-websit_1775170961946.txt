@@ -1,0 +1,395 @@
+Build a polished, modern, mobile-first real estate website for an Oklahoma Realtor brand called:
+
+Tessa Hood – The Coop Finder
+
+Brokerage:
+Knight Land Company
+
+Primary focus areas:
+Newcastle, Tuttle, and Blanchard (Tri-City area)
+
+Secondary service areas:
+Mustang, Moore, Norman, Yukon, and surrounding South Oklahoma City communities, while remaining available to help in other Oklahoma areas as appropriate
+
+Brand personality:
+Warm, approachable, trustworthy, local, polished, family-oriented, knowledgeable, and professional. The site should feel memorable and branded without being overly flashy. It should reflect a Realtor who is deeply connected to the community, especially for buyers, sellers, acreage properties, manufactured homes, first-time buyers, veterans, and individuals and households looking for their next “coop.”
+
+Core branding direction:
+Use a clean, high-end but welcoming aesthetic inspired by:
+
+* soft whites
+* warm neutrals
+* muted blue tones
+* touches of tan/gold
+* subtle black accents
+  The visual feel should be elevated but still personable and local, not corporate and not luxury-exclusive.
+
+Important brand theme:
+The “coop” concept is central to the brand. The site should subtly tie into the idea of helping people “find their coop and live their dream,” but the design must still clearly communicate REAL ESTATE. Avoid making it feel like a farm website. Use tasteful, subtle nods to the brand story rather than cartoonish farm elements.
+
+Main goal of the website:
+Generate leads for buyers and sellers, position Tessa as the trusted local expert, showcase community knowledge, and make it easy to connect through forms that will later integrate with GoHighLevel.
+
+Technical requirements:
+
+* Build as a static website using only HTML, CSS, and vanilla JavaScript
+* No frameworks
+* Organize files cleanly for GitHub and Vercel deployment
+* Use semantic HTML
+* Use clean, reusable CSS variables and sections
+* Optimize for speed and mobile responsiveness
+* Ensure good SEO structure
+* Use accessible color contrast, alt text placeholders, proper heading hierarchy, and keyboard-friendly navigation
+* Add structured comments in code so sections are easy to edit later
+* Keep all copy editable in the HTML
+* Use placeholder images and clearly label where custom brand photos should go
+
+Site structure:
+Create these pages:
+
+1. Home
+2. About
+3. Buyers
+4. Sellers
+5. Communities
+6. Featured Properties
+7. Around the Coop (main content hub page for community spotlights, buyer and seller education, local businesses, featured videos, and market/lifestyle content)
+8. Contact
+
+Global header:
+
+* Logo/text logo area for “Tessa Hood – The Coop Finder”
+* Navigation links to all pages
+* Primary CTA button: “Let’s Connect”
+* Mobile hamburger menu
+
+Global footer:
+Include:
+
+* Tessa Hood – The Coop Finder
+* Knight Land Company
+* Phone: 405-913-4185
+* Email: [TessaHood@TheCoopFinder.com](mailto:TessaHood@TheCoopFinder.com)
+* Tagline: Find Your Coop and Live Your Dream
+* Social icon placeholders
+* Fair Housing / Equal Housing style area placeholder
+* Brokerage/legal disclaimer area placeholder
+* Copyright
+
+Homepage requirements:
+
+Ensure the homepage clearly communicates the primary service area early in the page, including Newcastle, Tuttle, and Blanchard, while still mentioning broader South Oklahoma City and Oklahoma service coverage.
+
+1. Hero section
+
+* Strong headline that immediately says this is a real estate website
+* Supporting copy focused on helping buyers and sellers in Oklahoma
+* Two CTA buttons:
+
+  * Start Your Home Search
+  * Book a Consultation
+* Space for a professional brand image of Tessa
+
+2. Brand intro section
+
+* Brief introduction to Tessa and the meaning behind “The Coop Finder”
+* Emphasize local knowledge, trusted guidance, and relationships
+* Keep it warm and story-driven
+
+3. Services section
+   Three or four cards for:
+
+* Buying a Home
+* Selling Your Home
+* New Construction Guidance
+* Land / Acreage / Unique Properties
+
+4. Why Work With Tessa section
+   Highlight:
+
+* local expertise
+* guidance from start to finish
+* trusted lender, contractor, insurance, and title connections
+* strong communication
+* creative deal structuring
+* support for first-time buyers and veterans
+
+5. Featured Communities preview
+   Cards linking to:
+
+* Newcastle
+* Tuttle
+* Blanchard
+* Mustang
+* Moore
+* Norman
+* Yukon
+
+  Each card should have placeholder image, short summary, and button
+
+6. Featured Properties preview
+
+* Add a homepage preview section for featured listings/property spotlights
+* Show a clean card layout with image placeholder, city, price, short neutral description, and CTA button
+* Include optional button for video tour when available
+* This section should lead to the dedicated Featured Properties page
+
+7. Around the Coop preview
+
+* Add a homepage preview section that introduces Around the Coop as the brand’s content hub
+* Show featured cards for community spotlights, local businesses, buyer or seller tips, and featured videos
+* This section should lead to the dedicated Around the Coop page
+
+8. Testimonials section
+   Create a clean testimonial slider or cards with placeholder testimonials
+
+9. Lead capture section
+   Include a polished form area with fields:
+
+* Name
+* Email
+* Phone
+* Are you buying, selling, or both?
+* Message
+  Add a note in comments that this form will later connect to GoHighLevel
+
+10. Final CTA banner
+    Warm call to action to connect with Tessa
+
+About page requirements:
+
+* Ensure the About page clearly communicates the primary service area early in the page, including Newcastle, Tuttle, and Blanchard, while still mentioning broader South Oklahoma City and Oklahoma service coverage
+
+* Tell Tessa’s story in a warm, professional way
+
+* Show that she is relationship-driven, knowledgeable, community-focused, and deeply invested in helping clients
+
+* Mention Oklahoma markets served
+
+* Include a section on her approach: education, strategy, negotiation, local connections, and support
+
+* Include professional headshot area and lifestyle brand image area
+
+Buyers page requirements:
+
+* Speak to first-time buyers, move-up buyers, acreage buyers, veterans, and buyers exploring different financing paths
+* Include a simple process section:
+
+  1. Connect
+  2. Get pre-approved
+  3. Search smart
+  4. Make an offer
+  5. Inspections and closing
+* Include benefits of having representation
+* Include CTA form section
+
+Sellers page requirements:
+
+* Position Tessa as someone who helps sellers price, market, negotiate, and move strategically
+* Include a simple selling process
+* Include a section on marketing strategy:
+
+  * social media
+  * local exposure
+  * buyer network
+  * strong presentation
+  * guidance through inspections, title, and closing
+* Add CTA for home valuation request
+
+Communities page requirements:
+
+* Create a hub page for local areas with the strongest emphasis and most detailed content for Newcastle, Tuttle, and Blanchard first
+* Include clean cards for Newcastle, Tuttle, Blanchard, Mustang, Moore, Norman, Yukon
+* Give Newcastle, Tuttle, and Blanchard stronger SEO prominence through placement, headings, internal links, and slightly more developed preview content than the secondary areas
+* Each card should have:
+
+  * image placeholder
+  * short area description
+  * “Learn More” button
+* Build sample anchor sections lower on the page for at least Newcastle, Tuttle, and Blanchard to demonstrate a stronger content pattern for the primary focus areas
+* Secondary areas can follow the same design pattern in a lighter preview format initially
+
+Featured Properties page requirements:
+
+* Create a dedicated page for active listings, featured homes, and property spotlights
+* This page should be designed to support ongoing weekly updates using Facebook listing content in a clean and compliant way
+* Include a polished card grid layout with placeholders for:
+
+  * image
+  * city
+  * price
+  * beds / baths / square footage
+  * short neutral property description
+  * CTA button for details or contact
+  * optional button for video tour when available
+* Include tasteful status tags such as New Listing, Featured, Under Contract, or Sold
+* Keep all listing and property descriptions neutral, factual, and Fair Housing compliant
+* Make the layout easy to duplicate and update manually in static HTML
+
+Around the Coop page requirements:
+
+* Design this as the main branded content hub page for the website
+* This page should support repeated weekly updates and serve as a home for:
+
+  * community spotlights
+  * local business features
+  * buyer tips
+  * seller tips
+  * featured videos
+  * market and lifestyle content
+* Include a featured content area at the top
+* Include a clean card grid or category-based layout below
+* Build category filters or clear sections for:
+
+  * Community Spotlights
+  * Local Businesses
+  * Buyer Tips
+  * Seller Tips
+  * Featured Videos
+* Make this page feel like a major brand differentiator and an SEO asset, not just a basic blog page
+* Ensure this page is easy to update regularly in static HTML and designed to help extend the life of weekly Facebook and YouTube content
+
+Contact page requirements:
+
+* Design as a blog/community spotlight page
+* This should showcase local businesses, parks, coffee shops, family spots, and community features
+* Include a clean card grid layout for spotlight posts
+* Make this feel like a major brand differentiator
+* Include a featured post design at the top
+
+Contact page requirements:
+
+* Strong contact section with form
+* Contact info block
+* Service area summary
+* FAQ accordion with common questions like:
+
+  * Do I need my own Realtor for new construction?
+  * What if I need to sell before I buy?
+  * Can you help with first-time buyers?
+  * Do you work with land and acreage homes?
+
+Design requirements:
+
+* Clean spacing and polished section transitions
+* Rounded buttons and cards
+* Soft shadows
+* Strong typography hierarchy
+* Highly legible on mobile
+* Real estate focused and memorable
+* Avoid generic template feel
+* Avoid stock-looking corporate layouts
+* Make it feel custom and personal
+
+SEO requirements:
+
+* Use strong title tags and meta description placeholders for every page
+* Use only one H1 per page
+* Use logical H2 and H3 hierarchy
+* Add schema placeholder comments for local business / real estate agent structured data
+* Include Open Graph placeholder tags
+* Include alt text placeholders for every image
+* Make internal linking strong between pages
+
+Include location-based SEO structure by naturally incorporating the following areas across relevant pages (without keyword stuffing):
+
+Primary SEO focus:
+
+* Newcastle, Oklahoma
+* Tuttle, Oklahoma
+* Blanchard, Oklahoma
+
+Secondary SEO support:
+
+* Mustang, Oklahoma
+* Moore, Oklahoma
+* Norman, Oklahoma
+* Yukon, Oklahoma
+* South Oklahoma City
+* South OKC communities
+
+Use these locations in headings, internal links, and page content where appropriate, while keeping the language natural and user-focused.
+
+Emphasize Newcastle, Tuttle, and Blanchard as the primary service areas throughout the website.
+
+Use supporting language such as:
+“Serving the Tri-City area of Newcastle, Tuttle, and Blanchard, along with surrounding South OKC communities.”
+
+Do not rely on “Tri-City” alone for SEO. Always pair it with the actual city names.
+
+Position the website so the strongest geographic relevance is for the Tri-City area and South Oklahoma City communities first, while still allowing broader Oklahoma relevance where appropriate.
+
+Ensure strong internal linking between:
+
+* Homepage → Communities
+* Communities → individual area sections
+* Buyers/Sellers → Contact
+* Around the Coop → Communities and Home
+
+This should support SEO and user navigation without over-optimization.
+
+Compliance and content safety requirements:
+
+* Keep all copy professional and compliant for real estate marketing
+* Avoid any language that could violate Fair Housing principles
+* Do not use exclusionary or discriminatory wording
+* Keep community descriptions neutral and informational
+* Add a disclaimer placeholder for brokerage and licensing language where needed
+
+Do not use phrases like “perfect for,” “ideal for,” or “great for” when describing homes or communities in a way that could imply preference for a specific type of person or household. Keep all descriptions neutral and property-focused.
+
+When describing communities, focus on objective features such as:
+
+* location
+* proximity to major highways or cities
+* types of homes (new construction, acreage, etc.)
+* general market trends
+* local amenities like parks, shopping, and dining
+
+Avoid language that suggests who should or should not live in the area.
+
+Ensure testimonial content avoids references to protected classes or subjective statements about safety, crime, or demographics. Keep testimonials focused on the client experience, service, and transaction process.
+
+Ensure brokerage name is clearly displayed and not less prominent than the agent name. Include a placeholder for Oklahoma real estate license information if required.
+
+Include Equal Housing Opportunity language and/or icon in the footer to reflect compliance with Fair Housing laws.
+
+Forms and automation notes:
+
+* Use standard HTML forms with clear IDs and classes for future GoHighLevel integration
+* Add comments in code showing where webhook/form action will be inserted later
+* Include success and error message placeholders in JavaScript
+* Make forms easy to swap to GHL embeds if needed
+
+Deliverables:
+
+* index.html
+* about.html
+* buyers.html
+* sellers.html
+* communities.html
+* featured-properties.html
+* around-the-coop.html
+* contact.html
+* style.css
+* script.js
+
+Also create:
+
+* a clean file/folder structure
+* placeholder assets folder
+* notes in comments for where custom photos, branding, and GHL integrations should go
+
+Final quality bar:
+This needs to look like a custom boutique Realtor website for a recognizable Oklahoma brand, not a generic template. Prioritize trust, warmth, local identity, lead conversion, and a polished user experience.
+
+---
+
+Additional Creative Direction:
+Think boutique real estate brand meets local lifestyle brand. The design should feel personal, elevated, and memorable. It should communicate that Tessa is not just opening doors, she is helping people find the right home, community, and path forward.
+
+Do not overuse chicken or farm imagery. Keep the “coop” concept subtle and professional. but a house with a rooster crowing sitting on it is ok. We also have a logo to upload
+
+Make the homepage visually impressive first, then keep the interior pages consistent.
+
+Use a design style that would still look great once professional photos of Tessa, listings, acreage properties, and local businesses are added.
