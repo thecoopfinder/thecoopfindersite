@@ -339,19 +339,48 @@ export default function HomePage() {
             variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }}
           >
             {[
-              { cat: "Buyer Tip", title: "Why Pre-Approval Matters Before You Start Looking", body: "Getting pre-approved before you search puts you in a much stronger position when you're ready to make an offer. I connect buyers with trusted local lenders who make this step straightforward." },
-              { cat: "Community Spotlight", title: "What Makes the Tri-City Area a Place Worth Calling Home", body: "Newcastle, Tuttle, and Blanchard each offer something distinct — from new construction neighborhoods to wide-open acreage. Explore what makes each community worth considering." },
-              { cat: "Seller Tip", title: "Presentation Matters: Simple Steps Before You List", body: "How a home shows — online and in person — directly affects buyer interest and offer activity. A few targeted updates before listing can make a meaningful difference." },
+              {
+                videoId: "RngFX5wpDaM",
+                cat: "Buyer Tip",
+                title: "Should You Find a House First or Get Pre-Approved?",
+                body: "Most buyers want to start by touring homes — but getting pre-approved first puts you in a much stronger position when you're ready to make an offer.",
+              },
+              {
+                videoId: "JqBPmvrN7eg",
+                cat: "Community Spotlight",
+                title: "Things to Do in Newcastle, OK | Library Tour + Kids Activities",
+                body: "A look inside the Newcastle Public Library — from learning tablets and activity kits to a 3D printer and local experience passes for families.",
+              },
+              {
+                videoId: "VPCIWvD-1BA",
+                cat: "Local Business",
+                title: "Ten Arrows Coffee, Blanchard OK | Coffee Shop + Bistro Tour",
+                body: "A visit to Ten Arrows Coffee & Bistro in Blanchard — a locally owned spot worth knowing if you're in the area or considering a move.",
+              },
             ].map((card, i) => (
               <motion.div key={i} variants={itemVariants}>
-                <Card className="h-full border-border shadow-sm bg-background p-6 flex flex-col gap-3">
-                  <span className="text-xs font-bold uppercase tracking-widest text-primary">{card.cat}</span>
-                  <h3 className="text-xl font-serif font-bold text-foreground">{card.title}</h3>
-                  <p className="text-foreground/70 leading-relaxed flex-1 text-sm">{card.body}</p>
-                  <Link href="/around-the-coop" className="text-primary font-medium inline-flex items-center gap-2 hover:gap-3 transition-all mt-2 text-sm">
-                    Read more <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </Card>
+                <a href={`https://www.youtube.com/watch?v=${card.videoId}`} target="_blank" rel="noopener noreferrer" className="block group">
+                  <Card className="h-full border-border shadow-sm bg-background overflow-hidden flex flex-col">
+                    <div className="aspect-video relative overflow-hidden bg-[#d4c5a9]">
+                      <img
+                        src={`https://img.youtube.com/vi/${card.videoId}/maxresdefault.jpg`}
+                        alt={card.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        onError={(e) => { (e.target as HTMLImageElement).src = `https://img.youtube.com/vi/${card.videoId}/hqdefault.jpg`; }}
+                      />
+                      <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+                        <div className="w-10 h-10 rounded-full bg-primary/90 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                          <svg className="w-4 h-4 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="p-5 flex flex-col gap-2 flex-1">
+                      <span className="text-xs font-bold uppercase tracking-widest text-primary">{card.cat}</span>
+                      <h3 className="text-base font-serif font-bold text-foreground leading-snug group-hover:text-primary transition-colors">{card.title}</h3>
+                      <p className="text-foreground/70 leading-relaxed flex-1 text-sm">{card.body}</p>
+                    </div>
+                  </Card>
+                </a>
               </motion.div>
             ))}
           </motion.div>
