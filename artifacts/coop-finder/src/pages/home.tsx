@@ -79,8 +79,7 @@ export default function HomePage() {
       <section className="relative min-h-[90vh] flex items-center justify-center bg-card overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="w-full h-full bg-[#d4c5a9]">
-            {/* PHOTO: Wide Oklahoma landscape — open sky, golden fields */}
-            <img src="" alt="Oklahoma landscape near Newcastle, Tuttle, and Blanchard" className="w-full h-full object-cover opacity-30" />
+            <img src="/images/hero-landscape.jpg" alt="Oklahoma landscape near Newcastle, Tuttle, and Blanchard" className="w-full h-full object-cover opacity-30" />
           </div>
           <div className="absolute inset-0 bg-background/80 md:bg-background/45 backdrop-blur-[2px]" />
         </div>
@@ -238,16 +237,14 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             {[
-              { city: "Newcastle", desc: "A growing community southwest of Oklahoma City, known for its school district, mix of established neighborhoods and new construction, and convenient access to the metro via I-44." },
-              { city: "Tuttle", desc: "Located west of Oklahoma City, Tuttle offers acreage properties, equestrian-friendly land, and a strong school district in a quieter rural setting." },
-              { city: "Blanchard", desc: "South of the metro, Blanchard features a historic small-town character alongside wide-open properties and acreage, with access to both Norman and Oklahoma City." },
-            ].map(({ city, desc }) => (
+              { city: "Newcastle", img: "/images/newcastle.jpg", desc: "A growing community southwest of Oklahoma City, known for its school district, mix of established neighborhoods and new construction, and convenient access to the metro via I-44." },
+              { city: "Tuttle", img: "/images/tuttle.jpg", desc: "Located west of Oklahoma City, Tuttle offers acreage properties, equestrian-friendly land, and a strong school district in a quieter rural setting." },
+              { city: "Blanchard", img: "/images/blanchard.jpg", desc: "South of the metro, Blanchard features a historic small-town character alongside wide-open properties and acreage, with access to both Norman and Oklahoma City." },
+            ].map(({ city, img, desc }) => (
               <Card key={city} className="overflow-hidden border-none shadow-md group cursor-pointer">
                 <Link href={`/communities#${city.toLowerCase()}`}>
                   <div className="aspect-video relative bg-[#d4c5a9] overflow-hidden">
-                    {/* PHOTO: Representative image of {city}, Oklahoma */}
-                    <img src="" alt={`${city}, Oklahoma real estate and community`} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                    <div className="absolute inset-0 flex items-center justify-center text-foreground/50 z-10 font-medium text-sm">[{city}, OK – Community Photo]</div>
+                    <img src={img} alt={`${city}, Oklahoma real estate and community`} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                     <div className="absolute inset-0 bg-foreground/20 group-hover:bg-foreground/10 transition-colors" />
                   </div>
                   <CardContent className="p-6 bg-card">
@@ -300,9 +297,7 @@ export default function HomePage() {
                   <div className="absolute top-4 left-4 z-20">
                     <span className="px-3 py-1 bg-primary text-primary-foreground text-xs font-bold uppercase tracking-wider rounded-sm shadow-sm">Featured</span>
                   </div>
-                  {/* PHOTO: Property listing photo */}
-                  <img src="" alt="Featured property listing – Newcastle, Oklahoma" className="w-full h-full object-cover" />
-                  <div className="absolute inset-0 flex items-center justify-center text-foreground/50 z-10 font-medium text-sm">[Property Photo {i}]</div>
+                  <img src="/images/featured-property.jpg" alt="Featured property listing – Newcastle, Oklahoma" className="w-full h-full object-cover" />
                 </div>
                 <CardContent className="p-6">
                   <h3 className="text-xl font-bold mb-1">Newcastle, OK</h3>

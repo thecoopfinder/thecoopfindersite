@@ -1,0 +1,50 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "_RNinNogZWB-c3btDHVIM"
+uri = "file://attached_assets/stock_images/newcastle-ok.jpg"
+type = "image"
+title = "Newcastle Oklahoma suburban neighborhood homes tree-lined street"
+
+[[outputs]]
+id = "HLP0uwWdB1LtT5OF7q4Hd"
+uri = "file://attached_assets/stock_images/oklahoma-hero-landscape.jpg"
+type = "image"
+title = "Oklahoma rural farmland landscape open sky golden hour wide panoramic"
+
+[[outputs]]
+id = "zEZqQY-a4Nc6pQbGvqqIn"
+uri = "file://attached_assets/stock_images/blanchard-ok.jpg"
+type = "image"
+title = "Oklahoma countryside acreage homes open land rural"
+
+[[outputs]]
+id = "GkCu6gEyBl80q4OnYX9B1"
+uri = "file://attached_assets/stock_images/mustang-ok.jpg"
+type = "image"
+title = "Oklahoma suburban neighborhood curb appeal homes"
+
+[[outputs]]
+id = "_lsWmAxP1-bMJqe4-Hpti"
+uri = "file://attached_assets/stock_images/yukon-ok.jpg"
+type = "image"
+title = "Yukon Oklahoma suburban neighborhood homes"
+
+[[outputs]]
+id = "ij4v5VIuWXzaAol3xdZyE"
+uri = "file://attached_assets/stock_images/moore-ok.jpg"
+type = "image"
+title = "Oklahoma suburban family neighborhood street homes"
+
+[[outputs]]
+id = "7aTErOO_yClX1Q0EpFv1i"
+uri = "file://attached_assets/stock_images/norman-ok.jpg"
+type = "image"
+title = "Norman Oklahoma university town neighborhood homes"
+
+[[outputs]]
+id = "RdLELtNtCW-MLcongHTt_"
+uri = "file://attached_assets/stock_images/featured-property.jpg"
+type = "image"
+title = "beautiful home exterior curb appeal brick house front yard"

@@ -101,11 +101,7 @@ export default function CommunitiesPage() {
               >
                 <div className="flex-1 w-full">
                   <div className="aspect-[4/3] rounded-xl overflow-hidden bg-[#d4c5a9] relative shadow-lg">
-                    {/* PHOTO: Representative image of {community.name}, Oklahoma */}
-                    <img src="" alt={`${community.name}, Oklahoma – homes and community`} className="w-full h-full object-cover" />
-                    <div className="absolute inset-0 flex items-center justify-center text-foreground/50 p-8 text-center font-medium text-sm">
-                      [{community.name}, OK – Community Photo]
-                    </div>
+                    <img src={`/images/${community.id}.jpg`} alt={`${community.name}, Oklahoma – homes and community`} className="w-full h-full object-cover" />
                   </div>
                 </div>
                 <div className="flex-1 space-y-5">
@@ -143,11 +139,7 @@ export default function CommunitiesPage() {
             {secondaryCommunities.map((community) => (
               <Card key={community.id} id={community.id} className="overflow-hidden border-border shadow-sm group bg-background scroll-mt-24 flex flex-col">
                 <div className="aspect-video relative bg-[#d4c5a9]">
-                  {/* PHOTO: Representative image of {community.name}, Oklahoma */}
-                  <img src="" alt={`${community.name}, Oklahoma real estate`} className="w-full h-full object-cover" />
-                  <div className="absolute inset-0 flex items-center justify-center text-foreground/50 z-10 font-medium text-xs p-4 text-center">
-                    [{community.name}, OK]
-                  </div>
+                  <img src={`/images/${community.id}.jpg`} alt={`${community.name}, Oklahoma real estate`} className="w-full h-full object-cover" />
                 </div>
                 <CardContent className="p-5 flex flex-col flex-1">
                   <h3 className="text-lg font-serif font-bold mb-2">{community.name}, {community.state}</h3>
