@@ -51,7 +51,7 @@ export function Footer() {
                 <FaInstagram size={24} />
               </a>
               <a
-                href="https://www.youtube.com/@Thecoopfinder"
+                href="https://youtube.com/@thecoopfinder"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-secondary transition-colors"

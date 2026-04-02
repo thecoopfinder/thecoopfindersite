@@ -284,7 +284,7 @@ export default function AroundTheCoopPage() {
             <div className="flex items-center justify-between mb-8 border-b border-border pb-3">
               <h2 className="text-2xl md:text-3xl font-serif font-bold">All Videos</h2>
               <a
-                href="https://www.youtube.com/@Thecoopfinder"
+                href="https://youtube.com/@thecoopfinder"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-primary text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all"
