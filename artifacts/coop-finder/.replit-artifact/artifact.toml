@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Tessa Hood – The Coop Finder"
+version = "1.0.0"
+id = "artifacts/coop-finder"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 18651
+
+[services.development]
+run = "pnpm --filter @workspace/coop-finder run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/coop-finder", "run", "build" ]
+publicDir = "artifacts/coop-finder/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "18651"
+BASE_PATH = "/"
