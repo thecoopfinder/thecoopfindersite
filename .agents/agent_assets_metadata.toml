@@ -1,5 +1,10 @@
 uploads = []
-generated = []
+
+[[generated]]
+id = "uzRjeI3NnUAk3QsU3nES8"
+uri = "file://artifacts/coop-finder/public/images/hero-landscape.png"
+type = "image"
+title = "generated_image"
 
 [[outputs]]
 id = "_RNinNogZWB-c3btDHVIM"

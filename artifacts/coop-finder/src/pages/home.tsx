@@ -81,7 +81,7 @@ export default function HomePage() {
       <section className="relative min-h-[90vh] flex items-center justify-center bg-card overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="w-full h-full bg-[#d4c5a9]">
-            <img src="/images/hero-landscape.jpg" alt="Oklahoma landscape near Newcastle, Tuttle, and Blanchard" className="w-full h-full object-cover opacity-30" />
+            <img src="/images/hero-landscape.png" alt="Oklahoma sunset with windmill, Newcastle, Tuttle, and Blanchard" className="w-full h-full object-cover opacity-40" />
           </div>
           <div className="absolute inset-0 bg-background/80 md:bg-background/45 backdrop-blur-[2px]" />
         </div>
