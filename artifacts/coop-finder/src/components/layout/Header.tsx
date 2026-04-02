@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { Menu, X, Home } from "lucide-react";
+import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
@@ -17,9 +17,14 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-20 items-center justify-between">
-        <Link href="/" className="flex flex-col items-start hover:opacity-80 transition-opacity">
-          <span className="font-serif text-2xl font-bold tracking-tight text-foreground">Tessa Hood</span>
-          <span className="font-serif text-sm text-secondary font-medium uppercase tracking-wider">The Coop Finder</span>
+
+        {/* Logo */}
+        <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+          <img
+            src="/tessa-logo.png"
+            alt="Tessa Hood – The Coop Finder"
+            className="h-12 w-auto object-contain"
+          />
         </Link>
 
         {/* Desktop Nav */}
@@ -47,18 +52,25 @@ export function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-              <nav className="flex flex-col gap-4 mt-8">
+              <div className="flex items-center gap-3 mb-8 pt-2">
+                <img
+                  src="/tessa-logo.png"
+                  alt="Tessa Hood – The Coop Finder"
+                  className="h-10 w-auto object-contain"
+                />
+              </div>
+              <nav className="flex flex-col gap-4">
                 {links.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="text-lg font-medium text-foreground hover:text-primary transition-colors py-2"
+                    className="text-lg font-medium text-foreground hover:text-primary transition-colors py-2 border-b border-border/40"
                   >
                     {link.label}
                   </Link>
                 ))}
-                <Link href="/contact" className="text-lg font-medium text-primary py-2 mt-4 border-t">
-                  Let's Connect
+                <Link href="/contact" className="text-lg font-medium text-primary py-2 mt-2">
+                  Let's Connect →
                 </Link>
               </nav>
             </SheetContent>
