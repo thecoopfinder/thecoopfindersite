@@ -261,19 +261,28 @@ export default function HomePage() {
             ))}
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { city: "Mustang", desc: "Growing suburb with award-winning schools" },
-              { city: "Moore", desc: "Established community with metro access" },
-              { city: "Norman", desc: "University town, diverse housing options" },
-              { city: "Yukon", desc: "Expanding west-side OKC community" },
-            ].map(({ city, desc }) => (
-              <Link key={city} href={`/communities#${city.toLowerCase()}`}>
-                <div className="p-5 rounded-lg bg-background hover:bg-card border border-border hover:border-[#6d6a40]/50 transition-all text-center cursor-pointer group">
-                  <p className="font-semibold group-hover:text-primary transition-colors mb-1">{city}</p>
-                  <p className="text-xs text-foreground/60">{desc}</p>
-                </div>
-              </Link>
+              { city: "Mustang", img: "/images/mustang.jpg", desc: "A growing southwest OKC suburb with award-winning schools, active residential development, and expanding commercial amenities — a popular choice for buyers seeking suburban living with metro access." },
+              { city: "Moore", img: "/images/moore.jpg", desc: "An established community south of Oklahoma City with convenient I-35 access, a wide range of housing price points, and easy connections to both OKC and Norman." },
+              { city: "Norman", img: "/images/norman.jpg", desc: "Home to the University of Oklahoma, Norman offers diverse real estate from starter homes to larger properties across established neighborhoods and newer developments on the city's perimeter." },
+              { city: "Yukon", img: "/images/yukon.jpg", desc: "Growing on Oklahoma City's western edge, Yukon draws buyers looking for newer construction, local schools, room to grow, and convenient highway access into the metro." },
+            ].map(({ city, img, desc }) => (
+              <Card key={city} className="overflow-hidden border-none shadow-md group cursor-pointer">
+                <Link href={`/communities#${city.toLowerCase()}`}>
+                  <div className="aspect-video relative bg-[#d4c5a9] overflow-hidden">
+                    <img src={img} alt={`${city}, Oklahoma real estate and community`} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <div className="absolute inset-0 bg-foreground/20 group-hover:bg-foreground/10 transition-colors" />
+                  </div>
+                  <CardContent className="p-5 bg-card">
+                    <h3 className="text-xl font-serif font-bold mb-2">{city}, OK</h3>
+                    <p className="text-foreground/70 mb-4 text-xs leading-relaxed">{desc}</p>
+                    <span className="text-primary font-medium inline-flex items-center gap-2 group-hover:gap-3 transition-all text-sm">
+                      Explore {city} <ArrowRight className="w-4 h-4" />
+                    </span>
+                  </CardContent>
+                </Link>
+              </Card>
             ))}
           </div>
         </div>
