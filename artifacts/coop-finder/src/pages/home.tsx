@@ -104,13 +104,13 @@ export default function HomePage() {
             </motion.div>
           </div>
 
-          {/* Closing day photo */}
+          {/* Tessa + chicken hero photo */}
           <motion.div
-            className="flex-1 w-full max-w-md md:max-w-none"
+            className="flex-1 w-full max-w-sm md:max-w-none"
             initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border-8 border-background/50">
-              <img src="/images/helping-vet-homeowners.jpg" alt="Tessa Hood with clients at closing day – Legacy Title" className="w-full h-full object-cover" style={{ objectPosition: "45% 35%", transform: "scale(1.0)", transformOrigin: "center center" }} />
+            <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl border-8 border-background/50 bg-[#1f3a4a]">
+              <img src="/images/tessa-with-chicken-nobg.png" alt="Tessa Hood, Oklahoma Realtor – The Coop Finder" className="w-full h-full object-contain object-bottom" />
             </div>
           </motion.div>
         </div>
@@ -129,7 +129,7 @@ export default function HomePage() {
             </p>
             <div className="pt-8 flex flex-wrap justify-center gap-6 md:gap-4">
               <div className="w-48 md:w-52 aspect-square rounded-xl overflow-hidden shadow-xl rotate-[-3deg] hover:rotate-0 hover:scale-105 transition-all duration-300 border-4 border-white">
-                <img src="/images/happy-customer.jpg" alt="Happy home buyers with Tessa Hood – The Coop Finder" className="w-full h-full object-cover object-top" />
+                <img src="/images/helping-vet-homeowners.jpg" alt="Tessa Hood with clients at closing day – Legacy Title" className="w-full h-full object-cover" style={{ objectPosition: "45% 30%" }} />
               </div>
               <div className="w-48 md:w-52 aspect-square rounded-xl overflow-hidden shadow-xl rotate-[2deg] hover:rotate-0 hover:scale-105 transition-all duration-300 border-4 border-white mt-4 md:mt-8">
                 <img src="/images/dr-horton.jpg" alt="Tessa Hood at a D.R. Horton closing" className="w-full h-full object-cover object-top" />
