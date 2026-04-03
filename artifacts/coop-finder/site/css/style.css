@@ -777,6 +777,8 @@ h4 { font-size: 1.1rem; }
 }
 .video-card:hover .video-info h3 { color: var(--gold); }
 .video-info p { font-size: .825rem; color: var(--text-muted); line-height: 1.65; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.video-business-link { display: inline-block; margin-top: .75rem; font-size: .8rem; font-weight: 600; color: var(--gold); letter-spacing: .02em; text-decoration: none; transition: color .2s; }
+.video-business-link:hover { color: var(--navy); }
 
 /* Featured video */
 .featured-video {
