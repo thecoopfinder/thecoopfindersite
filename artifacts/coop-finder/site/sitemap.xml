@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <url>
+    <loc>https://www.thecoopfinder.com/</loc>
+    <lastmod>2025-04-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.thecoopfinder.com/images/tessa-headshot.png</image:loc>
+      <image:title>Tessa Hood – The Coop Finder, Oklahoma Realtor</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.thecoopfinder.com/about</loc>
+    <lastmod>2025-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://www.thecoopfinder.com/images/tessa-headshot.png</image:loc>
+      <image:title>Meet Tessa Hood – Realtor at Knight Land Company</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.thecoopfinder.com/buyers</loc>
+    <lastmod>2025-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.thecoopfinder.com/sellers</loc>
+    <lastmod>2025-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.thecoopfinder.com/communities</loc>
+    <lastmod>2025-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://www.thecoopfinder.com/images/newcastle.jpg</image:loc>
+      <image:title>Newcastle Oklahoma – The Coop Finder</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.thecoopfinder.com/featured-properties</loc>
+    <lastmod>2025-04-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://www.thecoopfinder.com/images/featured-property.jpg</image:loc>
+      <image:title>Featured Oklahoma Properties – The Coop Finder</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.thecoopfinder.com/around-the-coop</loc>
+    <lastmod>2025-04-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://www.thecoopfinder.com/contact</loc>
+    <lastmod>2025-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+</urlset>

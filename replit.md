@@ -31,19 +31,22 @@ See the `pnpm-workspace` skill for workspace structure, TypeScript setup, and pa
 ### Tessa Hood – The Coop Finder (coop-finder)
 - **Path**: `artifacts/coop-finder/`
 - **Preview path**: `/` (root)
-- **Type**: React + Vite (frontend-only, no backend)
-- **Stack**: React 19, Vite, Tailwind CSS v4, Framer Motion, wouter, shadcn/ui, lucide-react, react-icons
+- **Type**: True static multi-page HTML/CSS/vanilla JS (served via `serve ./site`)
+- **Stack**: Plain HTML5, CSS custom properties, vanilla JS — no framework dependencies for maximum SEO
 - **Description**: Full 8-page real estate website for Oklahoma Realtor Tessa Hood (The Coop Finder / Knight Land Company)
-- **Pages**: Home, About, Buyers, Sellers, Communities, Featured Properties, Around the Coop, Contact
-- **Brand**: Warm off-white/cream backgrounds, muted slate blue primary, warm tan/gold secondary, Playfair Display serif headings + Inter body
-- **Forms**: All forms use react-hook-form + zod validation. Comments in code mark where GoHighLevel webhook integrations will be added.
-- **SEO**: Each page sets unique title/description via usePageMeta hook. Schema.org and Open Graph placeholder comments included.
-- **Fair Housing**: All community and property descriptions are neutral and compliant. Equal Housing Opportunity in footer.
-- **Images**: All placeholder images are warm tan divs with labeled alt text for future custom photo replacement.
+- **Pages**: index.html, about.html, buyers.html, sellers.html, communities.html, featured-properties.html, around-the-coop.html, contact.html
+- **Static site root**: `artifacts/coop-finder/site/`
+- **Brand colors**: Gold #c99a45, Navy #1f3a4a, Warm white #f6f4f0, Burgundy #6e3c4f, Terracotta #a46a4f, Olive #6d6a40
+- **Forms**: All forms post to GoHighLevel via webhook. Set `data-webhook="YOUR_GHL_WEBHOOK_URL"` on each `<form>` to activate. Forms show a friendly message until configured.
+- **SEO**: Full meta tags, canonical URLs, Open Graph, Twitter Card, unique JSON-LD on every page.
+- **Dev server**: `npx serve ./site -p $PORT --no-clipboard` (clean URLs: `/about` serves `about.html`)
 - **Key files**:
-  - `src/App.tsx` — router setup
-  - `src/index.css` — theme/design tokens
-  - `src/components/Header.tsx` — global nav with mobile hamburger
-  - `src/components/Footer.tsx` — global footer with contact info, legal
-  - `src/pages/` — one file per page
-  - `src/hooks/usePageMeta.ts` — SEO title/description hook
+  - `site/css/style.css` — full brand design system (CSS custom properties, all components)
+  - `site/js/script.js` — mobile nav, video lightbox, FAQ accordion, category filter, GHL form handler
+  - `site/index.html` — Home page
+  - `site/around-the-coop.html` — Videos page (YouTube lightbox + category filter)
+  - `site/contact.html` — Contact page with GHL form
+  - `site/robots.txt`, `site/sitemap.xml` — SEO infrastructure
+  - `vercel.json` — `outputDirectory: site, cleanUrls: true` for deployment
+- **Legacy React source**: `src/` preserved alongside — do not delete until Tessa confirms
+- **Contact**: 405-913-4185 | TessaHood@TheCoopFinder.com | Knight Land Company
