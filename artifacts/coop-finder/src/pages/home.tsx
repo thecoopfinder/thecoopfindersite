@@ -158,20 +158,23 @@ export default function HomePage() {
             variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }}
           >
             {[
-              { title: "Buying a Home", desc: "Buyer representation for first-time buyers, veterans, move-up buyers, and everyone searching for the right fit in the Oklahoma market.", icon: Home, link: "/buyers" },
-              { title: "Selling Your Home", desc: "Strategic pricing, targeted marketing, and hands-on transaction management to get your home in front of the right buyers.", icon: Key, link: "/sellers" },
-              { title: "New Construction", desc: "Builder representation works for the builder — not you. I provide independent guidance through every phase of new construction.", icon: Star, link: "/buyers" },
-              { title: "Land & Acreage", desc: "Specialized knowledge for rural properties, including wells, septic systems, easements, and agricultural zoning.", icon: MapPin, link: "/buyers" },
+              { title: "Buying a Home", desc: "Buyer representation for first-time buyers, veterans, move-up buyers, and everyone searching for the right fit in the Oklahoma market.", icon: Home, link: "/buyers", color: "#c99a45" },
+              { title: "Selling Your Home", desc: "Strategic pricing, targeted marketing, and hands-on transaction management to get your home in front of the right buyers.", icon: Key, link: "/sellers", color: "#6e3c4f" },
+              { title: "New Construction", desc: "Builder representation works for the builder — not you. I provide independent guidance through every phase of new construction.", icon: Star, link: "/buyers", color: "#a46a4f" },
+              { title: "Land & Acreage", desc: "Specialized knowledge for rural properties, including wells, septic systems, easements, and agricultural zoning.", icon: MapPin, link: "/buyers", color: "#6d6a40" },
             ].map((service, i) => (
               <motion.div key={i} variants={itemVariants}>
                 <Card className="h-full border-none shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-background overflow-hidden group">
                   <CardContent className="p-5 md:p-8 flex flex-col items-center text-center h-full">
-                    <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+                    <div
+                      className="w-16 h-16 rounded-full flex items-center justify-center mb-6 transition-colors duration-300"
+                      style={{ backgroundColor: `${service.color}1a`, color: service.color }}
+                    >
                       <service.icon className="w-8 h-8" />
                     </div>
                     <h3 className="text-xl font-bold font-serif mb-3">{service.title}</h3>
                     <p className="text-foreground/70 mb-6 flex-1">{service.desc}</p>
-                    <Link href={service.link} className="text-primary font-medium inline-flex items-center gap-2 hover:gap-3 transition-all">
+                    <Link href={service.link} className="font-medium inline-flex items-center gap-2 hover:gap-3 transition-all" style={{ color: service.color }}>
                       Learn more <ArrowRight className="w-4 h-4" />
                     </Link>
                   </CardContent>
@@ -266,7 +269,7 @@ export default function HomePage() {
               { city: "Yukon", desc: "Expanding west-side OKC community" },
             ].map(({ city, desc }) => (
               <Link key={city} href={`/communities#${city.toLowerCase()}`}>
-                <div className="p-5 rounded-lg bg-background hover:bg-card border border-border hover:border-primary/30 transition-all text-center cursor-pointer group">
+                <div className="p-5 rounded-lg bg-background hover:bg-card border border-border hover:border-[#6d6a40]/50 transition-all text-center cursor-pointer group">
                   <p className="font-semibold group-hover:text-primary transition-colors mb-1">{city}</p>
                   <p className="text-xs text-foreground/60">{desc}</p>
                 </div>
@@ -298,7 +301,7 @@ export default function HomePage() {
             ].map((item, i) => (
               <motion.div key={i} variants={itemVariants}>
                 <div className="bg-card p-5 md:p-8 rounded-xl shadow-sm border border-border/60 h-full flex gap-4">
-                  <CheckCircle className="w-6 h-6 text-primary shrink-0 mt-0.5" />
+                  <CheckCircle className="w-6 h-6 shrink-0 mt-0.5" style={{ color: i % 2 === 0 ? "#c99a45" : "#6e3c4f" }} />
                   <div>
                     <h3 className="text-lg font-bold font-serif mb-2">{item.title}</h3>
                     <p className="text-foreground/70 leading-relaxed text-sm">{item.body}</p>
@@ -337,18 +340,21 @@ export default function HomePage() {
               {
                 videoId: "RngFX5wpDaM",
                 cat: "Buyer Tip",
+                catColor: "#c99a45",
                 title: "Should You Find a House First or Get Pre-Approved?",
                 body: "Most buyers want to start by touring homes — but getting pre-approved first puts you in a much stronger position when you're ready to make an offer.",
               },
               {
                 videoId: "JqBPmvrN7eg",
                 cat: "Community Spotlight",
+                catColor: "#a46a4f",
                 title: "Things to Do in Newcastle, OK | Library Tour + Kids Activities",
                 body: "A look inside the Newcastle Public Library — from learning tablets and activity kits to a 3D printer and local experience passes for families.",
               },
               {
                 videoId: "VPCIWvD-1BA",
                 cat: "Local Business",
+                catColor: "#6d6a40",
                 title: "Ten Arrows Coffee, Blanchard OK | Coffee Shop + Bistro Tour",
                 body: "A visit to Ten Arrows Coffee & Bistro in Blanchard — a locally owned spot worth knowing if you're in the area or considering a move.",
               },
@@ -370,7 +376,7 @@ export default function HomePage() {
                       </div>
                     </div>
                     <div className="p-5 flex flex-col gap-2 flex-1">
-                      <span className="text-xs font-bold uppercase tracking-widest text-primary">{card.cat}</span>
+                      <span className="text-xs font-bold uppercase tracking-widest" style={{ color: card.catColor }}>{card.cat}</span>
                       <h3 className="text-base font-serif font-bold text-foreground leading-snug group-hover:text-primary transition-colors">{card.title}</h3>
                       <p className="text-foreground/70 leading-relaxed flex-1 text-sm">{card.body}</p>
                     </div>
@@ -395,8 +401,8 @@ export default function HomePage() {
               { quote: "From the listing appointment to closing, Tessa was professional, communicative, and worked hard to get us the right outcome. We couldn't have asked for better representation.", name: "— Seller Client, Tuttle, OK" },
               { quote: "As first-time buyers, we had a lot of questions. Tessa was patient, knowledgeable, and really took the time to make sure we were making the right decision for our family.", name: "— Buyer Client, Blanchard, OK" },
             ].map((t, i) => (
-              <Card key={i} className="border-border shadow-sm bg-card p-5 md:p-8">
-                <div className="flex text-secondary mb-4">
+              <Card key={i} className="border-l-4 shadow-sm bg-card p-5 md:p-8" style={{ borderLeftColor: "#6e3c4f" }}>
+                <div className="flex mb-4" style={{ color: "#c99a45" }}>
                   {[...Array(5)].map((_, j) => <Star key={j} className="w-5 h-5 fill-current" />)}
                 </div>
                 <p className="text-foreground/80 mb-6 italic leading-relaxed">"{t.quote}"</p>
