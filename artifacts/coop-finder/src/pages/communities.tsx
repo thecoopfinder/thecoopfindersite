@@ -10,9 +10,47 @@ export default function CommunitiesPage() {
     description: "Explore real estate across Newcastle, Tuttle, Blanchard, Mustang, Moore, Norman, Yukon, and South OKC with Tessa Hood and Knight Land Company.",
     ogTitle: "Oklahoma Communities – The Coop Finder",
     ogDescription: "Serving Newcastle, Tuttle, Blanchard, and surrounding South OKC communities. Explore local real estate with Tessa Hood.",
+    canonical: "https://www.thecoopfinder.com/communities",
+    ogImage: "https://www.thecoopfinder.com/images/newcastle.jpg",
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Communities \u2013 Oklahoma Real Estate | The Coop Finder",
+      "url": "https://www.thecoopfinder.com/communities",
+      "description": "Explore homes and real estate in Newcastle, Tuttle, Blanchard, Mustang, Moore, Norman, Yukon, and South Oklahoma City with Tessa Hood.",
+      "about": [
+        {
+          "@type": "City",
+          "name": "Newcastle",
+          "containedInPlace": { "@type": "AdministrativeArea", "name": "Oklahoma" },
+          "description": "Growing community southwest of Oklahoma City along I-44, known for its school district, mix of new construction and established neighborhoods."
+        },
+        {
+          "@type": "City",
+          "name": "Tuttle",
+          "containedInPlace": { "@type": "AdministrativeArea", "name": "Oklahoma" },
+          "description": "Rural community west of Oklahoma City known for acreage properties, equestrian land, and strong school district."
+        },
+        {
+          "@type": "City",
+          "name": "Blanchard",
+          "containedInPlace": { "@type": "AdministrativeArea", "name": "Oklahoma" },
+          "description": "Small-town community south of the OKC metro featuring historic character and wide-open acreage properties."
+        },
+        { "@type": "City", "name": "Mustang", "containedInPlace": { "@type": "AdministrativeArea", "name": "Oklahoma" } },
+        { "@type": "City", "name": "Moore",    "containedInPlace": { "@type": "AdministrativeArea", "name": "Oklahoma" } },
+        { "@type": "City", "name": "Norman",   "containedInPlace": { "@type": "AdministrativeArea", "name": "Oklahoma" } },
+        { "@type": "City", "name": "Yukon",    "containedInPlace": { "@type": "AdministrativeArea", "name": "Oklahoma" } }
+      ],
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.thecoopfinder.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Communities", "item": "https://www.thecoopfinder.com/communities" }
+        ]
+      }
+    },
   });
-
-  /* SCHEMA: Place / RealEstateAgent areaServed structured data — add JSON-LD here */
 
   const primaryCommunities = [
     {

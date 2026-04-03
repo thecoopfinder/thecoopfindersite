@@ -8,9 +8,28 @@ export default function AboutPage() {
     description: "Tessa Hood is a Realtor with Knight Land Company, serving buyers and sellers across Newcastle, Tuttle, Blanchard, and the broader South OKC metro. Relationship-driven, knowledgeable, and committed to every client.",
     ogTitle: "Meet Tessa Hood – The Coop Finder",
     ogDescription: "Realtor with Knight Land Company serving Newcastle, Tuttle, Blanchard, and South OKC. Focused on education, strategy, and honest guidance from start to finish.",
+    canonical: "https://www.thecoopfinder.com/about",
+    ogImage: "https://www.thecoopfinder.com/images/tessa-headshot.png",
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "ProfilePage",
+      "name": "About Tessa Hood \u2013 The Coop Finder",
+      "url": "https://www.thecoopfinder.com/about",
+      "mainEntity": {
+        "@type": ["Person", "RealEstateAgent"],
+        "@id": "https://www.thecoopfinder.com/#agent",
+        "name": "Tessa Hood",
+        "jobTitle": "Realtor",
+        "worksFor": { "@type": "Organization", "name": "Knight Land Company" },
+        "url": "https://www.thecoopfinder.com",
+        "image": "https://www.thecoopfinder.com/images/tessa-headshot.png",
+        "telephone": "+14059134185",
+        "email": "TessaHood@TheCoopFinder.com",
+        "description": "Licensed Oklahoma Realtor with Knight Land Company, serving buyers and sellers in Newcastle, Tuttle, Blanchard, and the South OKC metro.",
+        "areaServed": ["Newcastle, OK", "Tuttle, OK", "Blanchard, OK", "Mustang, OK", "Moore, OK", "Norman, OK", "Yukon, OK", "South Oklahoma City"]
+      },
+    },
   });
-
-  /* SCHEMA: Person / RealEstateAgent structured data — add JSON-LD here */
 
   return (
     <div className="w-full">

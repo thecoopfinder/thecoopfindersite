@@ -126,6 +126,98 @@ export default function AroundTheCoopPage() {
     description: "Community spotlights, local business features, buyer and seller tips, and videos from Tessa Hood covering Newcastle, Tuttle, Blanchard, and the South OKC area.",
     ogTitle: "Around the Coop – Tessa Hood, The Coop Finder",
     ogDescription: "Local business spotlights, community videos, and real estate education for Newcastle, Tuttle, Blanchard, and South OKC.",
+    canonical: "https://www.thecoopfinder.com/around-the-coop",
+    ogImage: "https://img.youtube.com/vi/Zu14mblmIko/maxresdefault.jpg",
+    jsonLd: [
+      {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        "name": "Things to Do in Newcastle, OK | Library Tour + Kids Activities",
+        "description": "A look inside the Newcastle Public Library and what it offers families — from learning tablets and activity kits to a 3D printer and local experience passes.",
+        "thumbnailUrl": "https://img.youtube.com/vi/JqBPmvrN7eg/maxresdefault.jpg",
+        "embedUrl": "https://www.youtube.com/embed/JqBPmvrN7eg",
+        "url": "https://www.youtube.com/watch?v=JqBPmvrN7eg",
+        "publisher": { "@id": "https://www.thecoopfinder.com/#agent" },
+        "keywords": "Newcastle Oklahoma, things to do Newcastle OK, Newcastle library, kids activities Oklahoma"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        "name": "Mind of Christ Academy Tuttle, OK | Faith-Based Homeschool Program Tour",
+        "description": "A tour of Mind of Christ Academy in Tuttle — a faith-based homeschool cooperative offering core subjects alongside enrichment classes for local families.",
+        "thumbnailUrl": "https://img.youtube.com/vi/3qGDepuLOcY/maxresdefault.jpg",
+        "embedUrl": "https://www.youtube.com/embed/3qGDepuLOcY",
+        "url": "https://www.youtube.com/watch?v=3qGDepuLOcY",
+        "publisher": { "@id": "https://www.thecoopfinder.com/#agent" },
+        "keywords": "Tuttle Oklahoma, homeschool Tuttle OK, faith-based education Oklahoma"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        "name": "Ten Arrows Coffee, Blanchard OK | Local Coffee Shop + Bistro Tour",
+        "description": "A visit to Ten Arrows Coffee & Bistro in Blanchard — a locally owned coffee shop and bistro worth knowing about if you're in the area.",
+        "thumbnailUrl": "https://img.youtube.com/vi/VPCIWvD-1BA/maxresdefault.jpg",
+        "embedUrl": "https://www.youtube.com/embed/VPCIWvD-1BA",
+        "url": "https://www.youtube.com/watch?v=VPCIWvD-1BA",
+        "publisher": { "@id": "https://www.thecoopfinder.com/#agent" },
+        "keywords": "Blanchard Oklahoma, coffee shop Blanchard OK, Ten Arrows Coffee, local business Oklahoma"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        "name": "Happy Heart Homestead Newcastle, OK | Local Farm Store + Fresh Market Tour",
+        "description": "Happy Heart Homestead in Newcastle offers fresh produce, meats, baked goods, and locally sourced pantry staples — a great local resource for the community.",
+        "thumbnailUrl": "https://img.youtube.com/vi/FpZnCbmrW30/maxresdefault.jpg",
+        "embedUrl": "https://www.youtube.com/embed/FpZnCbmrW30",
+        "url": "https://www.youtube.com/watch?v=FpZnCbmrW30",
+        "publisher": { "@id": "https://www.thecoopfinder.com/#agent" },
+        "keywords": "Newcastle Oklahoma, farm store Newcastle OK, Happy Heart Homestead, local food Oklahoma"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        "name": "The Outpost on Main Street in Newcastle, OK | Local Business Spotlight",
+        "description": "A spotlight on The Outpost on Main Street in Newcastle — part of the Around the Coop series highlighting local businesses in the Tri-City area.",
+        "thumbnailUrl": "https://img.youtube.com/vi/jb0BHqMM6Uo/maxresdefault.jpg",
+        "embedUrl": "https://www.youtube.com/embed/jb0BHqMM6Uo",
+        "url": "https://www.youtube.com/watch?v=jb0BHqMM6Uo",
+        "publisher": { "@id": "https://www.thecoopfinder.com/#agent" },
+        "keywords": "Newcastle Oklahoma, local business Newcastle, The Outpost Newcastle OK"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        "name": "Should You Find a House First or Get Pre-Approved?",
+        "description": "Most buyers want to start by touring homes — but getting pre-approved first puts you in a much stronger position when you're ready to make an offer.",
+        "thumbnailUrl": "https://img.youtube.com/vi/RngFX5wpDaM/maxresdefault.jpg",
+        "embedUrl": "https://www.youtube.com/embed/RngFX5wpDaM",
+        "url": "https://www.youtube.com/watch?v=RngFX5wpDaM",
+        "publisher": { "@id": "https://www.thecoopfinder.com/#agent" },
+        "keywords": "Oklahoma home buying tips, pre-approval, first time home buyer Oklahoma, Newcastle Tuttle Blanchard real estate"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        "name": "Closing Cost Credits — What Buyers and Sellers Should Know",
+        "description": "Closing cost credits can lower a buyer's out-of-pocket costs and help sellers attract more competitive offers. Here's how they work.",
+        "thumbnailUrl": "https://img.youtube.com/vi/ETkDB-HkJRY/maxresdefault.jpg",
+        "embedUrl": "https://www.youtube.com/embed/ETkDB-HkJRY",
+        "url": "https://www.youtube.com/watch?v=ETkDB-HkJRY",
+        "publisher": { "@id": "https://www.thecoopfinder.com/#agent" },
+        "keywords": "closing costs Oklahoma, real estate tips, buyer seller tips Oklahoma"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        "name": "What Makes Up a Monthly Mortgage Payment? (First-Time Buyer Guide)",
+        "description": "A clear breakdown of what goes into a monthly mortgage payment — principal, interest, taxes, and insurance — for first-time home buyers in Oklahoma.",
+        "thumbnailUrl": "https://img.youtube.com/vi/DrK6dUACPDg/maxresdefault.jpg",
+        "embedUrl": "https://www.youtube.com/embed/DrK6dUACPDg",
+        "url": "https://www.youtube.com/watch?v=DrK6dUACPDg",
+        "publisher": { "@id": "https://www.thecoopfinder.com/#agent" },
+        "keywords": "mortgage payment Oklahoma, first time buyer guide, PITI Oklahoma, home loan breakdown"
+      }
+    ],
   });
 
   /* SCHEMA: Blog / ItemList structured data — add JSON-LD here */

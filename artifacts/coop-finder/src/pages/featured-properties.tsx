@@ -5,8 +5,31 @@ import { Button } from "@/components/ui/button";
 
 export default function FeaturedPropertiesPage() {
   usePageMeta({
-    title: "Featured Properties | Tessa Hood - The Coop Finder",
-    description: "Browse featured real estate listings and homes for sale in Newcastle, Tuttle, Blanchard, and surrounding Oklahoma areas.",
+    title: "Featured Properties | Homes for Sale in Newcastle, Tuttle & Blanchard – The Coop Finder",
+    description: "Browse featured real estate listings and homes for sale in Newcastle, Tuttle, Blanchard, Mustang, Moore, Norman, and surrounding South Oklahoma City communities with Tessa Hood.",
+    ogTitle: "Featured Oklahoma Homes for Sale – The Coop Finder",
+    ogDescription: "Current listings and property spotlights in Newcastle, Tuttle, Blanchard, and the South OKC metro. Contact Tessa Hood at 405-913-4185.",
+    canonical: "https://www.thecoopfinder.com/featured-properties",
+    ogImage: "https://www.thecoopfinder.com/images/featured-property.jpg",
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Featured Properties \u2013 Oklahoma Real Estate | The Coop Finder",
+      "url": "https://www.thecoopfinder.com/featured-properties",
+      "description": "Featured homes and property listings in Newcastle, Tuttle, Blanchard, and surrounding South Oklahoma City communities.",
+      "provider": {
+        "@type": "RealEstateAgent",
+        "@id": "https://www.thecoopfinder.com/#agent",
+        "name": "Tessa Hood \u2013 The Coop Finder"
+      },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.thecoopfinder.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Featured Properties", "item": "https://www.thecoopfinder.com/featured-properties" }
+        ]
+      }
+    },
   });
 
   return (

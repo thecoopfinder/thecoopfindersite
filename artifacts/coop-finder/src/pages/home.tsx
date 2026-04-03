@@ -29,21 +29,10 @@ export default function HomePage() {
     description: "Tessa Hood helps buyers and sellers across Newcastle, Tuttle, Blanchard, and the South OKC metro. Expert local guidance, trusted connections, and relationship-driven real estate with Knight Land Company.",
     ogTitle: "Find Your Coop – Tessa Hood, Oklahoma Realtor",
     ogDescription: "Serving Newcastle, Tuttle, Blanchard, and the South OKC metro. Call 405-913-4185.",
+    canonical: "https://www.thecoopfinder.com/",
+    ogImage: "https://www.thecoopfinder.com/images/tessa-headshot.png",
+    /* Home page schema lives in index.html as static JSON-LD for immediate crawlability */
   });
-
-  /* SCHEMA: LocalBusiness / RealEstateAgent structured data — insert JSON-LD here */
-  /*
-  {
-    "@context": "https://schema.org",
-    "@type": "RealEstateAgent",
-    "name": "Tessa Hood – The Coop Finder",
-    "telephone": "405-913-4185",
-    "email": "TessaHood@TheCoopFinder.com",
-    "url": "https://www.thecoopfinder.com",
-    "address": { "@type": "PostalAddress", "addressLocality": "Newcastle", "addressRegion": "OK", "addressCountry": "US" },
-    "areaServed": ["Newcastle", "Tuttle", "Blanchard", "Mustang", "Moore", "Norman", "Yukon", "South Oklahoma City"]
-  }
-  */
 
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);

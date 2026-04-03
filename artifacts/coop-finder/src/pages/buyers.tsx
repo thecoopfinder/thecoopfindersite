@@ -25,9 +25,29 @@ export default function BuyersPage() {
     description: "Tessa Hood helps first-time buyers, move-up buyers, veterans, and acreage hunters find the right home in the Tri-City area and South OKC metro. Honest guidance from contract to close.",
     ogTitle: "Find Your Perfect Home – Buyer Representation with Tessa Hood",
     ogDescription: "Expert buyer representation in Newcastle, Tuttle, Blanchard, and South OKC. First-time buyers, VA loans, new construction, and acreage properties.",
+    canonical: "https://www.thecoopfinder.com/buyers",
+    ogImage: "https://www.thecoopfinder.com/images/tessa-headshot.png",
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Home Buyer Representation \u2013 Oklahoma Real Estate",
+      "serviceType": "Buyer Representation",
+      "provider": {
+        "@type": "RealEstateAgent",
+        "@id": "https://www.thecoopfinder.com/#agent",
+        "name": "Tessa Hood \u2013 The Coop Finder"
+      },
+      "areaServed": ["Newcastle, OK", "Tuttle, OK", "Blanchard, OK", "Mustang, OK", "Moore, OK", "Norman, OK", "Yukon, OK", "South Oklahoma City metro"],
+      "description": "Expert buyer representation for first-time buyers, veterans (VA loans), move-up buyers, new construction, and acreage properties across the South OKC metro.",
+      "url": "https://www.thecoopfinder.com/buyers",
+      "offers": {
+        "@type": "Offer",
+        "description": "Buyer representation services including property search, offer strategy, negotiation, and transaction management.",
+        "priceCurrency": "USD",
+        "itemOffered": { "@type": "Service", "name": "Buyer Representation" }
+      }
+    },
   });
-
-  /* SCHEMA: Service/BuyerRepresentation structured data — add JSON-LD here */
 
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);

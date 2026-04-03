@@ -22,8 +22,27 @@ const formSchema = z.object({
 
 export default function ContactPage() {
   usePageMeta({
-    title: "Contact Tessa Hood | The Coop Finder",
-    description: "Get in touch with Tessa Hood, your Oklahoma Realtor serving Newcastle, Tuttle, Blanchard, and the surrounding areas.",
+    title: "Contact Tessa Hood | Oklahoma Realtor – The Coop Finder",
+    description: "Contact Tessa Hood, your Oklahoma Realtor with Knight Land Company. Serving buyers and sellers in Newcastle, Tuttle, Blanchard, and the South OKC metro. Call 405-913-4185 or email TessaHood@TheCoopFinder.com.",
+    ogTitle: "Contact Tessa Hood – The Coop Finder",
+    ogDescription: "Reach out to get started — whether you're buying, selling, or just exploring. Call 405-913-4185 or send a message.",
+    canonical: "https://www.thecoopfinder.com/contact",
+    ogImage: "https://www.thecoopfinder.com/images/tessa-headshot.png",
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "Contact Tessa Hood \u2013 The Coop Finder",
+      "url": "https://www.thecoopfinder.com/contact",
+      "description": "Contact Tessa Hood, Oklahoma Realtor with Knight Land Company, for buyer and seller representation in Newcastle, Tuttle, Blanchard, and the South OKC metro.",
+      "mainEntity": { "@id": "https://www.thecoopfinder.com/#agent" },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.thecoopfinder.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://www.thecoopfinder.com/contact" }
+        ]
+      }
+    },
   });
 
   const { toast } = useToast();

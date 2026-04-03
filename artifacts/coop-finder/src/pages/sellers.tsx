@@ -24,9 +24,29 @@ export default function SellersPage() {
     description: "Tessa Hood helps sellers in Newcastle, Tuttle, Blanchard, and the South OKC metro with strategic pricing, targeted marketing, and expert transaction management through Knight Land Company.",
     ogTitle: "Sell Your Home with Confidence – Tessa Hood, The Coop Finder",
     ogDescription: "Strategic home selling in Newcastle, Tuttle, Blanchard, and South OKC. Request a home valuation today.",
+    canonical: "https://www.thecoopfinder.com/sellers",
+    ogImage: "https://www.thecoopfinder.com/images/tessa-headshot.png",
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Home Seller Representation \u2013 Oklahoma Real Estate",
+      "serviceType": "Seller Representation",
+      "provider": {
+        "@type": "RealEstateAgent",
+        "@id": "https://www.thecoopfinder.com/#agent",
+        "name": "Tessa Hood \u2013 The Coop Finder"
+      },
+      "areaServed": ["Newcastle, OK", "Tuttle, OK", "Blanchard, OK", "Mustang, OK", "Moore, OK", "Norman, OK", "Yukon, OK", "South Oklahoma City metro"],
+      "description": "Strategic home selling services including pricing analysis, targeted marketing, and expert transaction management in Newcastle, Tuttle, Blanchard, and the South OKC metro.",
+      "url": "https://www.thecoopfinder.com/sellers",
+      "offers": {
+        "@type": "Offer",
+        "description": "Full-service seller representation including home valuation, market analysis, listing preparation, and negotiation.",
+        "priceCurrency": "USD",
+        "itemOffered": { "@type": "Service", "name": "Seller Representation" }
+      }
+    },
   });
-
-  /* SCHEMA: Service / HomeSelling structured data — add JSON-LD here */
 
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
