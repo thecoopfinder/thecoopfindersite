@@ -319,7 +319,7 @@ h4 { font-size: 1.1rem; }
 
 /* ── FOOTER ────────────────────────────────────────────────── */
 .site-footer {
-  background: var(--navy);
+  background: #6e3c4f;
   color: rgba(255,255,255,.85);
   padding-block: 3rem;
 }
