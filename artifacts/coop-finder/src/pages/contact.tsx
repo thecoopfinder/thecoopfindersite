@@ -88,7 +88,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-background">
+      <section id="contact-form" className="py-20 bg-background scroll-mt-20">
         <div className="container px-4 max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             
