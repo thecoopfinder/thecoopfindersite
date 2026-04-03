@@ -108,7 +108,7 @@ export default function HomePage() {
             initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.3 }}
           >
             <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl relative bg-[#d4c5a9] border-8 border-background/50">
-              <img src="/images/tessa-headshot.png" alt="Tessa Hood – Realtor, The Coop Finder, Knight Land Company" className="w-full h-full object-cover object-top" />
+              <img src="/images/happy-customer.jpg" alt="Happy home buyers with Tessa Hood – The Coop Finder" className="w-full h-full object-cover object-top" />
             </div>
           </motion.div>
         </div>
@@ -125,8 +125,19 @@ export default function HomePage() {
             <p className="text-lg text-foreground/70 leading-relaxed">
               I'm Tessa Hood, a Realtor with Knight Land Company. My focus is on building relationships, providing honest guidance, and making sure every client — buyer or seller — feels supported from the first conversation to closing day. I serve the Tri-City area of Newcastle, Tuttle, and Blanchard as my primary market, along with Mustang, Moore, Norman, Yukon, and surrounding South Oklahoma City communities.
             </p>
-            <div className="pt-4">
-              <img src="/favicon.svg" alt="The Coop Finder logo mark" className="w-12 h-12 mx-auto opacity-80" />
+            <div className="pt-8 flex flex-wrap justify-center gap-6 md:gap-4">
+              <div className="w-48 md:w-52 aspect-square rounded-xl overflow-hidden shadow-xl rotate-[-3deg] hover:rotate-0 hover:scale-105 transition-all duration-300 border-4 border-white">
+                <img src="/images/tessa-headshot.png" alt="Tessa Hood – The Coop Finder" className="w-full h-full object-cover object-top" />
+              </div>
+              <div className="w-48 md:w-52 aspect-square rounded-xl overflow-hidden shadow-xl rotate-[2deg] hover:rotate-0 hover:scale-105 transition-all duration-300 border-4 border-white mt-4 md:mt-8">
+                <img src="/images/dr-horton.jpg" alt="Tessa Hood at a D.R. Horton closing" className="w-full h-full object-cover object-top" />
+              </div>
+              <div className="w-48 md:w-52 aspect-square rounded-xl overflow-hidden shadow-xl rotate-[-2deg] hover:rotate-0 hover:scale-105 transition-all duration-300 border-4 border-white">
+                <img src="/images/first-house.jpg" alt="First home closing day at Legacy Title" className="w-full h-full object-cover object-top" />
+              </div>
+              <div className="w-48 md:w-52 aspect-square rounded-xl overflow-hidden shadow-xl rotate-[3deg] hover:rotate-0 hover:scale-105 transition-all duration-300 border-4 border-white mt-4 md:mt-6">
+                <img src="/images/helping-vet-homeowners.jpg" alt="Tessa Hood helping veteran homeowners at closing" className="w-full h-full object-cover object-top" />
+              </div>
             </div>
           </div>
         </div>
