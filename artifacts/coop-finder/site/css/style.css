@@ -458,6 +458,24 @@ h4 { font-size: 1.1rem; }
   display: flex;
   justify-content: center;
 }
+.hero-oval-wrap {
+  position: relative;
+  display: inline-block;
+}
+.hero-oval-logo {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  z-index: 3;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+@media (min-width: 768px) { .hero-oval-logo { width: 130px; height: 130px; } }
+@media (min-width: 1200px) { .hero-oval-logo { width: 155px; height: 155px; } }
 .hero-oval {
   width: 280px;
   aspect-ratio: 3/4;
