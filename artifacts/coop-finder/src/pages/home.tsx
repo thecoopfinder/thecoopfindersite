@@ -106,10 +106,10 @@ export default function HomePage() {
 
           {/* Tessa + chicken hero photo */}
           <motion.div
-            className="flex-1 w-full max-w-sm md:max-w-none"
+            className="flex-1 w-full flex justify-center md:justify-end"
             initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl border-8 border-background/50 bg-[#1f3a4a]">
+            <div className="w-[260px] md:w-[300px] aspect-[3/4] rounded-full overflow-hidden shadow-2xl bg-[#f6f4f0]">
               <img src="/images/tessa-with-chicken-nobg.png" alt="Tessa Hood, Oklahoma Realtor – The Coop Finder" className="w-full h-full object-contain object-bottom" />
             </div>
           </motion.div>
@@ -136,12 +136,6 @@ export default function HomePage() {
               </div>
               <div className="w-48 md:w-52 aspect-square rounded-xl overflow-hidden shadow-xl rotate-[-2deg] hover:rotate-0 hover:scale-105 transition-all duration-300 border-4 border-white">
                 <img src="/images/first-house.jpg" alt="First home closing day at Legacy Title" className="w-full h-full object-cover object-top" />
-              </div>
-              <div className="w-48 md:w-52 aspect-square rounded-xl overflow-hidden shadow-xl rotate-[3deg] hover:rotate-0 hover:scale-105 transition-all duration-300 border-4 border-white mt-4 md:mt-6">
-                <img src="/images/helping-vet-homeowners.jpg" alt="Tessa Hood with clients at closing day – Legacy Title" className="w-full h-full object-cover" style={{ objectPosition: "45% 30%" }} />
-              </div>
-              <div className="w-48 md:w-52 aspect-square rounded-xl overflow-hidden shadow-xl rotate-[-2deg] hover:rotate-0 hover:scale-105 transition-all duration-300 border-4 border-white mt-4 md:mt-10">
-                <img src="/images/client-porch.jpg" alt="Tessa Hood with happy clients at their new home" className="w-full h-full object-cover object-top" />
               </div>
             </div>
           </div>
@@ -327,6 +321,15 @@ export default function HomePage() {
             <Button asChild variant="outline" size="lg" className="h-12 px-8">
               <Link href="/about">More About Tessa <ArrowRight className="ml-2 w-4 h-4" /></Link>
             </Button>
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-8 mt-14">
+            <div className="w-56 md:w-64 aspect-square rounded-xl overflow-hidden shadow-xl rotate-[-2deg] hover:rotate-0 hover:scale-105 transition-all duration-300 border-4 border-white">
+              <img src="/images/helping-vet-homeowners.jpg" alt="Tessa Hood with clients at closing day – Legacy Title" className="w-full h-full object-cover" style={{ objectPosition: "45% 30%" }} />
+            </div>
+            <div className="w-56 md:w-64 aspect-square rounded-xl overflow-hidden shadow-xl rotate-[2deg] hover:rotate-0 hover:scale-105 transition-all duration-300 border-4 border-white mt-4 md:mt-8">
+              <img src="/images/client-porch.jpg" alt="Tessa Hood with happy clients at their new home" className="w-full h-full object-cover object-top" />
+            </div>
           </div>
         </div>
       </section>
