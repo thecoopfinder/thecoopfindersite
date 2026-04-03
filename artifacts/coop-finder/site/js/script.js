@@ -245,10 +245,26 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   /* ──────────────────────────────────────────────────────────
-     6. ACTIVE NAV HIGHLIGHT
-     Marks the current page's nav link with class "active".
-     HTML nav is identical on all pages — JS sets state at runtime.
+     6. SMOOTH SCROLL + ACTIVE NAV HIGHLIGHT
   ────────────────────────────────────────────────────────── */
+
+  /* Smooth scroll for on-page anchor links (e.g. #contact-form) */
+  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      const id = a.getAttribute('href').slice(1);
+      const target = document.getElementById(id);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        /* Update URL hash without jumping */
+        if (window.history && window.history.pushState) {
+          window.history.pushState(null, '', '#' + id);
+        }
+      }
+    });
+  });
+
+  /* Active nav link — set at runtime so all pages share identical HTML nav */
   (function () {
     const current = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
     document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(function (link) {
