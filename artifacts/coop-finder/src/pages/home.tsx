@@ -109,8 +109,8 @@ export default function HomePage() {
             className="flex-1 w-full max-w-md md:max-w-none"
             initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl border-8 border-background/50">
-              <img src="/images/helping-vet-homeowners.jpg" alt="Tessa Hood with clients at closing day – Legacy Title" className="w-full h-full object-cover object-top" />
+            <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border-8 border-background/50">
+              <img src="/images/helping-vet-homeowners.jpg" alt="Tessa Hood with clients at closing day – Legacy Title" className="w-full h-full object-cover object-center" />
             </div>
           </motion.div>
         </div>
