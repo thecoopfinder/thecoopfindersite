@@ -87,6 +87,7 @@ document.addEventListener('DOMContentLoaded', function () {
   /* Wire up all video trigger elements */
   document.querySelectorAll('[data-video-id]').forEach(function (el) {
     el.addEventListener('click', function (e) {
+      if (e.target.closest('.video-business-link')) return;
       e.preventDefault();
       const id    = el.dataset.videoId;
       const title = el.dataset.videoTitle || '';
