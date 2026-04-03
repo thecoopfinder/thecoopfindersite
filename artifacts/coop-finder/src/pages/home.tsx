@@ -75,7 +75,7 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-background/80 md:bg-background/45 backdrop-blur-[2px]" />
         </div>
 
-        <div className="container relative z-10 px-8 md:px-14 lg:px-20 py-16 md:py-0 min-h-[90vh] flex flex-col md:flex-row items-center gap-10 md:gap-12">
+        <div className="container relative z-10 px-6 md:px-10 py-16 md:py-0 min-h-[90vh] flex flex-col md:flex-row items-center gap-8 md:gap-16">
           {/* Text */}
           <div className="flex-1 space-y-6 text-center md:text-left">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
@@ -106,11 +106,16 @@ export default function HomePage() {
 
           {/* Tessa + chicken hero photo */}
           <motion.div
-            className="flex-1 w-full flex justify-center md:justify-end"
+            className="shrink-0 flex justify-center"
             initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <div className="w-[260px] md:w-[300px] aspect-[3/4] rounded-full overflow-hidden shadow-2xl bg-[#f6f4f0]">
-              <img src="/images/tessa-with-chicken-nobg.png" alt="Tessa Hood, Oklahoma Realtor – The Coop Finder" className="w-full h-full object-contain object-bottom" />
+            <div className="w-[280px] md:w-[380px] lg:w-[440px] aspect-[3/4] rounded-full overflow-hidden shadow-2xl bg-[#f6f4f0]">
+              <img
+                src="/images/tessa-with-chicken-nobg.png"
+                alt="Tessa Hood, Oklahoma Realtor – The Coop Finder"
+                className="w-full h-full object-contain"
+                style={{ transform: "scale(1.55)", transformOrigin: "50% 30%" }}
+              />
             </div>
           </motion.div>
         </div>
