@@ -110,7 +110,7 @@ export default function HomePage() {
             initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.3 }}
           >
             <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border-8 border-background/50">
-              <img src="/images/helping-vet-homeowners.jpg" alt="Tessa Hood with clients at closing day – Legacy Title" className="w-full h-full object-cover" style={{ objectPosition: "55% 40%", transform: "scale(1.15)", transformOrigin: "center center" }} />
+              <img src="/images/helping-vet-homeowners.jpg" alt="Tessa Hood with clients at closing day – Legacy Title" className="w-full h-full object-cover" style={{ objectPosition: "45% 40%", transform: "scale(1.08)", transformOrigin: "center center" }} />
             </div>
           </motion.div>
         </div>
