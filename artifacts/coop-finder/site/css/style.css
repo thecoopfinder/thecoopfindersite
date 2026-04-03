@@ -255,11 +255,12 @@ h4 { font-size: 1.1rem; }
 }
 @media (min-width: 1024px) { .nav-links { display: flex; } }
 .nav-links a {
-  padding: .5rem .875rem;
+  padding: .5rem .65rem;
   border-radius: var(--radius-sm);
   font-weight: 500;
-  font-size: .9rem;
+  font-size: .875rem;
   color: var(--text-muted);
+  white-space: nowrap;
   transition: color .15s, background .15s;
 }
 .nav-links a:hover, .nav-links a.active { color: var(--gold); }
