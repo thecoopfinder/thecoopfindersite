@@ -129,7 +129,7 @@ export default function HomePage() {
             </p>
             <div className="pt-8 flex flex-wrap justify-center gap-6 md:gap-4">
               <div className="w-48 md:w-52 aspect-square rounded-xl overflow-hidden shadow-xl rotate-[-3deg] hover:rotate-0 hover:scale-105 transition-all duration-300 border-4 border-white">
-                <img src="/images/helping-vet-homeowners.jpg" alt="Tessa Hood with clients at closing day – Legacy Title" className="w-full h-full object-cover" style={{ objectPosition: "45% 30%" }} />
+                <img src="/images/happy-customer.jpg" alt="Happy home buyers with Tessa Hood – The Coop Finder" className="w-full h-full object-cover object-top" />
               </div>
               <div className="w-48 md:w-52 aspect-square rounded-xl overflow-hidden shadow-xl rotate-[2deg] hover:rotate-0 hover:scale-105 transition-all duration-300 border-4 border-white mt-4 md:mt-8">
                 <img src="/images/dr-horton.jpg" alt="Tessa Hood at a D.R. Horton closing" className="w-full h-full object-cover object-top" />
@@ -137,8 +137,8 @@ export default function HomePage() {
               <div className="w-48 md:w-52 aspect-square rounded-xl overflow-hidden shadow-xl rotate-[-2deg] hover:rotate-0 hover:scale-105 transition-all duration-300 border-4 border-white">
                 <img src="/images/first-house.jpg" alt="First home closing day at Legacy Title" className="w-full h-full object-cover object-top" />
               </div>
-              <div className="w-48 md:w-52 aspect-square rounded-xl overflow-hidden shadow-xl rotate-[3deg] hover:rotate-0 hover:scale-105 transition-all duration-300 border-4 border-white mt-4 md:mt-6 bg-[#e8ddd0]">
-                <img src="/images/tessa-headshot-nobg.png" alt="Tessa Hood – The Coop Finder" className="w-full h-full object-contain object-bottom" />
+              <div className="w-48 md:w-52 aspect-square rounded-xl overflow-hidden shadow-xl rotate-[3deg] hover:rotate-0 hover:scale-105 transition-all duration-300 border-4 border-white mt-4 md:mt-6">
+                <img src="/images/helping-vet-homeowners.jpg" alt="Tessa Hood with clients at closing day – Legacy Title" className="w-full h-full object-cover" style={{ objectPosition: "45% 30%" }} />
               </div>
             </div>
           </div>
