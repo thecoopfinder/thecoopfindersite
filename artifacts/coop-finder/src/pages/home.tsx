@@ -75,59 +75,44 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-background/80 md:bg-background/45 backdrop-blur-[2px]" />
         </div>
 
-        {/* Text — strictly left half, centered vertically */}
-        <div className="relative z-10 w-full min-h-[90vh] flex items-center pointer-events-none">
-          <div className="w-full md:w-[48%] lg:w-[44%] px-8 md:pl-14 lg:pl-20 md:pr-4 pointer-events-auto">
-            <div className="space-y-6 text-center md:text-left">
-              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-serif leading-tight text-foreground">
-                  Your Trusted <span className="text-primary italic">Oklahoma</span> Realtor.
-                </h1>
-              </motion.div>
+        <div className="container relative z-10 px-8 md:px-14 lg:px-20 py-16 md:py-0 min-h-[90vh] flex flex-col md:flex-row items-center gap-10 md:gap-12">
+          {/* Text */}
+          <div className="flex-1 space-y-6 text-center md:text-left">
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-serif leading-tight text-foreground">
+                Your Trusted <span className="text-primary italic">Oklahoma</span> Realtor.
+              </h1>
+            </motion.div>
 
-              <motion.p
-                className="text-lg md:text-xl text-foreground/80 max-w-lg leading-relaxed"
-                initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}
-              >
-                Helping buyers and sellers across the Tri-City area of Newcastle, Tuttle, and Blanchard — and throughout the broader South Oklahoma City communities. Real estate with local knowledge, honest guidance, and relationships that last.
-              </motion.p>
+            <motion.p
+              className="text-lg md:text-xl text-foreground/80 max-w-lg leading-relaxed"
+              initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              Helping buyers and sellers across the Tri-City area of Newcastle, Tuttle, and Blanchard — and throughout the broader South Oklahoma City communities. Real estate with local knowledge, honest guidance, and relationships that last.
+            </motion.p>
 
-              <motion.div
-                className="flex flex-col sm:flex-row items-center gap-4 pt-4 md:justify-start justify-center"
-                initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4 }}
-              >
-                <Button asChild size="lg" className="w-full sm:w-auto h-14 text-base px-8 bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg transition-all hover:scale-105" data-testid="button-hero-search">
-                  <Link href="/featured-properties">Start Your Home Search</Link>
-                </Button>
-                <Button asChild variant="outline" size="lg" className="w-full sm:w-auto h-14 text-base px-8 border-primary/20 hover:bg-primary/5 transition-all" data-testid="button-hero-consultation">
-                  <Link href="/contact">Book a Consultation</Link>
-                </Button>
-              </motion.div>
-            </div>
+            <motion.div
+              className="flex flex-col sm:flex-row items-center gap-4 pt-4 md:justify-start justify-center"
+              initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              <Button asChild size="lg" className="w-full sm:w-auto h-14 text-base px-8 bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg transition-all hover:scale-105" data-testid="button-hero-search">
+                <Link href="/featured-properties">Start Your Home Search</Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="w-full sm:w-auto h-14 text-base px-8 border-primary/20 hover:bg-primary/5 transition-all" data-testid="button-hero-consultation">
+                <Link href="/contact">Book a Consultation</Link>
+              </Button>
+            </motion.div>
           </div>
-        </div>
 
-        {/* Tessa — absolutely anchored, fills the right side from bottom */}
-        <motion.div
-          className="hidden md:flex absolute bottom-0 right-0 md:right-[4%] lg:right-[8%] z-10 items-end"
-          initial={{ opacity: 0, scale: 0.97 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.9, delay: 0.3 }}
-        >
-          <img
-            src="/images/tessa-headshot-nobg.png"
-            alt="Tessa Hood – Realtor, The Coop Finder, Knight Land Company"
-            className="h-[88vh] w-auto object-contain object-bottom"
-            style={{ filter: "drop-shadow(-8px 0 32px rgba(31,58,74,0.15))" }}
-          />
-        </motion.div>
-
-        {/* Mobile: show Tessa inline below text */}
-        <div className="md:hidden relative z-10 w-full flex justify-center pb-8">
-          <img
-            src="/images/tessa-headshot-nobg.png"
-            alt="Tessa Hood – Realtor, The Coop Finder, Knight Land Company"
-            className="w-64 object-contain"
-            style={{ filter: "drop-shadow(0 8px 24px rgba(31,58,74,0.18))" }}
-          />
+          {/* Closing day photo */}
+          <motion.div
+            className="flex-1 w-full max-w-md md:max-w-none"
+            initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.3 }}
+          >
+            <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl border-8 border-background/50">
+              <img src="/images/helping-vet-homeowners.jpg" alt="Tessa Hood with clients at closing day – Legacy Title" className="w-full h-full object-cover object-top" />
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -152,8 +137,8 @@ export default function HomePage() {
               <div className="w-48 md:w-52 aspect-square rounded-xl overflow-hidden shadow-xl rotate-[-2deg] hover:rotate-0 hover:scale-105 transition-all duration-300 border-4 border-white">
                 <img src="/images/first-house.jpg" alt="First home closing day at Legacy Title" className="w-full h-full object-cover object-top" />
               </div>
-              <div className="w-48 md:w-52 aspect-square rounded-xl overflow-hidden shadow-xl rotate-[3deg] hover:rotate-0 hover:scale-105 transition-all duration-300 border-4 border-white mt-4 md:mt-6">
-                <img src="/images/helping-vet-homeowners.jpg" alt="Tessa Hood helping veteran homeowners at closing" className="w-full h-full object-cover object-top" />
+              <div className="w-48 md:w-52 aspect-square rounded-xl overflow-hidden shadow-xl rotate-[3deg] hover:rotate-0 hover:scale-105 transition-all duration-300 border-4 border-white mt-4 md:mt-6 bg-[#e8ddd0]">
+                <img src="/images/tessa-headshot-nobg.png" alt="Tessa Hood – The Coop Finder" className="w-full h-full object-contain object-bottom" />
               </div>
             </div>
           </div>
