@@ -67,7 +67,7 @@ export default function HomePage() {
     <div className="w-full">
 
       {/* ── HERO ── */}
-      <section className="relative min-h-[90vh] flex items-center justify-center bg-card overflow-hidden">
+      <section className="relative min-h-[90vh] bg-card overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="w-full h-full bg-[#d4c5a9]">
             <img src="/images/hero-landscape.png" alt="Oklahoma sunset with windmill, Newcastle, Tuttle, and Blanchard" className="w-full h-full object-cover opacity-40" />
@@ -75,16 +75,17 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-background/80 md:bg-background/45 backdrop-blur-[2px]" />
         </div>
 
-        <div className="container relative z-10 px-4 py-10 md:py-20 text-center md:text-left flex flex-col md:flex-row items-center gap-8 md:gap-12">
-          <div className="flex-1 space-y-6 max-w-3xl">
+        <div className="container relative z-10 px-8 md:px-14 lg:px-20 min-h-[90vh] flex flex-col md:flex-row items-center md:items-end gap-8 md:gap-0">
+          {/* Text — pushed up from the bottom with padding */}
+          <div className="flex-1 space-y-6 max-w-xl text-center md:text-left pt-24 md:pt-0 pb-10 md:pb-20 lg:pb-28">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-serif leading-tight text-foreground">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-serif leading-tight text-foreground">
                 Your Trusted <span className="text-primary italic">Oklahoma</span> Realtor.
               </h1>
             </motion.div>
 
             <motion.p
-              className="text-lg md:text-xl text-foreground/80 max-w-2xl leading-relaxed"
+              className="text-lg md:text-xl text-foreground/80 max-w-lg leading-relaxed"
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}
             >
               Helping buyers and sellers across the Tri-City area of Newcastle, Tuttle, and Blanchard — and throughout the broader South Oklahoma City communities. Real estate with local knowledge, honest guidance, and relationships that last.
@@ -103,13 +104,17 @@ export default function HomePage() {
             </motion.div>
           </div>
 
+          {/* Tessa — anchored to the bottom of the hero */}
           <motion.div
-            className="flex-1 w-full max-w-md md:max-w-none"
-            initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.3 }}
+            className="flex-shrink-0 flex items-end self-end w-full md:w-auto"
+            initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <div className="aspect-[3/4] relative flex items-end justify-center">
-              <img src="/images/tessa-headshot-nobg.png" alt="Tessa Hood – Realtor, The Coop Finder, Knight Land Company" className="w-full h-full object-contain drop-shadow-2xl" style={{ filter: "drop-shadow(0 20px 40px rgba(31,58,74,0.22))" }} />
-            </div>
+            <img
+              src="/images/tessa-headshot-nobg.png"
+              alt="Tessa Hood – Realtor, The Coop Finder, Knight Land Company"
+              className="w-full md:w-auto md:max-h-[82vh] object-contain object-bottom"
+              style={{ filter: "drop-shadow(0 -4px 30px rgba(31,58,74,0.18))" }}
+            />
           </motion.div>
         </div>
       </section>
