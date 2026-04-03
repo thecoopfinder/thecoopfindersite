@@ -182,42 +182,41 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── WHY TESSA ── */}
+      {/* ── FEATURED PROPERTIES ── */}
       <section className="py-12 md:py-24 bg-background">
-        <div className="container px-4 max-w-6xl mx-auto">
-          <div className="text-center mb-8 md:mb-16">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">Why Work With Tessa?</h2>
-            <p className="text-foreground/70 max-w-2xl mx-auto">Experience, local market knowledge, and a genuine commitment to every client's outcome — from the first showing to the final signature.</p>
+        <div className="container px-4">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-8 md:mb-12 gap-4 md:gap-6">
+            <div>
+              <h2 className="text-3xl md:text-5xl font-serif font-bold mb-4">Featured Properties</h2>
+              <p className="text-lg text-foreground/70">A selection of current listings and property spotlights across the service area. Updated regularly.</p>
+            </div>
+            <Button asChild variant="outline" className="shrink-0" data-testid="link-all-properties">
+              <Link href="/featured-properties">View All Listings <ArrowRight className="ml-2 w-4 h-4" /></Link>
+            </Button>
           </div>
 
-          <motion.div
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
-            variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }}
-          >
-            {[
-              { title: "Deep Local Knowledge", body: "Focused on Newcastle, Tuttle, and Blanchard as my primary market — with strong familiarity across Mustang, Moore, Norman, Yukon, and South OKC." },
-              { title: "Guidance From Start to Finish", body: "Every step of the process, from pre-approval to closing, is handled with clear communication, honest advice, and consistent follow-through." },
-              { title: "Trusted Local Connections", body: "Access to a reliable network of lenders, inspectors, title professionals, contractors, and insurance contacts built through local experience." },
-              { title: "First-Time Buyer & Veteran Support", body: "Patient, thorough guidance for first-time buyers and veterans navigating VA loans — because every buyer deserves an advocate in their corner." },
-              { title: "Strong Communication", body: "Responsive, accessible, and straightforward. You'll always know where things stand and what's coming next." },
-              { title: "Creative Deal Structuring", body: "Experience managing complex situations — contingent sales, new construction, acreage transactions, and financing challenges." },
-            ].map((item, i) => (
-              <motion.div key={i} variants={itemVariants}>
-                <div className="bg-card p-5 md:p-8 rounded-xl shadow-sm border border-border/60 h-full flex gap-4">
-                  <CheckCircle className="w-6 h-6 text-primary shrink-0 mt-0.5" />
-                  <div>
-                    <h3 className="text-lg font-bold font-serif mb-2">{item.title}</h3>
-                    <p className="text-foreground/70 leading-relaxed text-sm">{item.body}</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[1, 2, 3].map((i) => (
+              <Card key={i} className="overflow-hidden border-none shadow-md group bg-card">
+                <div className="aspect-[4/3] relative bg-[#d4c5a9]">
+                  <div className="absolute top-4 left-4 z-20">
+                    <span className="px-3 py-1 bg-primary text-primary-foreground text-xs font-bold uppercase tracking-wider rounded-sm shadow-sm">Featured</span>
                   </div>
+                  <img src="/images/featured-property.jpg" alt="Featured property listing – Newcastle, Oklahoma" className="w-full h-full object-cover" />
                 </div>
-              </motion.div>
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-bold mb-1">Newcastle, OK</h3>
+                  <p className="text-2xl font-serif text-primary mb-4">$349,000</p>
+                  <div className="flex gap-4 text-sm text-foreground/70 mb-4 pb-4 border-b">
+                    <span>3 Beds</span><span>2 Baths</span><span>2,100 SqFt</span>
+                  </div>
+                  <p className="text-foreground/70 text-sm mb-6 line-clamp-2">Single-story home with open floor plan, covered back patio, and half-acre lot in Newcastle, Oklahoma.</p>
+                  <Button asChild className="w-full" variant="outline">
+                    <Link href="/featured-properties">View Details</Link>
+                  </Button>
+                </CardContent>
+              </Card>
             ))}
-          </motion.div>
-
-          <div className="text-center mt-12">
-            <Button asChild variant="outline" size="lg" className="h-12 px-8">
-              <Link href="/about">More About Tessa <ArrowRight className="ml-2 w-4 h-4" /></Link>
-            </Button>
           </div>
         </div>
       </section>
@@ -277,41 +276,42 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── FEATURED PROPERTIES ── */}
+      {/* ── WHY TESSA ── */}
       <section className="py-12 md:py-24 bg-background">
-        <div className="container px-4">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-8 md:mb-12 gap-4 md:gap-6">
-            <div>
-              <h2 className="text-3xl md:text-5xl font-serif font-bold mb-4">Featured Properties</h2>
-              <p className="text-lg text-foreground/70">A selection of current listings and property spotlights across the service area. Updated regularly.</p>
-            </div>
-            <Button asChild variant="outline" className="shrink-0" data-testid="link-all-properties">
-              <Link href="/featured-properties">View All Listings <ArrowRight className="ml-2 w-4 h-4" /></Link>
-            </Button>
+        <div className="container px-4 max-w-6xl mx-auto">
+          <div className="text-center mb-8 md:mb-16">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">Why Work With Tessa?</h2>
+            <p className="text-foreground/70 max-w-2xl mx-auto">Experience, local market knowledge, and a genuine commitment to every client's outcome — from the first showing to the final signature.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[1, 2, 3].map((i) => (
-              <Card key={i} className="overflow-hidden border-none shadow-md group bg-card">
-                <div className="aspect-[4/3] relative bg-[#d4c5a9]">
-                  <div className="absolute top-4 left-4 z-20">
-                    <span className="px-3 py-1 bg-primary text-primary-foreground text-xs font-bold uppercase tracking-wider rounded-sm shadow-sm">Featured</span>
+          <motion.div
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+            variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }}
+          >
+            {[
+              { title: "Deep Local Knowledge", body: "Focused on Newcastle, Tuttle, and Blanchard as my primary market — with strong familiarity across Mustang, Moore, Norman, Yukon, and South OKC." },
+              { title: "Guidance From Start to Finish", body: "Every step of the process, from pre-approval to closing, is handled with clear communication, honest advice, and consistent follow-through." },
+              { title: "Trusted Local Connections", body: "Access to a reliable network of lenders, inspectors, title professionals, contractors, and insurance contacts built through local experience." },
+              { title: "First-Time Buyer & Veteran Support", body: "Patient, thorough guidance for first-time buyers and veterans navigating VA loans — because every buyer deserves an advocate in their corner." },
+              { title: "Strong Communication", body: "Responsive, accessible, and straightforward. You'll always know where things stand and what's coming next." },
+              { title: "Creative Deal Structuring", body: "Experience managing complex situations — contingent sales, new construction, acreage transactions, and financing challenges." },
+            ].map((item, i) => (
+              <motion.div key={i} variants={itemVariants}>
+                <div className="bg-card p-5 md:p-8 rounded-xl shadow-sm border border-border/60 h-full flex gap-4">
+                  <CheckCircle className="w-6 h-6 text-primary shrink-0 mt-0.5" />
+                  <div>
+                    <h3 className="text-lg font-bold font-serif mb-2">{item.title}</h3>
+                    <p className="text-foreground/70 leading-relaxed text-sm">{item.body}</p>
                   </div>
-                  <img src="/images/featured-property.jpg" alt="Featured property listing – Newcastle, Oklahoma" className="w-full h-full object-cover" />
                 </div>
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-bold mb-1">Newcastle, OK</h3>
-                  <p className="text-2xl font-serif text-primary mb-4">$349,000</p>
-                  <div className="flex gap-4 text-sm text-foreground/70 mb-4 pb-4 border-b">
-                    <span>3 Beds</span><span>2 Baths</span><span>2,100 SqFt</span>
-                  </div>
-                  <p className="text-foreground/70 text-sm mb-6 line-clamp-2">Single-story home with open floor plan, covered back patio, and half-acre lot in Newcastle, Oklahoma.</p>
-                  <Button asChild className="w-full" variant="outline">
-                    <Link href="/featured-properties">View Details</Link>
-                  </Button>
-                </CardContent>
-              </Card>
+              </motion.div>
             ))}
+          </motion.div>
+
+          <div className="text-center mt-12">
+            <Button asChild variant="outline" size="lg" className="h-12 px-8">
+              <Link href="/about">More About Tessa <ArrowRight className="ml-2 w-4 h-4" /></Link>
+            </Button>
           </div>
         </div>
       </section>
