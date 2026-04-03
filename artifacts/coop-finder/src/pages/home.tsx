@@ -140,6 +140,9 @@ export default function HomePage() {
               <div className="w-48 md:w-52 aspect-square rounded-xl overflow-hidden shadow-xl rotate-[3deg] hover:rotate-0 hover:scale-105 transition-all duration-300 border-4 border-white mt-4 md:mt-6">
                 <img src="/images/helping-vet-homeowners.jpg" alt="Tessa Hood with clients at closing day – Legacy Title" className="w-full h-full object-cover" style={{ objectPosition: "45% 30%" }} />
               </div>
+              <div className="w-48 md:w-52 aspect-square rounded-xl overflow-hidden shadow-xl rotate-[-2deg] hover:rotate-0 hover:scale-105 transition-all duration-300 border-4 border-white mt-4 md:mt-10">
+                <img src="/images/client-porch.jpg" alt="Tessa Hood with happy clients at their new home" className="w-full h-full object-cover object-top" />
+              </div>
             </div>
           </div>
         </div>
