@@ -78,10 +78,12 @@ export function usePageMeta({
     /* ── JSON-LD STRUCTURED DATA ──
        Injects (or replaces) page-specific schema alongside the site-wide
        RealEstateAgent schema already present in index.html.
+       Always removes any stale page schema on navigation, even when this
+       page provides no jsonLd (prevents cross-page schema leakage in SPA).
     ── */
+    const prevScript = document.getElementById("page-jsonld");
+    if (prevScript) prevScript.remove();
     if (jsonLd) {
-      const prev = document.getElementById("page-jsonld");
-      if (prev) prev.remove();
       const script = document.createElement("script");
       script.type = "application/ld+json";
       script.id = "page-jsonld";
