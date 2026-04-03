@@ -107,8 +107,8 @@ export default function HomePage() {
             className="flex-1 w-full max-w-md md:max-w-none"
             initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl relative bg-[#d4c5a9] border-8 border-background/50">
-              <img src="/images/tessa-headshot.png" alt="Tessa Hood – Realtor, The Coop Finder, Knight Land Company" className="w-full h-full object-cover object-top" />
+            <div className="aspect-[3/4] relative flex items-end justify-center">
+              <img src="/images/tessa-headshot-nobg.png" alt="Tessa Hood – Realtor, The Coop Finder, Knight Land Company" className="w-full h-full object-contain drop-shadow-2xl" style={{ filter: "drop-shadow(0 20px 40px rgba(31,58,74,0.22))" }} />
             </div>
           </motion.div>
         </div>

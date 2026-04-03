@@ -51,8 +51,8 @@ export default function AboutPage() {
         <div className="container px-4">
           <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center">
             <div className="flex-1 w-full">
-              <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-[#d4c5a9] relative border-8 border-card shadow-xl">
-                <img src="/images/tessa-headshot.png" alt="Tessa Hood, Realtor – The Coop Finder, Knight Land Company, Newcastle Oklahoma" className="w-full h-full object-cover object-top" />
+              <div className="aspect-[4/5] relative flex items-end justify-center">
+                <img src="/images/tessa-headshot-nobg.png" alt="Tessa Hood, Realtor – The Coop Finder, Knight Land Company, Newcastle Oklahoma" className="w-full h-full object-contain" style={{ filter: "drop-shadow(0 16px 32px rgba(31,58,74,0.20))" }} />
               </div>
             </div>
 
