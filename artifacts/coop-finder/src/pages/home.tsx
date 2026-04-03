@@ -109,7 +109,7 @@ export default function HomePage() {
             className="shrink-0 flex justify-center"
             initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <div className="w-[280px] md:w-[380px] lg:w-[440px] aspect-[3/4] rounded-full overflow-hidden shadow-2xl bg-[#f6f4f0]">
+            <div className="w-[280px] md:w-[380px] lg:w-[440px] aspect-[3/4] rounded-full overflow-hidden shadow-2xl bg-[#c99a45]">
               <img
                 src="/images/tessa-with-chicken-nobg.png"
                 alt="Tessa Hood, Oklahoma Realtor – The Coop Finder"
