@@ -246,18 +246,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
   /* ──────────────────────────────────────────────────────────
      6. ACTIVE NAV HIGHLIGHT
-     Marks the current page's nav link with class "active"
+     Marks the current page's nav link with class "active".
+     HTML nav is identical on all pages — JS sets state at runtime.
   ────────────────────────────────────────────────────────── */
-  const currentPath = window.location.pathname.replace(/\/$/, '') || '/';
-  const navLinks = document.querySelectorAll('.nav-links a, .mobile-menu a');
-  navLinks.forEach(function (link) {
-    const href = link.getAttribute('href') || '';
-    const linkPath = href.replace(/\/$/, '').replace(/\.html$/, '') || '/';
-    /* Strip .html from current path too */
-    const cleanCurrent = currentPath.replace(/\.html$/, '');
-    if (cleanCurrent === linkPath || (cleanCurrent === '/' && (href === '/' || href === '/index.html' || href === 'index.html'))) {
-      link.classList.add('active');
-    }
-  });
+  (function () {
+    const current = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+    document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(function (link) {
+      if (link.classList.contains('btn')) return;
+      const href = link.getAttribute('href') || '';
+      let linkPath = '/' + href.replace(/\.html$/, '').replace(/^\//, '');
+      if (linkPath === '/index') linkPath = '/';
+      if (current === linkPath) link.classList.add('active');
+    });
+  }());
 
 }); /* end DOMContentLoaded */
