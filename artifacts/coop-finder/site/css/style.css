@@ -1166,6 +1166,74 @@ textarea { min-height: 120px; resize: vertical; }
   margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
 }
 
+/* ── PROPERTY PHOTO CAROUSEL ──────────────────────────────── */
+.photo-carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.photo-carousel .carousel-track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.photo-carousel .carousel-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity .35s ease;
+  pointer-events: none;
+}
+.photo-carousel .carousel-slide.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+.photo-carousel .carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,.42);
+  border: none;
+  color: #fff;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: background .2s;
+  padding: 0;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+.carousel-btn:hover { background: rgba(0,0,0,.72); }
+.carousel-btn.prev { left: .5rem; }
+.carousel-btn.next { right: .5rem; }
+.carousel-counter {
+  position: absolute;
+  bottom: .5rem;
+  right: .6rem;
+  background: rgba(0,0,0,.5);
+  color: #fff;
+  font-size: .68rem;
+  padding: .15rem .45rem;
+  border-radius: 999px;
+  z-index: 10;
+  letter-spacing: .04em;
+  font-family: var(--font-sans);
+}
+.property-card.has-carousel:hover .photo-carousel .carousel-slide img {
+  transform: none;
+}
+
 /* ── SCROLLBAR POLISH ──────────────────────────────────────── */
 ::-webkit-scrollbar { width: 8px; }
 ::-webkit-scrollbar-track { background: var(--warm-white); }

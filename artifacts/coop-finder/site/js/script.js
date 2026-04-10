@@ -9,6 +9,7 @@
    4. Category filter (Around the Coop)
    5. Form submission with GHL webhook & graceful fallback
    6. Smooth scroll & active nav highlight
+   7. Property photo carousel
    ============================================================ */
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -276,5 +277,43 @@ document.addEventListener('DOMContentLoaded', function () {
       if (current === linkPath) link.classList.add('active');
     });
   }());
+
+  /* ──────────────────────────────────────────────────────────
+     7. PROPERTY PHOTO CAROUSEL
+  ────────────────────────────────────────────────────────── */
+  document.querySelectorAll('[data-carousel]').forEach(function (carousel) {
+    var slides   = carousel.querySelectorAll('.carousel-slide');
+    var counter  = carousel.querySelector('.carousel-counter');
+    var btnPrev  = carousel.querySelector('.carousel-btn.prev');
+    var btnNext  = carousel.querySelector('.carousel-btn.next');
+    var total    = slides.length;
+    var current  = 0;
+
+    function goTo(idx) {
+      slides[current].classList.remove('active');
+      current = (idx + total) % total;
+      slides[current].classList.add('active');
+      if (counter) counter.textContent = (current + 1) + ' / ' + total;
+    }
+
+    if (btnPrev) btnPrev.addEventListener('click', function (e) {
+      e.stopPropagation();
+      goTo(current - 1);
+    });
+    if (btnNext) btnNext.addEventListener('click', function (e) {
+      e.stopPropagation();
+      goTo(current + 1);
+    });
+
+    /* swipe support */
+    var touchStartX = 0;
+    carousel.addEventListener('touchstart', function (e) {
+      touchStartX = e.changedTouches[0].clientX;
+    }, { passive: true });
+    carousel.addEventListener('touchend', function (e) {
+      var diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) goTo(diff > 0 ? current + 1 : current - 1);
+    }, { passive: true });
+  });
 
 }); /* end DOMContentLoaded */
