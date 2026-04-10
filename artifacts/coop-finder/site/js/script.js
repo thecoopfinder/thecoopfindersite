@@ -12,6 +12,14 @@
    7. Property photo carousel
    ============================================================ */
 
+/* ════════════════════════════════════════════════════════════
+   GOHIGHLEVEL WEBHOOK — PASTE YOUR URL ON THE LINE BELOW
+   All 4 site forms (Home, Buyers, Sellers, Contact) send to
+   this single endpoint. Replace the placeholder string with
+   your actual GHL webhook URL and save the file.
+════════════════════════════════════════════════════════════ */
+var GHL_WEBHOOK_URL = 'PASTE_YOUR_GHL_WEBHOOK_URL_HERE';
+
 document.addEventListener('DOMContentLoaded', function () {
 
   /* ──────────────────────────────────────────────────────────
@@ -160,21 +168,33 @@ document.addEventListener('DOMContentLoaded', function () {
 
   /* ──────────────────────────────────────────────────────────
      5. FORM SUBMISSION WITH GHL WEBHOOK
-     Each form needs:
+     All forms with [data-webhook] use GHL_WEBHOOK_URL (defined
+     at the top of this file). Each form also needs:
        data-form-id="unique-id"
-       data-webhook="WEBHOOK_URL"
-     The script checks if the URL is still a placeholder and
-     shows a fallback message instead of firing a broken POST.
+     Fields are normalized to consistent keys before sending:
+       inquiry_type, name, email, phone, message,
+       source_page, site_name
   ────────────────────────────────────────────────────────── */
-  document.querySelectorAll('form[data-webhook]').forEach(function (form) {
-    const webhookUrl = form.dataset.webhook || '';
-    const formId     = form.dataset.formId  || 'form';
-    const submitBtn  = form.querySelector('[type="submit"]');
-    const successEl  = document.getElementById(formId + '-success');
-    const errorEl    = document.getElementById(formId + '-error');
-    const fallbackEl = document.getElementById(formId + '-fallback');
 
-    /* Helper to show a message block */
+  /* Field-name aliases: any of these keys are renamed to inquiry_type */
+  var INQUIRY_TYPE_ALIASES = ['intent', 'buyerType', 'helpType'];
+
+  /* Detect unfilled placeholder — checked once at load time */
+  var isPlaceholder = (
+    !GHL_WEBHOOK_URL ||
+    GHL_WEBHOOK_URL === 'PASTE_YOUR_GHL_WEBHOOK_URL_HERE' ||
+    GHL_WEBHOOK_URL.includes('REPLACE') ||
+    GHL_WEBHOOK_URL.includes('YOUR_')
+  );
+
+  document.querySelectorAll('form[data-webhook]').forEach(function (form) {
+    var formId    = form.dataset.formId || 'form';
+    var submitBtn = form.querySelector('[type="submit"]');
+    var successEl = document.getElementById(formId + '-success');
+    var errorEl   = document.getElementById(formId + '-error');
+    var fallbackEl= document.getElementById(formId + '-fallback');
+
+    /* Helper: show one message block, hide the others */
     function showMsg(el) {
       [successEl, errorEl, fallbackEl].forEach(function (m) {
         if (m) m.classList.remove('show');
@@ -182,58 +202,67 @@ document.addEventListener('DOMContentLoaded', function () {
       if (el) el.classList.add('show');
     }
 
-    /* Detect unfilled placeholder */
-    const isPlaceholder = (
-      !webhookUrl ||
-      webhookUrl === 'WEBHOOK_URL' ||
-      webhookUrl.includes('REPLACE') ||
-      webhookUrl.includes('YOUR_')
-    );
-
     form.addEventListener('submit', function (e) {
       e.preventDefault();
 
-      /* If webhook not configured, show friendly fallback */
+      /* If webhook not yet configured, show friendly fallback */
       if (isPlaceholder) {
         showMsg(fallbackEl);
         return;
       }
 
-      /* Collect form data */
-      const data = {};
+      /* Collect all form fields */
+      var raw = {};
       new FormData(form).forEach(function (value, key) {
-        data[key] = value;
+        raw[key] = value;
       });
 
-      /* Disable submit while sending */
+      /* Normalize field names → consistent GHL payload */
+      var data = {
+        name         : raw.name         || '',
+        email        : raw.email        || '',
+        phone        : raw.phone        || '',
+        inquiry_type : '',
+        message      : raw.message      || '',
+        source_page  : window.location.pathname || '/',
+        site_name    : 'The Coop Finder'
+      };
+
+      /* Map any alias key → inquiry_type */
+      INQUIRY_TYPE_ALIASES.forEach(function (alias) {
+        if (raw[alias]) data.inquiry_type = raw[alias];
+      });
+      /* If form already uses inquiry_type directly, honour it */
+      if (raw.inquiry_type) data.inquiry_type = raw.inquiry_type;
+
+      /* Pass through any extra form-specific fields (e.g. propertyAddress) */
+      Object.keys(raw).forEach(function (key) {
+        var isCore = ['name','email','phone','message','inquiry_type'].concat(INQUIRY_TYPE_ALIASES).indexOf(key) !== -1;
+        if (!isCore) data[key] = raw[key];
+      });
+
+      /* Disable submit button while sending */
       if (submitBtn) {
         submitBtn.disabled = true;
         submitBtn.dataset.originalText = submitBtn.textContent;
         submitBtn.textContent = 'Sending…';
       }
 
-      fetch(webhookUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          /* GHL INTEGRATION NOTE: If GHL requires a different Content-Type or
-             additional headers (e.g. Authorization), add them here. */
-        },
-        body: JSON.stringify(data),
+      fetch(GHL_WEBHOOK_URL, {
+        method : 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body   : JSON.stringify(data),
       })
         .then(function (res) {
-          /* GHL INTEGRATION NOTE: Adjust the success condition below if GHL returns
-             a non-2xx status on success, or check for a specific JSON field. */
           if (res.ok) {
             showMsg(successEl);
             form.reset();
           } else {
-            /* GHL INTEGRATION NOTE: Log res.status to debug unexpected responses. */
+            console.error('[Coop Finder] GHL webhook returned', res.status);
             showMsg(errorEl);
           }
         })
         .catch(function (err) {
-          /* Network error or CORS issue — log for debugging */
           console.error('[Coop Finder] Form submission error:', err);
           showMsg(errorEl);
         })
