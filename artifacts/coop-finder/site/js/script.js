@@ -224,8 +224,7 @@ document.addEventListener('DOMContentLoaded', function () {
         phone        : raw.phone        || '',
         inquiry_type : '',
         message      : raw.message      || '',
-        source_page  : window.location.pathname || '/',
-        site_name    : 'The Coop Finder'
+        source_page  : 'The Coop Finder — ' + (window.location.pathname || '/')
       };
 
       /* Map any alias key → inquiry_type */
