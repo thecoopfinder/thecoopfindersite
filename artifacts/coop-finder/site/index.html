@@ -30,6 +30,9 @@
   <!-- FONTS + CSS -->
   <link rel="stylesheet" href="/css/style.css">
 
+  <!-- PRELOAD hero image for fastest LCP -->
+  <link rel="preload" as="image" href="/images/tessa-with-chicken-nobg.webp" type="image/webp">
+
   <!-- JSON-LD: RealEstateAgent + WebSite -->
   <script type="application/ld+json">
   [
@@ -123,7 +126,10 @@
       <div class="hero-photo">
         <div class="hero-oval-wrap">
           <div class="hero-oval">
-            <img src="/images/tessa-with-chicken-nobg.png" alt="Tessa Hood Realtor – The Coop Finder, Newcastle Oklahoma">
+            <picture>
+              <source srcset="/images/tessa-with-chicken-nobg.webp" type="image/webp">
+              <img src="/images/tessa-with-chicken-nobg.png" alt="Tessa Hood Realtor – The Coop Finder, Newcastle Oklahoma" loading="eager" fetchpriority="high">
+            </picture>
           </div>
           <img src="/tessa-logo.png" class="hero-oval-logo" alt="The Coop Finder">
         </div>
