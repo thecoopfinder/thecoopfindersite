@@ -224,7 +224,12 @@ document.addEventListener('DOMContentLoaded', function () {
         phone        : raw.phone        || '',
         inquiry_type : '',
         message      : raw.message      || '',
-        source_page  : 'The Coop Finder — ' + (window.location.pathname || '/')
+        source_page  : (function () {
+          var p = window.location.pathname || '/';
+          p = p.replace(/\.html$/, '');
+          if (p === '/index' || p === '') p = '/';
+          return 'The Coop Finder — ' + p;
+        }())
       };
 
       /* Map any alias key → inquiry_type */
