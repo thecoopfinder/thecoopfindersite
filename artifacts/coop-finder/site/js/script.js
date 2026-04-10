@@ -18,7 +18,7 @@
    this single endpoint. Replace the placeholder string with
    your actual GHL webhook URL and save the file.
 ════════════════════════════════════════════════════════════ */
-var GHL_WEBHOOK_URL = 'PASTE_YOUR_GHL_WEBHOOK_URL_HERE';
+var GHL_WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/ubTknez7NyEtjGBooDEL/webhook-trigger/1c008a74-34f1-4527-a6d8-22434becde8f';
 
 document.addEventListener('DOMContentLoaded', function () {
 
