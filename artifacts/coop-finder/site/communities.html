@@ -27,8 +27,9 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="stylesheet" href="/css/style.css">
 
-  <!-- JSON-LD: WebPage + Place array + BreadcrumbList -->
+  <!-- JSON-LD: WebPage + Place array + BreadcrumbList + RealEstateAgent services -->
   <script type="application/ld+json">
+  [
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
@@ -96,7 +97,44 @@
         "containedInPlace": { "@type": "State", "name": "Oklahoma" }
       }
     ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Real Estate Services – Newcastle, Tuttle, Blanchard & South OKC Metro",
+    "serviceType": "Real Estate Agent Services",
+    "description": "Tessa Hood provides buyer representation, seller representation, and real estate guidance in Newcastle, Tuttle, Blanchard, Mustang, Moore, Norman, Yukon, and Oklahoma City.",
+    "provider": {
+      "@type": "RealEstateAgent",
+      "@id": "https://www.thecoopfinder.com/#agent",
+      "name": "Tessa Hood – The Coop Finder",
+      "telephone": "+14059134185",
+      "email": "TessaHood@TheCoopFinder.com",
+      "url": "https://www.thecoopfinder.com"
+    },
+    "areaServed": [
+      { "@type": "City", "name": "Newcastle",    "containedInPlace": { "@type": "State", "name": "Oklahoma" } },
+      { "@type": "City", "name": "Tuttle",       "containedInPlace": { "@type": "State", "name": "Oklahoma" } },
+      { "@type": "City", "name": "Blanchard",    "containedInPlace": { "@type": "State", "name": "Oklahoma" } },
+      { "@type": "City", "name": "Mustang",      "containedInPlace": { "@type": "State", "name": "Oklahoma" } },
+      { "@type": "City", "name": "Moore",        "containedInPlace": { "@type": "State", "name": "Oklahoma" } },
+      { "@type": "City", "name": "Norman",       "containedInPlace": { "@type": "State", "name": "Oklahoma" } },
+      { "@type": "City", "name": "Yukon",        "containedInPlace": { "@type": "State", "name": "Oklahoma" } },
+      { "@type": "City", "name": "Oklahoma City","containedInPlace": { "@type": "State", "name": "Oklahoma" } }
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Real Estate Services",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Buyer Representation", "description": "Expert buyer's agent services for first-time buyers, veterans, move-up buyers, and acreage purchasers." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Seller Representation", "description": "Strategic home selling including pricing analysis, marketing, and full transaction management." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "New Construction Guidance", "description": "Representation for buyers purchasing new build homes from builders in the South OKC metro." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Acreage & Rural Property", "description": "Specializing in land, acreage, and rural properties in Tuttle, Blanchard, and surrounding areas." } }
+      ]
+    },
+    "url": "https://www.thecoopfinder.com/communities"
   }
+  ]
   </script>
   <!-- Google Analytics 4 — replace G-XXXXXXXXXX with your Measurement ID -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
