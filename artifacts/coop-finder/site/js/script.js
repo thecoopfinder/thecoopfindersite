@@ -8,8 +8,10 @@
    3. FAQ accordion
    4. Category filter (Around the Coop)
    5. Form submission with GHL webhook & graceful fallback
-   6. Smooth scroll & active nav highlight
-   7. Property photo carousel
+   6. Contact page direct-URL fallback (?property= pre-fill)
+   7. Smooth scroll & active nav highlight
+   8. Property photo carousel
+   9. Contact slide-over drawer
    ============================================================ */
 
 /* ════════════════════════════════════════════════════════════
@@ -280,43 +282,26 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   /* ──────────────────────────────────────────────────────────
-     6. SCHEDULE A SHOWING — property address pre-fill
-     When a visitor clicks "Schedule a Showing" on any property
-     card, the property address (from the card's <h3>) is added
-     to the contact URL as ?property=ADDRESS so the contact form
-     can greet them with the right property pre-filled.
+     6. CONTACT PAGE DIRECT-URL FALLBACK
+     When a user navigates directly to /contact?property=ADDRESS
+     (e.g. from an external link), pre-fill the message field.
+     Normal site flow uses the slide-over drawer (section 9).
   ────────────────────────────────────────────────────────── */
-
-  /* Step A: inject ?property= param into each "Schedule a Showing" link */
-  document.querySelectorAll('a.btn').forEach(function (link) {
-    if (link.textContent.trim().toLowerCase().indexOf('schedule a showing') !== -1) {
-      var card = link.closest('article, .property-card');
-      if (card) {
-        var h3 = card.querySelector('h3');
-        if (h3) {
-          var address = h3.textContent.trim();
-          link.href = '/contact?property=' + encodeURIComponent(address) + '#contact-form';
-        }
-      }
-    }
-  });
-
-  /* Step B: on the contact page, read ?property= and pre-fill the message */
   (function () {
     var params   = new URLSearchParams(window.location.search);
     var property = params.get('property');
-    console.log('[Coop Finder] property param:', property);
     if (!property) return;
     var msgField = document.getElementById('contact-message');
-    console.log('[Coop Finder] msgField found:', !!msgField);
     if (msgField && !msgField.value) {
       msgField.value = "I\u2019m interested in scheduling a showing for " + property + ".";
-      console.log('[Coop Finder] message pre-filled');
     }
-    /* Also scroll to the form after the page settles */
+    /* Also pre-select helpType */
+    var helpField = document.getElementById('contact-help');
+    if (helpField && !helpField.value) helpField.value = 'buying';
+    /* Scroll to the form after the page settles */
     setTimeout(function () {
-      var form = document.getElementById('contact-form');
-      if (form) form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      var formSection = document.getElementById('contact-form');
+      if (formSection) formSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }, 300);
   }());
 
@@ -388,6 +373,123 @@ document.addEventListener('DOMContentLoaded', function () {
       var diff = touchStartX - e.changedTouches[0].clientX;
       if (Math.abs(diff) > 40) goTo(diff > 0 ? current + 1 : current - 1);
     }, { passive: true });
+  });
+
+  /* ──────────────────────────────────────────────────────────
+     9. CONTACT SLIDE-OVER DRAWER
+     Opens on ANY link whose href starts with /contact EXCEPT
+     plain footer nav links (inside .footer-links).
+     Pre-fills message + helpType for:
+       • "Schedule a Showing" buttons → extracts address from card <h3>
+       • "Ask About [City]" buttons   → extracts city from link text
+  ────────────────────────────────────────────────────────── */
+  var drawerOverlay = document.getElementById('contact-drawer-overlay');
+  var drawer        = document.getElementById('contact-drawer');
+  var drawerClose   = document.getElementById('drawer-close-btn');
+  var drawerMessage = document.getElementById('drawer-message');
+  var drawerHelp    = document.getElementById('drawer-help');
+
+  function openDrawer(prefillText, prefillHelpValue) {
+    if (!drawer) return;
+    /* Reset fields before pre-filling so stale values don't persist */
+    var drawerForm = drawer.querySelector('form');
+    if (drawerForm) drawerForm.reset();
+    /* Hide any previous messages */
+    drawer.querySelectorAll('.drawer-msg').forEach(function (m) {
+      m.classList.remove('show');
+    });
+    if (prefillText && drawerMessage) {
+      drawerMessage.value = prefillText;
+    }
+    if (prefillHelpValue && drawerHelp) {
+      drawerHelp.value = prefillHelpValue;
+    }
+    if (drawerOverlay) drawerOverlay.classList.add('open');
+    drawer.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    /* Focus first input after slide animation */
+    setTimeout(function () {
+      var firstInput = drawer.querySelector('input:not([type="hidden"]), select, textarea');
+      if (firstInput) firstInput.focus();
+    }, 360);
+  }
+
+  function closeDrawer() {
+    if (!drawer) return;
+    drawer.classList.remove('open');
+    if (drawerOverlay) drawerOverlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  if (drawerClose) drawerClose.addEventListener('click', closeDrawer);
+
+  /* Close on overlay click or any click outside the drawer panel */
+  document.addEventListener('click', function (e) {
+    if (!drawer || !drawer.classList.contains('open')) return;
+    /* If the click target is inside the drawer panel, do nothing */
+    if (drawer.contains(e.target)) return;
+    closeDrawer();
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && drawer && drawer.classList.contains('open')) {
+      closeDrawer();
+    }
+  });
+
+  /* Auto-close drawer 2.2 s after successful submission */
+  var drawerSuccessEl = document.getElementById('drawer-contact-success');
+  if (drawerSuccessEl) {
+    new MutationObserver(function (mutations) {
+      mutations.forEach(function (m) {
+        if (m.attributeName === 'class' && drawerSuccessEl.classList.contains('show')) {
+          setTimeout(function () {
+            closeDrawer();
+            setTimeout(function () {
+              drawerSuccessEl.classList.remove('show');
+              var drawerForm = drawer ? drawer.querySelector('form') : null;
+              if (drawerForm) drawerForm.reset();
+            }, 400);
+          }, 2200);
+        }
+      });
+    }).observe(drawerSuccessEl, { attributes: true });
+  }
+
+  /* Intercept all contact links — skip plain footer nav links */
+  document.querySelectorAll('a[href^="/contact"]').forEach(function (link) {
+    if (link.closest('.footer-links')) return; /* plain footer nav — let navigate */
+
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation(); /* prevent click from reaching the document outside-click handler */
+
+      var prefillText = '';
+      var helpValue   = '';
+      var text        = link.textContent.trim();
+
+      /* "Schedule a Showing" → extract property address from card <h3> */
+      if (text.toLowerCase().indexOf('schedule a showing') !== -1) {
+        var card = link.closest('article, .property-card');
+        if (card) {
+          var h3 = card.querySelector('h3');
+          if (h3) {
+            prefillText = "I\u2019m interested in scheduling a showing for " + h3.textContent.trim() + ".";
+            helpValue = 'buying';
+          }
+        }
+      }
+
+      /* "Ask About [City]" → extract city name */
+      var askMatch = text.match(/Ask About\s+(.+?)(?:\s*[\u2192\u00bb])?$/i);
+      if (askMatch) {
+        var city = askMatch[1].trim();
+        prefillText = "I\u2019d like to learn more about " + city + ".";
+        helpValue = 'buying';
+      }
+
+      openDrawer(prefillText, helpValue);
+    });
   });
 
 }); /* end DOMContentLoaded */

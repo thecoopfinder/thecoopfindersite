@@ -301,5 +301,57 @@
 </footer>
 
 <script src="/js/script.js"></script>
+<!-- ═══════════════ CONTACT SLIDE-OVER DRAWER ═══════════════ -->
+<div id="contact-drawer-overlay" role="presentation" aria-hidden="true"></div>
+<div id="contact-drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-title">
+  <div class="drawer-header">
+    <div class="drawer-header-title">
+      <h2 id="drawer-title">Contact Tessa</h2>
+      <span>No pressure. No obligation.</span>
+    </div>
+    <button class="drawer-close" id="drawer-close-btn" aria-label="Close contact form">
+      <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <div class="drawer-body">
+    <form data-webhook="ghl" data-form-id="drawer-contact">
+      <div class="form-group">
+        <label for="drawer-name">Name</label>
+        <input type="text" id="drawer-name" name="name" placeholder="Your full name" required>
+      </div>
+      <div class="drawer-row-2">
+        <div class="form-group">
+          <label for="drawer-email">Email</label>
+          <input type="email" id="drawer-email" name="email" placeholder="Your email" required>
+        </div>
+        <div class="form-group">
+          <label for="drawer-phone">Phone</label>
+          <input type="tel" id="drawer-phone" name="phone" placeholder="Optional">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="drawer-help">How can I help?</label>
+        <select id="drawer-help" name="helpType" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="buying">I am interested in buying</option>
+          <option value="selling">I am interested in selling</option>
+          <option value="both">I need to sell and buy</option>
+          <option value="general">General Question</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="drawer-message">Message</label>
+        <textarea id="drawer-message" name="message" placeholder="Tell me a little about your real estate needs..." required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+      <div class="drawer-msg drawer-msg-success" id="drawer-contact-success">Thank you! I&rsquo;ll be in touch soon.</div>
+      <div class="drawer-msg drawer-msg-error" id="drawer-contact-error">Something went wrong. Please call <a href="tel:+14059134185">405-913-4185</a> or email <a href="mailto:TessaHood@TheCoopFinder.com">TessaHood@TheCoopFinder.com</a>.</div>
+      <div class="drawer-msg drawer-msg-fallback" id="drawer-contact-fallback">Please call or email: <strong>405-913-4185</strong> | TessaHood@TheCoopFinder.com</div>
+    </form>
+    <p class="drawer-subtext">Or call / text Tessa directly: <a href="tel:+14059134185">405-913-4185</a></p>
+  </div>
+</div>
+<!-- ═══════════════ END CONTACT DRAWER ═══════════════ -->
+
 </body>
 </html>
