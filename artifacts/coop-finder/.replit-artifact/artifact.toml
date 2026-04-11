@@ -18,13 +18,8 @@ localPort = 18651
 run = "pnpm --filter @workspace/coop-finder run dev"
 
 [services.production]
-build = [ "pnpm", "--filter", "@workspace/coop-finder", "run", "build" ]
-publicDir = "artifacts/coop-finder/dist/public"
+publicDir = "artifacts/coop-finder/site"
 serve = "static"
-
-[[services.production.rewrites]]
-from = "/*"
-to = "/index.html"
 
 [services.env]
 PORT = "18651"
