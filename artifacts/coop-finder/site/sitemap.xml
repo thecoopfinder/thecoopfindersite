@@ -4,7 +4,7 @@
 
   <url>
     <loc>https://www.thecoopfinder.com/</loc>
-    <lastmod>2026-04-03</lastmod>
+    <lastmod>2026-04-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -14,8 +14,15 @@
   </url>
 
   <url>
+    <loc>https://www.thecoopfinder.com/around-the-coop</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
     <loc>https://www.thecoopfinder.com/featured-properties</loc>
-    <lastmod>2026-04-03</lastmod>
+    <lastmod>2026-04-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
     <image:image>
@@ -26,21 +33,21 @@
 
   <url>
     <loc>https://www.thecoopfinder.com/buyers</loc>
-    <lastmod>2026-04-03</lastmod>
+    <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
     <loc>https://www.thecoopfinder.com/sellers</loc>
-    <lastmod>2026-04-03</lastmod>
+    <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
     <loc>https://www.thecoopfinder.com/communities</loc>
-    <lastmod>2026-04-03</lastmod>
+    <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -51,7 +58,7 @@
 
   <url>
     <loc>https://www.thecoopfinder.com/about</loc>
-    <lastmod>2026-04-03</lastmod>
+    <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <image:image>
@@ -61,15 +68,8 @@
   </url>
 
   <url>
-    <loc>https://www.thecoopfinder.com/around-the-coop</loc>
-    <lastmod>2026-04-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-  </url>
-
-  <url>
     <loc>https://www.thecoopfinder.com/contact</loc>
-    <lastmod>2026-04-03</lastmod>
+    <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
