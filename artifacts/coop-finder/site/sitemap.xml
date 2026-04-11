@@ -39,17 +39,6 @@
   </url>
 
   <url>
-    <loc>https://www.thecoopfinder.com/communities</loc>
-    <lastmod>2026-04-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-    <image:image>
-      <image:loc>https://www.thecoopfinder.com/images/newcastle.jpg</image:loc>
-      <image:title>Newcastle Oklahoma – The Coop Finder</image:title>
-    </image:image>
-  </url>
-
-  <url>
     <loc>https://www.thecoopfinder.com/featured-properties</loc>
     <lastmod>2026-04-03</lastmod>
     <changefreq>weekly</changefreq>
@@ -57,6 +46,17 @@
     <image:image>
       <image:loc>https://www.thecoopfinder.com/images/featured-property.jpg</image:loc>
       <image:title>Featured Oklahoma Properties – The Coop Finder</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.thecoopfinder.com/communities</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://www.thecoopfinder.com/images/newcastle.jpg</image:loc>
+      <image:title>Newcastle Oklahoma – The Coop Finder</image:title>
     </image:image>
   </url>
 

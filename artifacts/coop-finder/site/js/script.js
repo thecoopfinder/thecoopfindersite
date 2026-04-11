@@ -280,7 +280,48 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   /* ──────────────────────────────────────────────────────────
-     6. SMOOTH SCROLL + ACTIVE NAV HIGHLIGHT
+     6. SCHEDULE A SHOWING — property address pre-fill
+     When a visitor clicks "Schedule a Showing" on any property
+     card, the property address (from the card's <h3>) is added
+     to the contact URL as ?property=ADDRESS so the contact form
+     can greet them with the right property pre-filled.
+  ────────────────────────────────────────────────────────── */
+
+  /* Step A: inject ?property= param into each "Schedule a Showing" link */
+  document.querySelectorAll('a.btn').forEach(function (link) {
+    if (link.textContent.trim().toLowerCase().indexOf('schedule a showing') !== -1) {
+      var card = link.closest('article, .property-card');
+      if (card) {
+        var h3 = card.querySelector('h3');
+        if (h3) {
+          var address = h3.textContent.trim();
+          link.href = '/contact?property=' + encodeURIComponent(address) + '#contact-form';
+        }
+      }
+    }
+  });
+
+  /* Step B: on the contact page, read ?property= and pre-fill the message */
+  (function () {
+    var params   = new URLSearchParams(window.location.search);
+    var property = params.get('property');
+    console.log('[Coop Finder] property param:', property);
+    if (!property) return;
+    var msgField = document.getElementById('contact-message');
+    console.log('[Coop Finder] msgField found:', !!msgField);
+    if (msgField && !msgField.value) {
+      msgField.value = "I\u2019m interested in scheduling a showing for " + property + ".";
+      console.log('[Coop Finder] message pre-filled');
+    }
+    /* Also scroll to the form after the page settles */
+    setTimeout(function () {
+      var form = document.getElementById('contact-form');
+      if (form) form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 300);
+  }());
+
+  /* ──────────────────────────────────────────────────────────
+     7. SMOOTH SCROLL + ACTIVE NAV HIGHLIGHT
   ────────────────────────────────────────────────────────── */
 
   /* Smooth scroll for on-page anchor links (e.g. #contact-form) */
