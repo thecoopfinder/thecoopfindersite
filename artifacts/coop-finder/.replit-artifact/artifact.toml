@@ -21,6 +21,34 @@ run = "pnpm --filter @workspace/coop-finder run dev"
 publicDir = "artifacts/coop-finder/site"
 serve = "static"
 
+[[services.production.rewrites]]
+from = "/about"
+to = "/about.html"
+
+[[services.production.rewrites]]
+from = "/buyers"
+to = "/buyers.html"
+
+[[services.production.rewrites]]
+from = "/sellers"
+to = "/sellers.html"
+
+[[services.production.rewrites]]
+from = "/communities"
+to = "/communities.html"
+
+[[services.production.rewrites]]
+from = "/contact"
+to = "/contact.html"
+
+[[services.production.rewrites]]
+from = "/featured-properties"
+to = "/featured-properties.html"
+
+[[services.production.rewrites]]
+from = "/around-the-coop"
+to = "/around-the-coop.html"
+
 [services.env]
 PORT = "18651"
 BASE_PATH = "/"
