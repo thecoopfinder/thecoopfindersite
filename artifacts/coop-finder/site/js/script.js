@@ -468,7 +468,7 @@ document.addEventListener('DOMContentLoaded', function () {
       var helpValue   = '';
       var text        = link.textContent.trim();
 
-      /* "Schedule a Showing" → extract property address from card <h3> */
+      /* "Schedule a Showing" → extract property address from the card's <h3> */
       if (text.toLowerCase().indexOf('schedule a showing') !== -1) {
         var card = link.closest('article, .property-card');
         if (card) {
@@ -480,7 +480,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       }
 
-      /* "Ask About [City]" → extract city name */
+      /* "Ask About [City]" → extract city name from the link text */
       var askMatch = text.match(/Ask About\s+(.+?)(?:\s*[\u2192\u00bb])?$/i);
       if (askMatch) {
         var city = askMatch[1].trim();
