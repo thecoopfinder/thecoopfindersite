@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.thecoopfinder.com/sitemap.xml
+Sitemap: https://thecoopfinder.com/sitemap.xml
