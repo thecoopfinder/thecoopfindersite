@@ -1239,9 +1239,6 @@ textarea { min-height: 120px; resize: vertical; }
 .carousel-btn:hover { background: rgba(0,0,0,.72); }
 .carousel-btn.prev { left: .5rem; }
 .carousel-btn.next { right: .5rem; }
-@media (hover: none) and (pointer: coarse) {
-  .carousel-btn { display: none; }
-}
 .carousel-counter {
   position: absolute;
   bottom: .5rem;
