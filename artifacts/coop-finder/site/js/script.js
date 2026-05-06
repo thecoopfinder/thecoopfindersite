@@ -464,28 +464,32 @@ document.addEventListener('DOMContentLoaded', function () {
       e.preventDefault();
       e.stopPropagation(); /* prevent click from reaching the document outside-click handler */
 
-      var prefillText = '';
-      var helpValue   = '';
-      var text        = link.textContent.trim();
+      /* Explicit data attributes take priority over text-parsing fallbacks */
+      var prefillText = link.dataset.drawerPrefill || '';
+      var helpValue   = link.dataset.drawerHelp   || '';
 
-      /* "Schedule a Showing" → extract property address from the card's <h3> */
-      if (text.toLowerCase().indexOf('schedule a showing') !== -1) {
-        var card = link.closest('article, .property-card');
-        if (card) {
-          var h3 = card.querySelector('h3');
-          if (h3) {
-            prefillText = "I\u2019m interested in scheduling a showing for " + h3.textContent.trim() + ".";
-            helpValue = 'buying';
+      if (!prefillText) {
+        var text = link.textContent.trim();
+
+        /* "Schedule a Showing" → extract property address from the card's <h3> */
+        if (text.toLowerCase().indexOf('schedule a showing') !== -1) {
+          var card = link.closest('article, .property-card');
+          if (card) {
+            var h3 = card.querySelector('h3');
+            if (h3) {
+              prefillText = "I\u2019m interested in scheduling a showing for " + h3.textContent.trim() + ".";
+              if (!helpValue) helpValue = 'buying';
+            }
           }
         }
-      }
 
-      /* "Ask About [City]" → extract city name from the link text */
-      var askMatch = text.match(/Ask About\s+(.+?)(?:\s*[\u2192\u00bb])?$/i);
-      if (askMatch) {
-        var city = askMatch[1].trim();
-        prefillText = "I\u2019d like to learn more about " + city + ".";
-        helpValue = 'buying';
+        /* "Ask About [City]" → extract city name from the link text */
+        var askMatch = text.match(/Ask About\s+(.+?)(?:\s*[\u2192\u00bb])?$/i);
+        if (askMatch) {
+          var city = askMatch[1].trim();
+          prefillText = "I\u2019d like to learn more about " + city + ".";
+          if (!helpValue) helpValue = 'buying';
+        }
       }
 
       openDrawer(prefillText, helpValue);
