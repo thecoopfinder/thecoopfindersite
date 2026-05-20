@@ -66,10 +66,10 @@ ul { list-style: none; }
 }
 @media (min-width: 768px) { .container { padding-inline: 2.5rem; } }
 
-.section { padding-block: 4rem; }
+.section { padding-block: 2.5rem; }
 @media (min-width: 768px) { .section { padding-block: 6rem; } }
 
-.section-sm { padding-block: 2.5rem; }
+.section-sm { padding-block: 1.5rem; }
 @media (min-width: 768px) { .section-sm { padding-block: 3.5rem; } }
 
 .bg-warm  { background: var(--warm-white); }
@@ -398,7 +398,7 @@ h4 { font-size: 1.1rem; }
   display: flex;
   align-items: center;
 }
-@media (max-width: 767px) { .hero { min-height: auto; padding: 4rem 0 2.5rem; } }
+@media (max-width: 767px) { .hero { min-height: auto; padding: 2.5rem 0 1.5rem; } }
 .hero-bg {
   position: absolute;
   inset: 0;
@@ -431,7 +431,7 @@ h4 { font-size: 1.1rem; }
   flex-direction: column;
   gap: 2.5rem;
   align-items: center;
-  padding-block: 4rem;
+  padding-block: 1.5rem;
   text-align: center;
 }
 @media (min-width: 768px) {
