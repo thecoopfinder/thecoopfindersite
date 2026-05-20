@@ -465,6 +465,25 @@ h4 { font-size: 1.1rem; }
   justify-content: center;
 }
 @media (max-width: 767px) { .hero-photo { display: none; } }
+
+/* Mobile-only brand logo shown below CTAs when photo is hidden */
+.hero-mobile-brand {
+  display: none;
+}
+@media (max-width: 767px) {
+  .hero-mobile-brand {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+  .hero-mobile-brand img {
+    width: 160px;
+    height: 160px;
+    object-fit: contain;
+    opacity: .85;
+    mix-blend-mode: multiply;
+  }
+}
 .hero-oval-wrap {
   position: relative;
   display: inline-block;
