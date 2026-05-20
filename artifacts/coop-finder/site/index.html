@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- PRIMARY SEO -->
-  <title>Tessa Hood – The Coop Finder | Newcastle, Tuttle &amp; Blanchard Realtor</title>
-  <meta name="description" content="Tessa Hood helps buyers and sellers across Newcastle, Tuttle, Blanchard, and the South OKC metro. Expert local guidance, honest advice, and relationship-driven real estate with Knight Land Company.">
+  <title>Tessa Hood – The Coop Finder | Newcastle Realtor</title>
+  <meta name="description" content="Tessa Hood helps buyers and sellers in Newcastle, Tuttle, Blanchard, and South OKC. Local expertise, honest advice, and Knight Land Company.">
   <link rel="canonical" href="https://thecoopfinder.com/">
 
   <!-- OPEN GRAPH -->
@@ -33,8 +33,7 @@
   <!-- FONTS + CSS -->
   <link rel="stylesheet" href="/css/style.css">
 
-  <!-- PRELOAD hero image for fastest LCP -->
-  <link rel="preload" as="image" href="/images/tessa-with-chicken-nobg.webp" type="image/webp">
+  <!-- Hero image preload desktop-only (mobile hides the photo via CSS) -->
 
   <!-- JSON-LD: RealEstateAgent + WebSite -->
   <script type="application/ld+json">
@@ -326,7 +325,7 @@
           <div class="hero-oval">
             <picture>
               <source srcset="/images/tessa-with-chicken-nobg.webp" type="image/webp">
-              <img src="/images/tessa-with-chicken-nobg.png" alt="Tessa Hood Realtor – The Coop Finder, Newcastle Oklahoma" loading="eager" fetchpriority="high">
+              <img src="/images/tessa-with-chicken-nobg.png" alt="Tessa Hood Realtor – The Coop Finder, Newcastle Oklahoma" loading="lazy">
             </picture>
           </div>
           <img src="/tessa-logo.png" class="hero-oval-logo" alt="The Coop Finder">
@@ -378,7 +377,7 @@
             <div class="video-overlay"><div class="play-btn" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
           </a>
           <div class="video-info">
-            <span class="video-label" style="color:var(--terracotta);">Community Spotlight</span>
+            <span class="video-label" aria-hidden="true" style="color:var(--terracotta);">Community Spotlight</span>
             <h3>Coal Creek Holler Tuttle OK | Local Farm Stand Spotlight</h3>
             <p>A self-serve silo farm stand filled with nontoxic, everyday items from local makers and farms right here in the Tuttle community — sourdough, honey, handmade goods, and more.</p>
           </div>
@@ -390,7 +389,7 @@
             <div class="video-overlay"><div class="play-btn" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
           </a>
           <div class="video-info">
-            <span class="video-label" style="color:var(--terracotta);">Community Spotlight</span>
+            <span class="video-label" aria-hidden="true" style="color:var(--terracotta);">Community Spotlight</span>
             <h3>Things to Do in Newcastle, OK | Library Tour + Kids Activities</h3>
             <p>A look inside the Newcastle Public Library, from learning tablets and activity kits to a 3D printer and local experience passes for families.</p>
           </div>
@@ -402,7 +401,7 @@
             <div class="video-overlay"><div class="play-btn" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
           </a>
           <div class="video-info">
-            <span class="video-label" style="color:var(--olive);">Local Business</span>
+            <span class="video-label" aria-hidden="true" style="color:var(--olive);">Local Business</span>
             <h3>APS Tire and Automotive Tuttle OK | Local Auto Shop You Can Trust</h3>
             <p>Looking for a reliable auto shop in Tuttle? APS Tire and Automotive is a great local spot for tires, maintenance, and general car service.</p>
           </div>
@@ -842,7 +841,7 @@
 
 <!-- VIDEO LIGHTBOX -->
 <dialog id="video-dialog" aria-label="Video player">
-  <button class="dialog-close" aria-label="Close video">&times;</button>
+  <button class="dialog-close" aria-label="Close video"><span aria-hidden="true">&times;</span></button>
   <p class="dialog-title"></p>
   <div class="dialog-video">
     <iframe src="" allow="autoplay; encrypted-media" allowfullscreen loading="lazy" title="Video player"></iframe>

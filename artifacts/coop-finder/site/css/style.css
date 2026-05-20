@@ -414,6 +414,11 @@ h4 { font-size: 1.1rem; }
 }
 @media (min-width: 768px) { .hero-overlay { background: rgba(246,244,240,.45); } }
 
+/* Hide decorative hero background on mobile */
+@media (max-width: 767px) {
+  .hero-bg { display: none; }
+}
+
 .hero-inner {
   position: relative;
   z-index: 2;
@@ -459,6 +464,7 @@ h4 { font-size: 1.1rem; }
   display: flex;
   justify-content: center;
 }
+@media (max-width: 767px) { .hero-photo { display: none; } }
 .hero-oval-wrap {
   position: relative;
   display: inline-block;
