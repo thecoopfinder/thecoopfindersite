@@ -398,6 +398,7 @@ h4 { font-size: 1.1rem; }
   display: flex;
   align-items: center;
 }
+@media (max-width: 767px) { .hero { min-height: auto; padding: 4rem 0 2.5rem; } }
 .hero-bg {
   position: absolute;
   inset: 0;
@@ -466,22 +467,16 @@ h4 { font-size: 1.1rem; }
 }
 @media (max-width: 767px) { .hero-photo { display: none; } }
 
-/* Mobile-only brand logo shown below CTAs when photo is hidden */
-.hero-mobile-brand {
-  display: none;
-}
+/* On mobile, show the 3 client photos above the intro text */
 @media (max-width: 767px) {
-  .hero-mobile-brand {
+  .brand-intro .container {
     display: flex;
-    justify-content: center;
-    margin-top: 2rem;
+    flex-direction: column;
   }
-  .hero-mobile-brand img {
-    width: 160px;
-    height: 160px;
-    object-fit: contain;
-    opacity: .85;
-    mix-blend-mode: multiply;
+  .brand-intro .photo-gallery {
+    order: -1;
+    margin-bottom: 2rem;
+    margin-top: 0;
   }
 }
 .hero-oval-wrap {
