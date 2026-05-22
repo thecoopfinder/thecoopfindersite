@@ -514,54 +514,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   /* ──────────────────────────────────────────────────────────
-     10. VIDEO PAGE LIGHTBOX — inject dialog + convert iframes
-     On video detail pages the inline iframe is replaced with a
-     thumbnail + play button. Tapping opens the existing
-     #video-dialog lightbox so YouTube stays contained and
-     accidental taps to YouTube are eliminated.
-  ────────────────────────────────────────────────────────── */
-  document.querySelectorAll('.video-embed-wrap iframe').forEach(function (iframe) {
-    var src   = iframe.getAttribute('src') || '';
-    var match = src.match(/embed\/([\w-]+)/);
-    if (!match) return;
-    var videoId = match[1];
-    var wrap    = iframe.parentElement;
-    var titleEl = document.querySelector('.video-page-title');
-    var title   = titleEl ? titleEl.textContent.trim() : '';
-
-    /* Inject dialog if this page doesn't already have one */
-    if (!getDialogEl()) {
-      var dlg = document.createElement('dialog');
-      dlg.id = 'video-dialog';
-      dlg.setAttribute('aria-label', 'Video player');
-      dlg.innerHTML =
-        '<button class="dialog-close" aria-label="Close video"><span aria-hidden="true">&times;</span></button>' +
-        '<p class="dialog-title"></p>' +
-        '<div class="dialog-video"><iframe src="" allow="autoplay; encrypted-media" allowfullscreen loading="lazy" title="Video player"></iframe></div>';
-      document.body.appendChild(dlg);
-      wireDialog(dlg);
-    }
-
-    /* Replace inline iframe with a styled thumbnail trigger */
-    wrap.innerHTML =
-      '<div class="video-thumb-trigger" role="button" tabindex="0" aria-label="Play: ' + title + '">' +
-        '<img src="https://img.youtube.com/vi/' + videoId + '/maxresdefault.jpg"' +
-             ' onerror="this.src=\'https://img.youtube.com/vi/' + videoId + '/hqdefault.jpg\'"' +
-             ' alt="' + title + '" loading="eager">' +
-        '<div class="video-thumb-play" aria-hidden="true">' +
-          '<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>' +
-        '</div>' +
-      '</div>';
-
-    var trigger = wrap.querySelector('.video-thumb-trigger');
-    trigger.addEventListener('click', function () { openVideo(videoId, title); });
-    trigger.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openVideo(videoId, title); }
-    });
-  });
-
-  /* ──────────────────────────────────────────────────────────
-     11. FULL-CARD CLICK — hub page video cards
+     10. FULL-CARD CLICK — hub page video cards
      Clicking anywhere on the card navigates to the video page.
      Clicks on <a> tags (ext link, business link) are left alone.
   ────────────────────────────────────────────────────────── */
