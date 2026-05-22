@@ -1561,3 +1561,26 @@ textarea { min-height: 120px; resize: vertical; }
 }
 .video-more-header h2 { font-size: 1.4rem; margin-bottom: .25rem; }
 .video-more-header p { font-size: .9rem; color: var(--text-muted); }
+
+/* ── VIDEO CARD WRAPPER (external link below card) ────────── */
+.video-card-wrap {
+  display: flex;
+  flex-direction: column;
+}
+.video-card-wrap .video-card {
+  flex: 1;
+}
+.video-card-ext-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .25rem;
+  font-size: .78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: .5rem .25rem 0;
+  transition: color .15s;
+  border-top: 1px solid var(--border);
+  margin-top: auto;
+}
+.video-card-ext-link:hover { color: var(--gold); }
