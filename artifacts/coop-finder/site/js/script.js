@@ -497,7 +497,25 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   /* ──────────────────────────────────────────────────────────
-     10. CLICK-TO-PLAY — video detail pages
+     10. FULL-CARD CLICK — hub page video cards
+     Clicking anywhere on the card navigates to the video page.
+     Clicks on <a> tags (ext link, business link) are left alone.
+  ────────────────────────────────────────────────────────── */
+  document.querySelectorAll('.video-card-wrap .video-card').forEach(function (card) {
+    var thumbLink = card.querySelector('.video-thumb');
+    if (!thumbLink) return;
+    var href = thumbLink.getAttribute('href');
+    if (!href) return;
+
+    card.addEventListener('click', function (e) {
+      if (!e.target.closest('a')) {
+        window.location.href = href;
+      }
+    });
+  });
+
+  /* ──────────────────────────────────────────────────────────
+     11. CLICK-TO-PLAY — video detail pages
      Shows a YouTube thumbnail with a play button. The iframe
      only loads when the user deliberately taps/clicks, which
      prevents accidental navigation to YouTube on mobile.

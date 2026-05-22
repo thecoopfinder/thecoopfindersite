@@ -1586,18 +1586,8 @@ textarea { min-height: 120px; resize: vertical; }
 .video-card-ext-link:hover { color: var(--gold); }
 
 /* ── FULL-CARD CLICK AREA (hub page cards) ──────────────── */
-/* The .video-thumb anchor stretches a pseudo-element over the
-   entire card so tapping anywhere navigates to the video page.
-   .video-business-link and .video-card-ext-link stay above it. */
-.video-card-wrap .video-card { position: relative; }
-.video-card-wrap .video-card .video-thumb::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-}
-.video-card-wrap .video-card .video-business-link { position: relative; z-index: 1; }
-.video-card-ext-link { position: relative; z-index: 1; }
+/* cursor added via JS; click handling done in script.js     */
+.video-card-wrap .video-card { cursor: pointer; }
 
 /* ── CLICK-TO-PLAY POSTER (video detail pages) ──────────── */
 .video-poster {
