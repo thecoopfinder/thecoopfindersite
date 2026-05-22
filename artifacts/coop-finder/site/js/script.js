@@ -501,7 +501,7 @@ document.addEventListener('DOMContentLoaded', function () {
      Clicking anywhere on the card navigates to the video page.
      Clicks on <a> tags (ext link, business link) are left alone.
   ────────────────────────────────────────────────────────── */
-  document.querySelectorAll('.video-card-wrap .video-card').forEach(function (card) {
+  document.querySelectorAll('.video-card').forEach(function (card) {
     var thumbLink = card.querySelector('.video-thumb');
     if (!thumbLink) return;
     var href = thumbLink.getAttribute('href');
