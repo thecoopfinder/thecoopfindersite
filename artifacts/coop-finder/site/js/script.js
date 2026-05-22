@@ -515,44 +515,33 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   /* ──────────────────────────────────────────────────────────
-     11. CLICK-TO-PLAY — video detail pages
-     Shows a YouTube thumbnail with a play button. The iframe
-     only loads when the user deliberately taps/clicks, which
-     prevents accidental navigation to YouTube on mobile.
+     11. VIDEO PLAY OVERLAY — video detail pages
+     The iframe loads normally (looks exactly like YouTube).
+     A transparent overlay with a play button sits on top to
+     intercept accidental taps while scrolling. Tapping the
+     play button removes the overlay so the player is fully
+     interactive.
   ────────────────────────────────────────────────────────── */
   document.querySelectorAll('.video-embed-wrap iframe').forEach(function (iframe) {
-    var src = iframe.getAttribute('src') || '';
-    var match = src.match(/embed\/([\w-]+)/);
-    if (!match) return;
-    var videoId = match[1];
     var wrap = iframe.parentElement;
 
-    var poster = document.createElement('div');
-    poster.className = 'video-poster';
-    poster.setAttribute('role', 'button');
-    poster.setAttribute('aria-label', 'Play video');
-    poster.setAttribute('tabindex', '0');
-    poster.innerHTML =
-      '<img src="https://img.youtube.com/vi/' + videoId + '/maxresdefault.jpg"' +
-      ' onerror="this.src=\'https://img.youtube.com/vi/' + videoId + '/hqdefault.jpg\'"' +
-      ' alt="Video thumbnail" loading="eager">' +
-      '<div class="video-poster-play" aria-hidden="true">' +
+    var overlay = document.createElement('div');
+    overlay.className = 'video-play-overlay';
+    overlay.setAttribute('role', 'button');
+    overlay.setAttribute('aria-label', 'Play video');
+    overlay.setAttribute('tabindex', '0');
+    overlay.innerHTML =
+      '<div class="video-overlay-btn" aria-hidden="true">' +
       '<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>';
 
-    function loadVideo() {
-      var autoSrc = src.indexOf('?') !== -1 ? src + '&autoplay=1' : src + '?autoplay=1';
-      iframe.setAttribute('src', autoSrc);
-      iframe.style.display = '';
-      poster.remove();
-    }
+    function dismiss() { overlay.remove(); }
 
-    poster.addEventListener('click', loadVideo);
-    poster.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); loadVideo(); }
+    overlay.addEventListener('click', dismiss);
+    overlay.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); dismiss(); }
     });
 
-    iframe.style.display = 'none';
-    wrap.insertBefore(poster, iframe);
+    wrap.appendChild(overlay);
   });
 
 }); /* end DOMContentLoaded */
