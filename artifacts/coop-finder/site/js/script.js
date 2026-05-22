@@ -60,56 +60,62 @@ document.addEventListener('DOMContentLoaded', function () {
      2. YOUTUBE VIDEO LIGHTBOX
      Usage: give any element data-video-id="YOUTUBE_ID"
             and data-video-title="Video Title" (optional)
+     Lazy lookups so it works even when dialog is injected
+     dynamically (video detail pages).
   ────────────────────────────────────────────────────────── */
-  const dialog   = document.getElementById('video-dialog');
-  const dialogIframe = dialog ? dialog.querySelector('.dialog-video iframe') : null;
-  const dialogTitle  = dialog ? dialog.querySelector('.dialog-title') : null;
-  const dialogClose  = dialog ? dialog.querySelector('.dialog-close') : null;
+  function getDialogEl()     { return document.getElementById('video-dialog'); }
+  function getDialogIframe() { var d = getDialogEl(); return d ? d.querySelector('.dialog-video iframe') : null; }
+  function getDialogTitle()  { var d = getDialogEl(); return d ? d.querySelector('.dialog-title') : null; }
 
   function openVideo(videoId, title) {
-    if (!dialog || !dialogIframe) return;
-    dialogIframe.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0';
-    if (dialogTitle && title) dialogTitle.textContent = title;
-    dialog.showModal();
+    var dlg    = getDialogEl();
+    var iframe = getDialogIframe();
+    var ttl    = getDialogTitle();
+    if (!dlg || !iframe) return;
+    iframe.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0';
+    if (ttl && title) ttl.textContent = title;
+    dlg.showModal();
   }
 
   function closeVideo() {
-    if (!dialog) return;
-    dialog.close();
-    if (dialogIframe) dialogIframe.src = '';
+    var dlg    = getDialogEl();
+    var iframe = getDialogIframe();
+    if (!dlg) return;
+    dlg.close();
+    if (iframe) iframe.src = '';
   }
 
-  if (dialogClose) dialogClose.addEventListener('click', closeVideo);
-  if (dialog) {
-    /* Close on backdrop click */
-    dialog.addEventListener('click', function (e) {
-      const rect = dialog.getBoundingClientRect();
-      if (
-        e.clientX < rect.left || e.clientX > rect.right ||
-        e.clientY < rect.top  || e.clientY > rect.bottom
-      ) closeVideo();
+  function wireDialog(dlg) {
+    var closeBtn = dlg.querySelector('.dialog-close');
+    if (closeBtn) closeBtn.addEventListener('click', closeVideo);
+    dlg.addEventListener('click', function (e) {
+      var rect = dlg.getBoundingClientRect();
+      if (e.clientX < rect.left || e.clientX > rect.right ||
+          e.clientY < rect.top  || e.clientY > rect.bottom) closeVideo();
     });
-    /* Close on ESC (dialog handles ESC natively but we also clear src) */
-    dialog.addEventListener('close', function () {
-      if (dialogIframe) dialogIframe.src = '';
+    dlg.addEventListener('close', function () {
+      var iframe = getDialogIframe();
+      if (iframe) iframe.src = '';
     });
   }
+
+  var existingDialog = getDialogEl();
+  if (existingDialog) wireDialog(existingDialog);
 
   /* Wire up all video trigger elements */
   document.querySelectorAll('[data-video-id]').forEach(function (el) {
     el.addEventListener('click', function (e) {
       if (e.target.closest('.video-business-link')) return;
       e.preventDefault();
-      const id    = el.dataset.videoId;
-      const title = el.dataset.videoTitle || '';
+      var id    = el.dataset.videoId;
+      var title = el.dataset.videoTitle || '';
       if (id) openVideo(id, title);
     });
-    /* Keyboard accessibility */
     el.addEventListener('keydown', function (e) {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
-        const id    = el.dataset.videoId;
-        const title = el.dataset.videoTitle || '';
+        var id    = el.dataset.videoId;
+        var title = el.dataset.videoTitle || '';
         if (id) openVideo(id, title);
       }
     });
@@ -497,7 +503,54 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   /* ──────────────────────────────────────────────────────────
-     10. FULL-CARD CLICK — hub page video cards
+     10. VIDEO PAGE LIGHTBOX — inject dialog + convert iframes
+     On video detail pages the inline iframe is replaced with a
+     thumbnail + play button. Tapping opens the existing
+     #video-dialog lightbox so YouTube stays contained and
+     accidental taps to YouTube are eliminated.
+  ────────────────────────────────────────────────────────── */
+  document.querySelectorAll('.video-embed-wrap iframe').forEach(function (iframe) {
+    var src   = iframe.getAttribute('src') || '';
+    var match = src.match(/embed\/([\w-]+)/);
+    if (!match) return;
+    var videoId = match[1];
+    var wrap    = iframe.parentElement;
+    var titleEl = document.querySelector('.video-page-title');
+    var title   = titleEl ? titleEl.textContent.trim() : '';
+
+    /* Inject dialog if this page doesn't already have one */
+    if (!getDialogEl()) {
+      var dlg = document.createElement('dialog');
+      dlg.id = 'video-dialog';
+      dlg.setAttribute('aria-label', 'Video player');
+      dlg.innerHTML =
+        '<button class="dialog-close" aria-label="Close video"><span aria-hidden="true">&times;</span></button>' +
+        '<p class="dialog-title"></p>' +
+        '<div class="dialog-video"><iframe src="" allow="autoplay; encrypted-media" allowfullscreen loading="lazy" title="Video player"></iframe></div>';
+      document.body.appendChild(dlg);
+      wireDialog(dlg);
+    }
+
+    /* Replace inline iframe with a styled thumbnail trigger */
+    wrap.innerHTML =
+      '<div class="video-thumb-trigger" role="button" tabindex="0" aria-label="Play: ' + title + '">' +
+        '<img src="https://img.youtube.com/vi/' + videoId + '/maxresdefault.jpg"' +
+             ' onerror="this.src=\'https://img.youtube.com/vi/' + videoId + '/hqdefault.jpg\'"' +
+             ' alt="' + title + '" loading="eager">' +
+        '<div class="video-thumb-play" aria-hidden="true">' +
+          '<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>' +
+        '</div>' +
+      '</div>';
+
+    var trigger = wrap.querySelector('.video-thumb-trigger');
+    trigger.addEventListener('click', function () { openVideo(videoId, title); });
+    trigger.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openVideo(videoId, title); }
+    });
+  });
+
+  /* ──────────────────────────────────────────────────────────
+     11. FULL-CARD CLICK — hub page video cards
      Clicking anywhere on the card navigates to the video page.
      Clicks on <a> tags (ext link, business link) are left alone.
   ────────────────────────────────────────────────────────── */
