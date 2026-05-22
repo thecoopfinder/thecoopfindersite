@@ -496,4 +496,45 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  /* ──────────────────────────────────────────────────────────
+     10. CLICK-TO-PLAY — video detail pages
+     Shows a YouTube thumbnail with a play button. The iframe
+     only loads when the user deliberately taps/clicks, which
+     prevents accidental navigation to YouTube on mobile.
+  ────────────────────────────────────────────────────────── */
+  document.querySelectorAll('.video-embed-wrap iframe').forEach(function (iframe) {
+    var src = iframe.getAttribute('src') || '';
+    var match = src.match(/embed\/([\w-]+)/);
+    if (!match) return;
+    var videoId = match[1];
+    var wrap = iframe.parentElement;
+
+    var poster = document.createElement('div');
+    poster.className = 'video-poster';
+    poster.setAttribute('role', 'button');
+    poster.setAttribute('aria-label', 'Play video');
+    poster.setAttribute('tabindex', '0');
+    poster.innerHTML =
+      '<img src="https://img.youtube.com/vi/' + videoId + '/maxresdefault.jpg"' +
+      ' onerror="this.src=\'https://img.youtube.com/vi/' + videoId + '/hqdefault.jpg\'"' +
+      ' alt="Video thumbnail" loading="eager">' +
+      '<div class="video-poster-play" aria-hidden="true">' +
+      '<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>';
+
+    function loadVideo() {
+      var autoSrc = src.indexOf('?') !== -1 ? src + '&autoplay=1' : src + '?autoplay=1';
+      iframe.setAttribute('src', autoSrc);
+      iframe.style.display = '';
+      poster.remove();
+    }
+
+    poster.addEventListener('click', loadVideo);
+    poster.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); loadVideo(); }
+    });
+
+    iframe.style.display = 'none';
+    wrap.insertBefore(poster, iframe);
+  });
+
 }); /* end DOMContentLoaded */
