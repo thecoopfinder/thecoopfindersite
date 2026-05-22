@@ -22,6 +22,17 @@
 ════════════════════════════════════════════════════════════ */
 var GHL_WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/ubTknez7NyEtjGBooDEL/webhook-trigger/1c008a74-34f1-4527-a6d8-22434becde8f';
 
+/* Pre-warm YouTube connection so lightbox loads faster when tapped */
+(function () {
+  ['https://www.youtube.com', 'https://i.ytimg.com', 'https://yt3.ggpht.com'].forEach(function (origin) {
+    var link = document.createElement('link');
+    link.rel = 'preconnect';
+    link.href = origin;
+    link.crossOrigin = 'anonymous';
+    document.head.appendChild(link);
+  });
+})();
+
 document.addEventListener('DOMContentLoaded', function () {
 
   /* ──────────────────────────────────────────────────────────
