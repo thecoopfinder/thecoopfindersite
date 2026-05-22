@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
 
   <url>
     <loc>https://thecoopfinder.com/</loc>
@@ -15,7 +16,7 @@
 
   <url>
     <loc>https://thecoopfinder.com/around-the-coop</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -79,6 +80,173 @@
     <lastmod>2026-05-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.30</priority>
+  </url>
+
+  <!-- ═══ VIDEO PAGES ═══ -->
+
+  <url>
+    <loc>https://thecoopfinder.com/videos/coal-creek-holler</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/D7EdEjGimaU/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Coal Creek Holler – Local Farm Stand in Tuttle OK | The Coop Finder</video:title>
+      <video:description>A self-serve silo farm stand in Tuttle, Oklahoma filled with nontoxic goods from local makers and farms — community spotlight by Tessa Hood, The Coop Finder.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/D7EdEjGimaU</video:player_loc>
+      <video:publication_date>2025-01-01</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://thecoopfinder.com/videos/newcastle-library-tour</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/JqBPmvrN7eg/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Newcastle Public Library Tour – Things to Do in Newcastle OK | The Coop Finder</video:title>
+      <video:description>The Newcastle Public Library offers far more than books — a community spotlight by Tessa Hood, The Coop Finder Realtor serving Newcastle, Tuttle, and Blanchard.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/JqBPmvrN7eg</video:player_loc>
+      <video:publication_date>2025-01-01</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://thecoopfinder.com/videos/mind-of-christ-academy</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/3qGDepuLOcY/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Mind of Christ Academy – Faith-Based Homeschool in Tuttle OK | The Coop Finder</video:title>
+      <video:description>Mind of Christ Academy is a faith-based homeschool program in Tuttle, Oklahoma serving families across the Tri-City area — featured by Tessa Hood, The Coop Finder.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/3qGDepuLOcY</video:player_loc>
+      <video:publication_date>2025-01-01</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://thecoopfinder.com/videos/aps-tire-automotive</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/cGFfXNXhjvk/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>APS Tire & Automotive – Local Auto Shop in Tuttle OK | The Coop Finder</video:title>
+      <video:description>APS Tire and Automotive is a trusted local auto shop in Tuttle, Oklahoma for tires, maintenance, and general car service — featured by Tessa Hood, The Coop Finder.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/cGFfXNXhjvk</video:player_loc>
+      <video:publication_date>2025-01-01</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://thecoopfinder.com/videos/ten-arrows-coffee</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/VPCIWvD-1BA/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Ten Arrows Coffee & Bistro – Best Coffee Shop in Blanchard OK | The Coop Finder</video:title>
+      <video:description>Ten Arrows Coffee &amp; Bistro is a welcoming local coffee shop in Blanchard, Oklahoma with great food and a community-first heart — featured by Tessa Hood, The Coop Finder.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/VPCIWvD-1BA</video:player_loc>
+      <video:publication_date>2025-01-01</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://thecoopfinder.com/videos/happy-heart-homestead</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/FpZnCbmrW30/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Happy Heart Homestead – Local Farm Store in Newcastle OK | The Coop Finder</video:title>
+      <video:description>Happy Heart Homestead is a locally owned farm store in Newcastle, Oklahoma with fresh produce, local meats, baked goods, and more — featured by Tessa Hood, The Coop Finder.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/FpZnCbmrW30</video:player_loc>
+      <video:publication_date>2025-01-01</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://thecoopfinder.com/videos/moore-ok-homes</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/jb0BHqMM6Uo/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Homes for Sale in Moore OK – Find Your Fit | The Coop Finder</video:title>
+      <video:description>Moore, Oklahoma has homes for every lifestyle. Tessa Hood of The Coop Finder helps buyers and sellers across Moore, Newcastle, Tuttle, Blanchard, Norman, and South OKC.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/jb0BHqMM6Uo</video:player_loc>
+      <video:publication_date>2025-01-01</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://thecoopfinder.com/videos/house-first-or-pre-approved</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/RngFX5wpDaM/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>House First or Pre-Approved First? Home Buying Tip | The Coop Finder</video:title>
+      <video:description>Should you find a house or get pre-approved first? Tessa Hood of The Coop Finder explains why starting with a lender sets you up for success in Oklahoma.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/RngFX5wpDaM</video:player_loc>
+      <video:publication_date>2025-01-01</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://thecoopfinder.com/videos/closing-cost-credits</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/ETkDB-HkJRY/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Closing Cost Credits Explained – Buyer & Seller Tip | The Coop Finder</video:title>
+      <video:description>Closing cost credits can lower buyer out-of-pocket costs and help sellers attract more offers. A quick tip from Tessa Hood, The Coop Finder — Oklahoma Realtor.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/ETkDB-HkJRY</video:player_loc>
+      <video:publication_date>2025-01-01</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://thecoopfinder.com/videos/buyer-tip-mortgage-payment</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/DrK6dUACPDg/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>What's Actually in Your Mortgage Payment? Buyer Tip | The Coop Finder</video:title>
+      <video:description>Most first-time buyers focus on price — but your monthly payment is what matters. Tessa Hood breaks down principal, interest, taxes, insurance, and HOA fees.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/DrK6dUACPDg</video:player_loc>
+      <video:publication_date>2025-01-01</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://thecoopfinder.com/videos/homes-norman-newcastle</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/Zu14mblmIko/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Homes in Norman & Newcastle OK – Find Your Perfect Coop | The Coop Finder</video:title>
+      <video:description>Looking for homes in Norman or Newcastle, Oklahoma? Tessa Hood of The Coop Finder is your local Realtor for Newcastle, Norman, Tuttle, Blanchard, and South OKC.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/Zu14mblmIko</video:player_loc>
+      <video:publication_date>2025-01-01</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
   </url>
 
 </urlset>
