@@ -514,34 +514,5 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  /* ──────────────────────────────────────────────────────────
-     11. VIDEO PLAY OVERLAY — video detail pages
-     The iframe loads normally (looks exactly like YouTube).
-     A transparent overlay with a play button sits on top to
-     intercept accidental taps while scrolling. Tapping the
-     play button removes the overlay so the player is fully
-     interactive.
-  ────────────────────────────────────────────────────────── */
-  document.querySelectorAll('.video-embed-wrap iframe').forEach(function (iframe) {
-    var wrap = iframe.parentElement;
-
-    var overlay = document.createElement('div');
-    overlay.className = 'video-play-overlay';
-    overlay.setAttribute('role', 'button');
-    overlay.setAttribute('aria-label', 'Play video');
-    overlay.setAttribute('tabindex', '0');
-    overlay.innerHTML =
-      '<div class="video-overlay-btn" aria-hidden="true">' +
-      '<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>';
-
-    function dismiss() { overlay.remove(); }
-
-    overlay.addEventListener('click', dismiss);
-    overlay.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); dismiss(); }
-    });
-
-    wrap.appendChild(overlay);
-  });
 
 }); /* end DOMContentLoaded */
