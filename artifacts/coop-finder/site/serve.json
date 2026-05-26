@@ -1,4 +1,26 @@
 {
+  "redirects": [
+    { "source": "/index.html",                              "destination": "/",                                   "type": 301 },
+    { "source": "/about.html",                              "destination": "/about",                              "type": 301 },
+    { "source": "/around-the-coop.html",                    "destination": "/around-the-coop",                    "type": 301 },
+    { "source": "/buyers.html",                             "destination": "/buyers",                             "type": 301 },
+    { "source": "/communities.html",                        "destination": "/communities",                        "type": 301 },
+    { "source": "/contact.html",                            "destination": "/contact",                            "type": 301 },
+    { "source": "/featured-properties.html",                "destination": "/featured-properties",                "type": 301 },
+    { "source": "/privacy-policy.html",                     "destination": "/privacy-policy",                     "type": 301 },
+    { "source": "/sellers.html",                            "destination": "/sellers",                            "type": 301 },
+    { "source": "/videos/aps-tire-automotive.html",         "destination": "/videos/aps-tire-automotive",         "type": 301 },
+    { "source": "/videos/buyer-tip-mortgage-payment.html",  "destination": "/videos/buyer-tip-mortgage-payment",  "type": 301 },
+    { "source": "/videos/closing-cost-credits.html",        "destination": "/videos/closing-cost-credits",        "type": 301 },
+    { "source": "/videos/coal-creek-holler.html",           "destination": "/videos/coal-creek-holler",           "type": 301 },
+    { "source": "/videos/happy-heart-homestead.html",       "destination": "/videos/happy-heart-homestead",       "type": 301 },
+    { "source": "/videos/homes-norman-newcastle.html",      "destination": "/videos/homes-norman-newcastle",      "type": 301 },
+    { "source": "/videos/house-first-or-pre-approved.html", "destination": "/videos/house-first-or-pre-approved", "type": 301 },
+    { "source": "/videos/mind-of-christ-academy.html",      "destination": "/videos/mind-of-christ-academy",      "type": 301 },
+    { "source": "/videos/moore-ok-homes.html",              "destination": "/videos/moore-ok-homes",              "type": 301 },
+    { "source": "/videos/newcastle-library-tour.html",      "destination": "/videos/newcastle-library-tour",      "type": 301 },
+    { "source": "/videos/ten-arrows-coffee.html",           "destination": "/videos/ten-arrows-coffee",           "type": 301 }
+  ],
   "headers": [
     {
       "source": "**/*.html",
