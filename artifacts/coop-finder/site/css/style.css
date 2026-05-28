@@ -192,6 +192,9 @@ h4 { font-size: 1.1rem; }
 
 .btn-sm { padding: .5rem 1.25rem; font-size: .875rem; }
 .btn-lg { padding: 1rem 2.5rem; font-size: 1.05rem; height: 3.5rem; }
+@media (max-width: 480px) {
+  .btn-lg { padding: .875rem 1.5rem; font-size: 1rem; height: auto; white-space: normal; max-width: 100%; }
+}
 .btn-full { width: 100%; }
 
 /* ── STATUS BADGES ─────────────────────────────────────────── */
