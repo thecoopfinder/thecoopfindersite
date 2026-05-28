@@ -148,10 +148,12 @@ h4 { font-size: 1.1rem; }
   letter-spacing: .01em;
   transition: all .2s ease;
   cursor: pointer;
-  white-space: nowrap;
+  white-space: normal;
+  text-align: center;
   border: 2px solid transparent;
   text-decoration: none;
 }
+@media (min-width: 480px) { .btn { white-space: nowrap; } }
 .btn:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
 
 .btn-primary {
