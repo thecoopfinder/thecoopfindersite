@@ -398,7 +398,7 @@ h4 { font-size: 1.1rem; }
   display: flex;
   align-items: center;
 }
-@media (max-width: 767px) { .hero { min-height: auto; padding: 2.5rem 0 1.5rem; } }
+@media (max-width: 767px) { .hero { min-height: auto; padding: 2.5rem 0 0; } }
 .hero-bg {
   position: absolute;
   inset: 0;
@@ -433,6 +433,10 @@ h4 { font-size: 1.1rem; }
   align-items: center;
   padding-block: 1.5rem;
   text-align: center;
+}
+@media (max-width: 767px) {
+  .hero-inner { gap: 0; }
+  .hero-inner .photo-gallery { padding-top: 0.5rem; }
 }
 @media (min-width: 768px) {
   .hero-inner {
@@ -477,6 +481,7 @@ h4 { font-size: 1.1rem; }
     order: -1;
     margin-bottom: 2rem;
     margin-top: 0;
+    padding-top: 0;
   }
 }
 .hero-oval-wrap {
@@ -1079,6 +1084,9 @@ textarea { min-height: 120px; resize: vertical; }
     gap: 1.25rem;
     padding-top: 1.5rem;
   }
+  .hero-inner .photo-gallery {
+    padding-top: 0.5rem;
+  }
   .photo-tile {
     width: min(18rem, 90%);
   }
@@ -1145,6 +1153,7 @@ textarea { min-height: 120px; resize: vertical; }
 
 /* ── BRAND INTRO SECTION ───────────────────────────────────── */
 .brand-intro { padding-block: 4rem; background: var(--warm-white); text-align: center; }
+@media (max-width: 767px) { .brand-intro { padding-top: 1rem; } }
 @media (min-width: 768px) { .brand-intro { padding-block: 6rem; } }
 .brand-intro h2 { margin-bottom: 1.25rem; }
 .brand-intro .lead { font-size: 1.1rem; color: var(--text-muted); max-width: 52rem; margin-inline: auto; line-height: 1.8; margin-bottom: 1rem; }
