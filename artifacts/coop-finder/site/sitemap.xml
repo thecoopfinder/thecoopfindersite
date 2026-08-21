@@ -16,7 +16,7 @@
 
   <url>
     <loc>https://thecoopfinder.com/around-the-coop</loc>
-    <lastmod>2026-05-22</lastmod>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -245,6 +245,81 @@
       <video:description>Looking for homes in Norman or Newcastle, Oklahoma? Tessa Hood of The Coop Finder is your local Realtor for Newcastle, Norman, Tuttle, Blanchard, and South OKC.</video:description>
       <video:player_loc>https://www.youtube.com/embed/Zu14mblmIko</video:player_loc>
       <video:publication_date>2025-11-21</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://thecoopfinder.com/videos/serene-pelvic-pt-birth-services</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/SBh_g9dS6QA/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Serene Pelvic PT &amp; Birth Services – Tuttle OK | The Coop Finder</video:title>
+      <video:description>A Tuttle, Oklahoma resource for pelvic health physical therapy, birth support, prenatal education, lactation support, and family care.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/SBh_g9dS6QA</video:player_loc>
+      <video:publication_date>2026-06-06</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://thecoopfinder.com/videos/paper-dolls-gathering-place</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/wj8q6Fl_UPI/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Paper Dolls Gathering Place – Newcastle OK | The Coop Finder</video:title>
+      <video:description>Paper Dolls Gathering Place is a longtime creative space in Newcastle, Oklahoma for scrapbooking, cardmaking, projects, classes, and community.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/wj8q6Fl_UPI</video:player_loc>
+      <video:publication_date>2026-06-13</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://thecoopfinder.com/videos/cubhouse-place-studio</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/MGr8gHUns98/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Cubhouse Place Studio – Tuttle OK | The Coop Finder</video:title>
+      <video:description>Cubhouse Place Studio is a Tuttle, Oklahoma play studio for younger children, family fun, and birthday celebrations.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/MGr8gHUns98</video:player_loc>
+      <video:publication_date>2026-06-18</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://thecoopfinder.com/videos/sell-before-you-buy</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/cc1T4TdVcDc/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Do You Have to Sell Before You Buy a Home? | The Coop Finder</video:title>
+      <video:description>Tessa Hood explains how Oklahoma homeowners can plan a smoother move when they need to sell their current home before buying their next one.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/cc1T4TdVcDc</video:player_loc>
+      <video:publication_date>2026-06-30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://thecoopfinder.com/videos/home-inspection-report</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/qdIAlDEWnKs/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Home Inspection Reports: What Buyers Should Know | The Coop Finder</video:title>
+      <video:description>A home inspection report is not a pass-or-fail test. Tessa Hood explains how Oklahoma buyers can review findings and make a confident decision.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/qdIAlDEWnKs</video:player_loc>
+      <video:publication_date>2026-07-14</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
     </video:video>
   </url>
